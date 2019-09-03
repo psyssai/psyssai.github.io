@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tutorial on PSYda</title>
+    <link>/tags/tutorial/</link>
+    <description>Recent content in tutorial on PSYda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>/blog/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>/blog/pandasbasic_9_dataframe_groupingfunction/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/pandasbasic_9_dataframe_groupingfunction/</guid>
+      <description># 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(&amp;quot;&amp;lt;style&amp;gt; .container{width:90% !important;}&amp;lt;/style&amp;gt;&amp;quot;))   .container{width:90% !important;} import pandas as pd from pandas import Series , DataFrame import numpy as np  9. DataFrame의 집계함수 DataFrame을 집계할 수 있는 함수에는 아래 두가지가 있음 - groupby - pivot_table
+9.1 groupby 함수 groupby 함수를 사용한 집계 연산은 두 단계로 이루어짐 - DataFrame을 그룹별로 나누는 단계 - 나누어진 그룹에서 집계 함수(sum, mean, max 등)를 수행하는 단계 Data Loading</description>
+    </item>
+    
+  </channel>
+</rss>
