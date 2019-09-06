@@ -22,16 +22,6 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
     </item>
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>/blog/pandasbasic_9_dataframe_groupingfunction/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/pandasbasic_9_dataframe_groupingfunction/</guid>
-      <description># 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(&amp;quot;&amp;lt;style&amp;gt; .container{width:90% !important;}&amp;lt;/style&amp;gt;&amp;quot;))   .container{width:90% !important;} import pandas as pd from pandas import Series , DataFrame import numpy as np  9. DataFrame의 집계함수 DataFrame을 집계할 수 있는 함수에는 아래 두가지가 있음 - groupby - pivot_table
-9.1 groupby 함수 groupby 함수를 사용한 집계 연산은 두 단계로 이루어짐 - DataFrame을 그룹별로 나누는 단계 - 나누어진 그룹에서 집계 함수(sum, mean, max 등)를 수행하는 단계 Data Loading</description>
-    </item>
-    
-    <item>
       <title>(Hu)go Template Primer</title>
       <link>/blog/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
@@ -72,6 +62,28 @@ With Jekyll, something that looked like&lt;/p&gt;
     ▾ images/
         logo.png
 &lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/pandasbasic_1_series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/pandasbasic_1_series/</guid>
+      <description># 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(&amp;quot;&amp;lt;style&amp;gt; .container{width:90% !important;}&amp;lt;/style&amp;gt;&amp;quot;))   .container{width:90% !important;} 1. Series Series란?
+  1차원 데이터   Index + Value 로 구성(Python의 사전데이터와 유사)   먼저 Series 나 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 해야겠죠?(설치는 이전 블로그를 참고해주세요.)
+# pandas library import import pandas as pd from pandas import Series, DataFrame  1.1 Series 데이터 생성  Python 자료형으로 생성가능(리스트, 튜플, 사전) numpy array 자료형으로 생성가능  1.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/pandasbasic_9_dataframe_groupingfunction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/pandasbasic_9_dataframe_groupingfunction/</guid>
+      <description># 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(&amp;quot;&amp;lt;style&amp;gt; .container{width:90% !important;}&amp;lt;/style&amp;gt;&amp;quot;))   .container{width:90% !important;} 1. Series Series란?
+  1차원 데이터   Index + Value 로 구성(Python의 사전데이터와 유사)   먼저 Series 나 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 해야겠죠?(설치는 이전 블로그를 참고해주세요.)
+# pandas library import import pandas as pd from pandas import Series, DataFrame  1.1 Series 데이터 생성  Python 자료형으로 생성가능(리스트, 튜플, 사전) numpy array 자료형으로 생성가능  1.</description>
     </item>
     
   </channel>

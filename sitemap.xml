@@ -48,11 +48,6 @@
   </url>
   
   <url>
-    <loc>/blog/pandasbasic_9_dataframe_groupingfunction/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/hugo/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
@@ -98,7 +93,66 @@
   </url>
   
   <url>
+    <loc>/blog/pandasbasic_1_series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/pandasbasic_9_dataframe_groupingfunction/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_1_series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_2_dataframe/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_3_dataframe_merge/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_4_dataframe_fileio/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_5_dataframe_arithmeticoperation/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_6_dataframe_statistic/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_7_dataframe_sort_rank/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_8_pandas_apply_function/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/pandas/pandasbasic_9_dataframe_groupingfunction/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>/pandas/</loc>
   </url>
   
 </urlset>
