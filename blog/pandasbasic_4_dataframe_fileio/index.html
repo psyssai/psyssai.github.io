@@ -1,11 +1,3 @@
-
-
-
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
@@ -18,26 +10,28 @@
              "@type": "WebPage",
              "@id": "\/"
         },
-        "articleSection" : "pandas",
-        "name" : "",
-        "headline" : "",
-        "description" : "# 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(\x26quot;\x26lt;style\x26gt; .container{width:90% !important;}\x26lt;\/style\x26gt;\x26quot;))   .container{width:90% !important;} import pandas as pd from pandas import Series, DataFrame  3. DataFrame Join Join 이란? - 두 개의 DataFrame을 합치는 것 - 열기준 컬럼명으로 합치기 : merge - 열기준 Index명로 합치기 : merge, concat - 행기준으로 합치기 : concat, append\n합치는 방법은? - Inner : 두 DataFrame의 기준 컬럼에서 둘 다 존재하는 데이터만 Join - Left Outer join : 왼쪽 DataFrame으로 합치기 - Right Outer Join : 오른쪽 DataFrame으로 합치기 - Outer Join : 두 DataFrame의 모든 Data를 합치기",
+        "articleSection" : "blog",
+        "name" : "Creating a New Theme",
+        "headline" : "Creating a New Theme",
+        "description" : "Learn how to create a theme on Hugo",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "0001",
-        "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
-        "dateModified" : "0001-01-01 00:00:00 \x2b0000 UTC",
-        "url" : "\/pandas\/pandasbasic_3_dataframe_merge\/",
-        "wordCount" : "995",
-        "keywords" : [ "Blog" ]
+        "copyrightYear" : "2014",
+        "datePublished": "2014-09-28 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2014-09-28 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog\/pandasbasic_4_dataframe_fileio\/",
+        "wordCount" : "1419",
+        "keywords" : [ "tutorial","Blog" ]
     }
     </script>
         
-            <title> - PSYda</title>
+            
+                <title>Creating a New Theme</title>
+            
         
 
         <meta charset="utf-8" />
@@ -47,40 +41,39 @@
 
 
         
+            <meta name="author" content="Theme author">
         
-            
-                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
-            
+        
+            <meta name="description" content="Learn how to create a theme on Hugo">
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="# 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(&quot;&lt;style&gt; .container{width:90% !important;}&lt;/style&gt;&quot;))   .container{width:90% !important;} import pandas as pd from pandas import Series, DataFrame  3. DataFrame Join Join 이란? - 두 개의 DataFrame을 합치는 것 - 열기준 컬럼명으로 합치기 : merge - 열기준 Index명로 합치기 : merge, concat - 행기준으로 합치기 : concat, append
-합치는 방법은? - Inner : 두 DataFrame의 기준 컬럼에서 둘 다 존재하는 데이터만 Join - Left Outer join : 왼쪽 DataFrame으로 합치기 - Right Outer Join : 오른쪽 DataFrame으로 합치기 - Outer Join : 두 DataFrame의 모든 Data를 합치기"/>
+<meta name="twitter:title" content="Creating a New Theme"/>
+<meta name="twitter:description" content="Learn how to create a theme on Hugo"/>
 <meta name="twitter:site" content="@example"/>
 
-        <meta property="og:title" content="" />
-<meta property="og:description" content="# 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(&quot;&lt;style&gt; .container{width:90% !important;}&lt;/style&gt;&quot;))   .container{width:90% !important;} import pandas as pd from pandas import Series, DataFrame  3. DataFrame Join Join 이란? - 두 개의 DataFrame을 합치는 것 - 열기준 컬럼명으로 합치기 : merge - 열기준 Index명로 합치기 : merge, concat - 행기준으로 합치기 : concat, append
-합치는 방법은? - Inner : 두 DataFrame의 기준 컬럼에서 둘 다 존재하는 데이터만 Join - Left Outer join : 왼쪽 DataFrame으로 합치기 - Right Outer Join : 오른쪽 DataFrame으로 합치기 - Outer Join : 두 DataFrame의 모든 Data를 합치기" />
+        <meta property="og:title" content="Creating a New Theme" />
+<meta property="og:description" content="Learn how to create a theme on Hugo" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/pandas/pandasbasic_3_dataframe_merge/" />
-
+<meta property="og:url" content="/blog/pandasbasic_4_dataframe_fileio/" />
+<meta property="article:published_time" content="2014-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-09-28T00:00:00+00:00" />
 
         <meta property="og:image" content="//images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        <meta itemprop="name" content="">
-<meta itemprop="description" content="# 블로그에 포스팅하기 위한 스타일 조정 from IPython.core.display import display, HTML display(HTML(&quot;&lt;style&gt; .container{width:90% !important;}&lt;/style&gt;&quot;))   .container{width:90% !important;} import pandas as pd from pandas import Series, DataFrame  3. DataFrame Join Join 이란? - 두 개의 DataFrame을 합치는 것 - 열기준 컬럼명으로 합치기 : merge - 열기준 Index명로 합치기 : merge, concat - 행기준으로 합치기 : concat, append
-합치는 방법은? - Inner : 두 DataFrame의 기준 컬럼에서 둘 다 존재하는 데이터만 Join - Left Outer join : 왼쪽 DataFrame으로 합치기 - Right Outer Join : 오른쪽 DataFrame으로 합치기 - Outer Join : 두 DataFrame의 모든 Data를 합치기">
+        <meta itemprop="name" content="Creating a New Theme">
+<meta itemprop="description" content="Learn how to create a theme on Hugo">
+
+
+<meta itemprop="datePublished" content="2014-09-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-09-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1419">
 
 
 
-<meta itemprop="wordCount" content="995">
-
-
-
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="tutorial," />
 
         
 
@@ -120,9 +113,10 @@
       <div id="wrapper">
 
     
+    
 <header id="header">
     
-      <h1><a href="/">pandas</a></h1>
+      <h1><a href="/">blog</a></h1>
     
 
     <nav class="links">
@@ -168,6 +162,10 @@
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -294,7 +292,7 @@
         
 
         <a href="/blog/creating-a-new-theme/" class="image featured">
-            <img src="/img/2014/09/pic03.jpg" alt="">
+            <img src="/date/pic03.jpg" alt="">
         </a>
     
 
@@ -333,7 +331,7 @@
         
 
         <a href="/blog/pandasbasic_2_dataframe/" class="image featured">
-            <img src="/img/2014/09/pic03.jpg" alt="">
+            <img src="/date/pic03.jpg" alt="">
         </a>
     
 
@@ -372,7 +370,7 @@
         
 
         <a href="/blog/pandasbasic_3_dataframe_merge/" class="image featured">
-            <img src="/img/2014/09/pic03.jpg" alt="">
+            <img src="/img//pic03.jpg" alt="">
         </a>
     
 
@@ -411,7 +409,7 @@
         
 
         <a href="/blog/pandasbasic_4_dataframe_fileio/" class="image featured">
-            <img src="/img/2014/09/pic03.jpg" alt="">
+            <img src="/img//pic03.jpg" alt="">
         </a>
     
 
@@ -450,7 +448,7 @@
         
 
         <a href="/blog/goisforlovers/" class="image featured">
-            <img src="/img/2014/04/pic02.jpg" alt="">
+            <img src="/img//pic02.jpg" alt="">
         </a>
     
 
@@ -472,22 +470,250 @@
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;text=Creating%20a%20New%20Theme&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fpandasbasic_4_dataframe_fileio%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;description=Creating%20a%20New%20Theme" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Theme%20author&amp;body=%2fblog%2fpandasbasic_4_dataframe_fileio%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
+        
+        
         <article class="post">
-            
-            <header>
+  <header>
     <div class="title">
         
-            <h1><a href="/pandas/pandasbasic_3_dataframe_merge/"></a></h1>
+            <h1><a href="/blog/pandasbasic_4_dataframe_fileio/">Creating a New Theme</a></h1>
             
+        
+        
+            <p>Learn how to create a theme on Hugo</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2014-09-28'>
+            September 28, 2014</time>
+        <span class="author">Theme author</span>
+        
+            <p>7 minute read</p>
         
         
     </div>
 </header>
 
-            <div id="content">
-                
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;text=Creating%20a%20New%20Theme&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fpandasbasic_4_dataframe_fileio%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fpandasbasic_4_dataframe_fileio%2f&amp;description=Creating%20a%20New%20Theme" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Theme%20author&amp;body=%2fblog%2fpandasbasic_4_dataframe_fileio%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+        
+        
+        
+
+        <a href="/blog/pandasbasic_4_dataframe_fileio/" class="image featured">
+            <img src="/img/2014/09/pic03.jpg" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    
 
 <pre><code class="language-python"># 블로그에 포스팅하기 위한 스타일 조정
 from IPython.core.display import display, HTML
@@ -500,145 +726,46 @@ display(HTML(&quot;&lt;style&gt; .container{width:90% !important;}&lt;/style&gt;
 from pandas import Series, DataFrame
 </code></pre>
 
-<h1 id="3-dataframe-join">3. DataFrame Join</h1>
+<h1 id="4-pandas-파일-입출력">4. Pandas 파일 입출력</h1>
 
-<p>Join 이란?
-- 두 개의 DataFrame을 합치는 것
-- 열기준 컬럼명으로 합치기 : merge
-- 열기준 Index명로 합치기 : merge, concat
-- 행기준으로 합치기 : concat, append</p>
-
-<p>합치는 방법은?
-- Inner : 두 DataFrame의 기준 컬럼에서 둘 다 존재하는 데이터만 Join
-- Left Outer join : 왼쪽 DataFrame으로 합치기
-- Right Outer Join : 오른쪽 DataFrame으로 합치기
-- Outer Join : 두 DataFrame의 모든 Data를 합치기</p>
-
-<p>Merge 명령어 사용법?
-- pd.merge(left, right, how, on, left_on, right_on, left_index, right_index)
-- left : Merge 할 왼쪽 DataFrame
-- right : Merge 할 오른쪽 DataFrame
-- how : inner, left, right, outer
-- on : 두 DataFrame을 Join할 기준 컬럼명(컬럼명이 동일할 경우)
-- left_on : Join할 기준 컬럼의 왼쪽 DataFrame의 컬럼명
-- right_on : Join할 기준 컬럼의 오른쪽 DataFrame의 컬럼명
-- left_index : 왼쪽 DataFrame index로 Join할 경우 True
-- right_index : 오른쪽 DataFrame index로 Join할 경우 True</p>
-
-<p>concat 명령어 사용법?
-- pd.concat([left,right], axis, join,&hellip;)
-- [left,right] : left DataFrame과 right DataFrame으로 이루어진 List
-- axis = 0 : 행기준으로 합치기, 1: 열기준으로 Index명으로 합치기</p>
-
-<h2 id="3-1-같은-column끼리-합치기">3.1 같은 Column끼리 합치기</h2>
-
-<pre><code class="language-python">DF1 = DataFrame([[&quot;싸이&quot;,180,75],[&quot;덕구&quot;,160,65],[&quot;또치&quot;,170,75]], columns = [&quot;이름&quot;,&quot;키&quot;,&quot;몸무게&quot;])
-DF1
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>이름</th>
-      <th>키</th>
-      <th>몸무게</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>싸이</td>
-      <td>180</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>덕구</td>
-      <td>160</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>또치</td>
-      <td>170</td>
-      <td>75</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">DF2 = DataFrame([[&quot;싸이&quot;,&quot;포워드&quot;,&quot;잘함&quot;],[&quot;덕구&quot;,&quot;미드필더&quot;,&quot;못함&quot;],[&quot;똥갈&quot;,&quot;수비수&quot;,&quot;잘함&quot;]], columns = [&quot;이름&quot;,&quot;포지션&quot;,&quot;실력&quot;])
-DF2
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>이름</th>
-      <th>포지션</th>
-      <th>실력</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>싸이</td>
-      <td>포워드</td>
-      <td>잘함</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>덕구</td>
-      <td>미드필더</td>
-      <td>못함</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>똥갈</td>
-      <td>수비수</td>
-      <td>잘함</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="3-1-1-inner-join">3.1.1 Inner Join</h3>
+<p>Pandas로 입출력 할 수 있는 파일 포맷은 매우 다양하지만 대표적으로 아래와 같습니다.</p>
 
 <ul>
-<li><p>두 DataFrame의 기준 컬럼에서 둘 다 존재하는 데이터만 Join
-<img src = "img/Merge_1.jpg" /></p>
+<li>CSV, Excel, HTML, JSON 등</li>
+</ul>
 
-<pre><code class="language-python">pd.merge(left = DF1 , right = DF2, how = &quot;inner&quot;, on = &quot;이름&quot;)
+<p>이번에는 CSV 및 Excel File을 입출력하는 방법을 알아보겠습니다.</p>
+
+<p>예제에 사용하기 위한 데이터를 확보하기 위해 kaggle에서 fifa19 선수 Dataset(<a href="https://www.kaggle.com/karangadiya/fifa19)을">https://www.kaggle.com/karangadiya/fifa19)을</a> 다운로드 받았으며, 실습에 사용하기 위해 변형하였습니다.</p>
+
+<h2 id="4-1-파일-입력">4.1 파일 입력</h2>
+
+<h3 id="4-1-1-구분자가-있는-텍스트-파일-및-csv-파일-읽기">4.1.1 (구분자가 있는)텍스트 파일 및 CSV 파일 읽기</h3>
+
+<p>Pandas에서 read_csv 함수를 이용하여 텍스트 파일 및 CSV 파일을 읽을 수 있으며, 읽은 데이터는 DataFrame형태로 저장됩니다.
+read_csv 함수 사용법은 아래와 같습니다.</p>
+
+<p>pd.read_csv(FilePath, sep, header, names, index_col, skiprows, nrows, encoding, comment, chunksize)
+- FilePath : 읽을 파일 Path, URL 도 가능
+- sep : 구분자 입력, Default 는 쉼표(&lsquo;,&rsquo;)
+- header : 파일의 데이터에 header가 없을 경우 none 입력, Default는 header 읽음
+- names : 파일의 데이터에 header가 없을 경우에 명시적으로 컬럼명 입력 가능
+- skiprows : 입력한 개수 만큼 파일에서 행을 건너뛰고 읽음
+- index_col : 명시한 특정 컬럼을 index로 사용
+- nrows : 파일 최상위에서부터 입력한 개수만큼의 데이터만 읽음
+- encoding : 파일의 문자 인코딩 타입 입력, 한글이면 &lsquo;CP949&rsquo;
+- comment : 특정 문자는 주석으로 간주하고 읽지 않음
+- chunksize : TextFileReader가 입력받을 데이터 개수 Return하여 특정 개수 만큼 순서대로 읽음(뒤에 예시 참고)</p>
+
+<h4 id="4-1-1-1-read-csv-별도-옵션-없이">4.1.1.1 read_csv(별도 옵션 없이)</h4>
+
+<ul>
+<li>일반 text 파일 또는 csv을 읽어서 DataFrame에 저장</li>
+
+<li><p>쉼표(&lsquo;,&rsquo;)를 기준으로 Data를 나누고 읽음</p>
+
+<pre><code class="language-python">fifa19Player = pd.read_csv(&quot;data/Ch4_1_fifa.csv&quot;)
+fifa19Player.head(5)
 </code></pre></li>
 </ul>
 
@@ -660,466 +787,61 @@ DF2
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>이름</th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>포지션</th>
-      <th>실력</th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>싸이</td>
-      <td>180</td>
-      <td>75</td>
-      <td>포워드</td>
-      <td>잘함</td>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>덕구</td>
-      <td>160</td>
-      <td>65</td>
-      <td>미드필더</td>
-      <td>못함</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="3-1-2-left-outer-join">3.1.2 Left Outer Join</h3>
-
-<ul>
-<li>왼쪽 DataFrame의 모든 데이터 출력 +</li>
-<li>오른쪽 DataFrame 중 왼쪽 DataFrame에 있는 Data는 출력</li>
-
-<li><p>오른쪽 DataFrame 중 왼쪽 DataFrame에 없는 Data는 NaN으로 처리
-<img src = "img/Merge_2.jpg" /></p>
-
-<pre><code class="language-python">pd.merge(left = DF1 , right = DF2, how = &quot;left&quot;, on = &quot;이름&quot;)
-</code></pre></li>
-</ul>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>이름</th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>포지션</th>
-      <th>실력</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>싸이</td>
-      <td>180</td>
-      <td>75</td>
-      <td>포워드</td>
-      <td>잘함</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>덕구</td>
-      <td>160</td>
-      <td>65</td>
-      <td>미드필더</td>
-      <td>못함</td>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>또치</td>
-      <td>170</td>
-      <td>75</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="3-1-3-right-outer-join">3.1.3 Right Outer Join</h3>
-
-<ul>
-<li>오른쪽 DataFrame의 모든 데이터 출력 +</li>
-<li>왼쪽 DataFrame 중 오른쪽 DataFrame에 있는 Data는 출력</li>
-
-<li><p>왼쪽 DataFrame 중 오른쪽 DataFrame에 없는 Data는 NaN으로 처리
-<img src = "img/Merge_3.jpg" /></p>
-
-<pre><code class="language-python">pd.merge(left = DF1 , right = DF2, how = &quot;right&quot;, on = &quot;이름&quot;)
-</code></pre></li>
-</ul>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>이름</th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>포지션</th>
-      <th>실력</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>싸이</td>
-      <td>180.0</td>
-      <td>75.0</td>
-      <td>포워드</td>
-      <td>잘함</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>덕구</td>
-      <td>160.0</td>
-      <td>65.0</td>
-      <td>미드필더</td>
-      <td>못함</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>똥갈</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>수비수</td>
-      <td>잘함</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="3-1-4-outer-join">3.1.4 Outer Join</h3>
-
-<ul>
-<li>왼쪽, 오른쪽 DataFrame의 모든 데이터 출력 +</li>
-<li>왼쪽 DataFrame 중 오른쪽 DataFrame에 있는 Data는 NaN으로 처리</li>
-
-<li><p>오른쪽 DataFrame 중 왼쪽 DataFrame에 없는 Data는 NaN으로 처리
-<img src = "img/Merge_4.jpg" /></p>
-
-<pre><code class="language-python">pd.merge(left = DF1 , right = DF2, how = &quot;outer&quot;, on = &quot;이름&quot;)
-</code></pre></li>
-</ul>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>이름</th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>포지션</th>
-      <th>실력</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>싸이</td>
-      <td>180.0</td>
-      <td>75.0</td>
-      <td>포워드</td>
-      <td>잘함</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>덕구</td>
-      <td>160.0</td>
-      <td>65.0</td>
-      <td>미드필더</td>
-      <td>못함</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>또치</td>
-      <td>170.0</td>
-      <td>75.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>똥갈</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>수비수</td>
-      <td>잘함</td>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<h2 id="3-2-같은-index-기준으로-합치기">3.2 같은 Index 기준으로 합치기</h2>
-
-<p>DF1 과 DF2의 이름 컬럼을 인덱스로 이동
-- set_index(&ldquo;컬럼명&rdquo;) : 컬럼명의 데이터가 Index로 설정, 컬럼데이터는 삭제됨</p>
-
-<pre><code class="language-python">DF1 = DF1.set_index(&quot;이름&quot;)
-DF1
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>키</th>
-      <th>몸무게</th>
-    </tr>
-    <tr>
-      <th>이름</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>싸이</th>
-      <td>180</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>덕구</th>
-      <td>160</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>또치</th>
-      <td>170</td>
-      <td>75</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">DF2 = DF2.set_index(&quot;이름&quot;)
-DF2
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>포지션</th>
-      <th>실력</th>
-    </tr>
-    <tr>
-      <th>이름</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>싸이</th>
-      <td>포워드</td>
-      <td>잘함</td>
-    </tr>
-    <tr>
-      <th>덕구</th>
-      <td>미드필더</td>
-      <td>못함</td>
-    </tr>
-    <tr>
-      <th>똥갈</th>
-      <td>수비수</td>
-      <td>잘함</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">pd.merge(left = DF1, right = DF2, left_index = True, right_index = True, how = &quot;inner&quot;)
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>포지션</th>
-      <th>실력</th>
-    </tr>
-    <tr>
-      <th>이름</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>싸이</th>
-      <td>180</td>
-      <td>75</td>
-      <td>포워드</td>
-      <td>잘함</td>
-    </tr>
-    <tr>
-      <th>덕구</th>
-      <td>160</td>
-      <td>65</td>
-      <td>미드필더</td>
-      <td>못함</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">pd.concat([DF1,DF2],axis = 1, join = 'inner')
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>포지션</th>
-      <th>실력</th>
-    </tr>
-    <tr>
-      <th>이름</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>싸이</th>
-      <td>180</td>
-      <td>75</td>
-      <td>포워드</td>
-      <td>잘함</td>
-    </tr>
-    <tr>
-      <th>덕구</th>
-      <td>160</td>
-      <td>65</td>
-      <td>미드필더</td>
-      <td>못함</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h2 id="3-3-행기준으로-합치기">3.3 행기준으로 합치기</h2>
+<h4 id="4-1-1-2-sep-옵션">4.1.1.2 sep 옵션</h4>
 
 <ul>
-<li>같은 컬럼명이 존재하면, 데이터 저장</li>
-<li>다른 컬럼명이 존재하면, 해당 컬럼이 있는 DataFrame은 데이터 저장, 없는 DataFrame은 NaN 처리</li>
+<li>공백, 탭, 다른 기호 등으로 데이터가 분리된 파일일 경우 사용</li>
 
-<li><p>일반적으로 concat보다 append가 더 빠르다고 합니다.</p>
+<li><p>공백의 경우 정규식 &lsquo;\s+&rsquo; 을 사용함(공백이 하나 이상 발생한 경우 구분하는 정규식)</p>
 
-<pre><code class="language-python">DF3 = DataFrame([[187, 80, 30], [190,85, 20]], columns = [&quot;키&quot;,&quot;몸무게&quot;,&quot;나이&quot;], index = [&quot;거북이&quot;,&quot;깜디&quot;])
-DF3
+<pre><code class="language-python">data1 = pd.read_csv('data/Ch4_2_sep.txt', sep='\s+')
+data1
 </code></pre></li>
 </ul>
 
@@ -1141,29 +863,839 @@ DF3
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>키</th>
-      <th>몸무게</th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-3-header-옵션">4.1.1.3 header 옵션</h4>
+
+<ul>
+<li>Default 값은 첫 행을 Header로 간주</li>
+<li>첫 행이 Header가 아닐 경우 None 을 입력해주면, 첫 행도 데이터로 저장</li>
+
+<li><p>왼쪽부터 0부터 순서대로 컬럼명 부여</p>
+
+<pre><code class="language-python">data2 = pd.read_csv('data/Ch4_3_header.txt', sep='\s+', header = None)
+data2
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-4-names-옵션">4.1.1.4 names 옵션</h4>
+
+<ul>
+<li><p>첫 행이 Header가 아닐 경우 명시적으로 컬럼명 입력 가능</p>
+
+<pre><code class="language-python">data3 = pd.read_csv('data/Ch4_3_header.txt', sep='\s+', names = ['Index', 'ID', 'Player', 'Age'])
+data3
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>Player</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-5-skiprosw-옵션">4.1.1.5 skiprosw 옵션</h4>
+
+<ul>
+<li>읽고 싶지 않은 행(MetaData 등)을 제외 할 수 있음</li>
+
+<li><p>특정 행을 읽는데 에러가 생기는 경우 제외 할 수 있음</p>
+
+<pre><code class="language-python">data4 = pd.read_csv(&quot;data/Ch4_4_skiprows.txt&quot;, sep='\s+', skiprows = [0,1], header = None)
+data4
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-6-index-col-옵션">4.1.1.6 index_col 옵션</h4>
+
+<ul>
+<li><p>특정 컬럼명을 Index열로 저장</p>
+
+<pre><code class="language-python">data5 = pd.read_csv('data/Ch4_5_index_col.txt', index_col = 'Index')
+data5
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <th>Index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-7-nrows-옵션">4.1.1.7 nrows 옵션</h4>
+
+<ul>
+<li>위에서부터 입력한 개수 만큼의 데이터만 읽음</li>
+
+<li><p>데이터량이 많아 메모리에 문제가 예상될 때 사용 할 수 있음</p>
+
+<pre><code class="language-python">data6= pd.read_csv('data/Ch4_5_index_col.txt', nrows = 3)
+data6
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-8-encoding-옵션">4.1.1.8 encoding 옵션</h4>
+
+<ul>
+<li>데이터 encoding 이 맞지 않아 문자가 깨지거나 오류가 생길 때</li>
+
+<li><p>한글의 경우 &lsquo;CP949&rsquo; 를 적용하면 꺠지지 않음</p>
+
+<pre><code class="language-python">data7= pd.read_csv('data/Ch4_6_encoding.txt', encoding = 'CP949')
+data7
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>이름</th>
       <th>나이</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>거북이</th>
-      <td>187</td>
-      <td>80</td>
-      <td>30</td>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
     </tr>
     <tr>
-      <th>깜디</th>
-      <td>190</td>
-      <td>85</td>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-9-comment-옵션">4.1.1.9 comment 옵션</h4>
+
+<ul>
+<li><p>특정 문자가 있는 행은 주석으로 간주하고 읽지 않고 건너뜀</p>
+
+<pre><code class="language-python">data5 = pd.read_csv('data/Ch4_5_comment.txt', comment = '/')
+data5
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>192985</td>
+      <td>K.DeBruyne</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="4-1-1-10-chunksize-옵션">4.1.1.10 chunksize 옵션</h4>
+
+<ul>
+<li>특정 개수만큼 순서대로 입력 받을 수 있는 TextFileReader 객체를 생성</li>
+<li>next(TextFileReader객체) 구문을 이용해 특정 개수만큼 순서대로 데이터 입력</li>
+
+<li><p>데이터량이 많아서 한번에 불러올 수 없는 경우에 사용</p>
+
+<pre><code class="language-python">TextFileReader = pd.read_csv('data/Ch4_1_fifa.csv', chunksize = 2)
+</code></pre>
+
+<pre><code class="language-python">next(TextFileReader)
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L.Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20801</td>
+      <td>CristianoRonaldo</td>
+      <td>33</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># 한번 더 하면 그 다음 500개 가 순서대로 출력
+next(TextFileReader)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Index</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>190871</td>
+      <td>NeymarJr</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>DeGea</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="4-1-2-excel-파일-읽기">4.1.2 Excel 파일 읽기</h3>
+
+<p>read_excel 함수를 이용하여 excel 파일을 읽어 올 수 있으며 대부분의 옵션들은 read_csv와 동일합니다.</p>
+
+<p>자주 사용되는 옵션들 위주로 알아보겠습니다.</p>
+
+<ul>
+<li>read_excel(Path, sheet_name</li>
+<li>Path : excel 파일 경로</li>
+<li>sheet_name : 읽을 Sheet name 명시</li>
+</ul>
+
+<h4 id="4-1-2-1-read-excel-별도-옵션-없이">4.1.2.1 read_excel(별도 옵션 없이)</h4>
+
+<pre><code class="language-python">fifa = pd.read_excel('data/Ch4_9_fifa19.xlsx')
+fifa
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>158023</td>
+      <td>L. Messi</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7</td>
+      <td>176580</td>
+      <td>L. Suárez</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18</td>
+      <td>192448</td>
+      <td>M. ter Stegen</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
       <td>20</td>
+      <td>189511</td>
+      <td>Sergio Busquets</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>32</td>
+      <td>189242</td>
+      <td>Coutinho</td>
+      <td>26</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<pre><code class="language-python">DF1.append(DF3, sort=False)
+<h4 id="4-1-2-2-sheet-name">4.1.2.2 sheet_name</h4>
+
+<ul>
+<li>명시한 Sheet name만 읽음</li>
+<li>Default는 첫 번째 Sheet</li>
+
+<li><p>None을 입력하면 모든 Sheet를 key = Sheetname, value = Data 로 가져옴</p>
+
+<pre><code class="language-python">Tottenham = pd.read_excel('data/Ch4_9_fifa19.xlsx', sheet_name = 'Tottenham')
+Tottenham
+</code></pre></li>
+</ul>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>202126</td>
+      <td>H. Kane</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>31</td>
+      <td>190460</td>
+      <td>C. Eriksen</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37</td>
+      <td>167948</td>
+      <td>H. Lloris</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>125</td>
+      <td>200104</td>
+      <td>H. Son</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>71</td>
+      <td>184087</td>
+      <td>T. Alderweireld</td>
+      <td>29</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">AllTeam = pd.read_excel('data/Ch4_9_fifa19.xlsx', sheet_name = None)
+</code></pre>
+
+<pre><code class="language-python">AllTeam.keys()
+</code></pre>
+
+<pre><code>odict_keys(['FCBarcelona', 'Tottenham', 'ManUnited'])
+</code></pre>
+
+<pre><code class="language-python">AllTeam['ManUnited']
 </code></pre>
 
 <div>
@@ -1184,47 +1716,58 @@ DF3
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>나이</th>
+      <th>Unnamed: 0</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>싸이</th>
-      <td>180</td>
-      <td>75</td>
-      <td>NaN</td>
+      <th>0</th>
+      <td>3</td>
+      <td>193080</td>
+      <td>De Gea</td>
+      <td>27</td>
     </tr>
     <tr>
-      <th>덕구</th>
-      <td>160</td>
-      <td>65</td>
-      <td>NaN</td>
+      <th>1</th>
+      <td>45</td>
+      <td>195864</td>
+      <td>P. Pogba</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>또치</th>
-      <td>170</td>
-      <td>75</td>
-      <td>NaN</td>
+      <th>2</th>
+      <td>47</td>
+      <td>192505</td>
+      <td>R. Lukaku</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>거북이</th>
-      <td>187</td>
-      <td>80</td>
-      <td>30.0</td>
+      <th>3</th>
+      <td>93</td>
+      <td>184941</td>
+      <td>A. Sánchez</td>
+      <td>29</td>
     </tr>
     <tr>
-      <th>깜디</th>
-      <td>190</td>
-      <td>85</td>
-      <td>20.0</td>
+      <th>4</th>
+      <td>116</td>
+      <td>211300</td>
+      <td>A. Martial</td>
+      <td>22</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<pre><code class="language-python">pd.concat([DF1, DF3], axis = 0, sort=False)
+<p>한번에 세 개의 팀을 저장 할 수도 있음</p>
+
+<pre><code class="language-python">Barcelona, Tottenham, ManUTD = AllTeam.values()
+</code></pre>
+
+<pre><code class="language-python">Tottenham
 </code></pre>
 
 <div>
@@ -1245,48 +1788,152 @@ DF3
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>키</th>
-      <th>몸무게</th>
-      <th>나이</th>
+      <th>Unnamed: 0</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>싸이</th>
-      <td>180</td>
-      <td>75</td>
-      <td>NaN</td>
+      <th>0</th>
+      <td>16</td>
+      <td>202126</td>
+      <td>H. Kane</td>
+      <td>24</td>
     </tr>
     <tr>
-      <th>덕구</th>
-      <td>160</td>
-      <td>65</td>
-      <td>NaN</td>
+      <th>1</th>
+      <td>31</td>
+      <td>190460</td>
+      <td>C. Eriksen</td>
+      <td>26</td>
     </tr>
     <tr>
-      <th>또치</th>
-      <td>170</td>
-      <td>75</td>
-      <td>NaN</td>
+      <th>2</th>
+      <td>37</td>
+      <td>167948</td>
+      <td>H. Lloris</td>
+      <td>31</td>
     </tr>
     <tr>
-      <th>거북이</th>
-      <td>187</td>
-      <td>80</td>
-      <td>30.0</td>
+      <th>3</th>
+      <td>125</td>
+      <td>200104</td>
+      <td>H. Son</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>깜디</th>
-      <td>190</td>
-      <td>85</td>
-      <td>20.0</td>
+      <th>4</th>
+      <td>71</td>
+      <td>184087</td>
+      <td>T. Alderweireld</td>
+      <td>29</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-            </div>
-        </article>
+<h2 id="4-2-파일-출력">4.2 파일 출력</h2>
+
+<p>파일 입력과 마찬가지로 Pandas는 다양한 데이터로의 출력을 지원하지만 가장 많이 사용하는 csv, excel 에 관해서만 알아보겠습니다.</p>
+
+<h3 id="4-2-1-구분자가-있는-텍스트-파일-및-csv-로-출력">4.2.1 (구분자가 있는)텍스트 파일 및 CSV 로 출력</h3>
+
+<p>Pandas에서는 DataFame 데이터를 to_csv 함수를 이용하여 텍스트 파일 및 CSV 파일로 출력할 수 있습니다.</p>
+
+<p>to_csv도 read_csv와 비슷한 옵션들을 가지고 있기 떄문에, 옵션에 대한 설명은 넘어가도록 하겠습니다.</p>
+
+<pre><code class="language-python">Tottenham.to_csv('data/Tottenham.csv')
+</code></pre>
+
+<h3 id="4-2-2-excel-로-출력">4.2.2 Excel 로 출력</h3>
+
+<pre><code class="language-python">to_excel 함수를 이용해 DataFrame 데이터를 Excel 파일로 출력할 수 있습니다.
+
+마찬가지로 옵션에 대한 설명은 넘어가도록 하겠습니다.
+</code></pre>
+
+<pre><code class="language-python">ManUTD.to_excel('data/ManUTD.xlsx')
+</code></pre>
+
+<p>head.txt</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/hugo">Hugo</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/tutorial">tutorial</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/goisforlovers/"
+                class="button big previous">(Hu)go Template Primer</a></li>
+    
+
+    
+        <li><a href="/blog/pandasbasic_3_dataframe_merge/"
+                class="button big next">Creating a New Theme</a></li>
+    
+</ul>
+
+
     </div>
     
 <section id="sidebar">
@@ -1457,6 +2104,9 @@ DF3
 
 
   
+  
+    
+  
 
 
         
@@ -1464,7 +2114,7 @@ DF3
         
 
         <a href="/blog/creating-a-new-theme/" class="image featured">
-            <img src="/img//pic03.jpg" alt="">
+            <img src="/img/2014/09/pic03.jpg" alt="">
         </a>
     
 
@@ -1505,7 +2155,7 @@ DF3
         
 
         <a href="/blog/pandasbasic_2_dataframe/" class="image featured">
-            <img src="/img/2014/09/pic03.jpg" alt="">
+            <img src="/img//pic03.jpg" alt="">
         </a>
     
 
@@ -1546,7 +2196,7 @@ DF3
         
 
         <a href="/blog/pandasbasic_3_dataframe_merge/" class="image featured">
-            <img src="/img/2014/09/pic03.jpg" alt="">
+            <img src="/img/2014/092014/09/pic03.jpg" alt="">
         </a>
     
 
@@ -1587,7 +2237,7 @@ DF3
         
 
         <a href="/blog/pandasbasic_4_dataframe_fileio/" class="image featured">
-            <img src="/img/2014/09/pic03.jpg" alt="">
+            <img src="/img/2014/092014/09/pic03.jpg" alt="">
         </a>
     
 
@@ -1628,7 +2278,7 @@ DF3
         
 
         <a href="/blog/goisforlovers/" class="image featured">
-            <img src="/img/2014/04/pic02.jpg" alt="">
+            <img src="/img/2014/042014/04/pic02.jpg" alt="">
         </a>
     
 
