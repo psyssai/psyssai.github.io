@@ -3,156 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/bigdata/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/itemized/item1/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <loc>/tags/dataframe/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/itemized/item2/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <loc>/categories/pandas/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/itemized/item3/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/itemized/item4/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/itemized/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <loc>/tags/pandas/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/hugo/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>/tags/series/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/tutorial/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>/bigdata/pandas/pandas%EA%B8%B0%EC%B4%881.pandas%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <loc>/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/pandasbasic_1_series/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/pandasbasic_9_dataframe_groupingfunction/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_1_series/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_2_dataframe/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_3_dataframe_merge/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_4_dataframe_fileio/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_5_dataframe_arithmeticoperation/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_6_dataframe_statistic/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_7_dataframe_sort_rank/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_8_pandas_apply_function/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/pandas/pandasbasic_9_dataframe_groupingfunction/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/contact/</loc>
-  </url>
-  
-  <url>
-    <loc>/pandas/</loc>
+    <loc>/tags/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
