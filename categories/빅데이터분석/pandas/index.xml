@@ -6,10 +6,24 @@
     <description>Recent content in 빅데이터분석/Pandas on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Pandas 기초]2.Pandas의 자료구조-Series</title>
+      <link>https://psyssai.github.io/blog/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/blog/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/</guid>
+      <description>안녕하세요. PSYda 입니다.
+Pandas는 2개의 자료구조(Series , DataFrame)를 가지고 있습니다.
+Series는 1차원 데이터 구조, DataFrame은 2차원 데이터 구조를 나타냅니다.
+이번 포스팅에서는 Series에 대해 아래와 같은 내용을 알아볼 예정입니다.
+ Series 데이터의 생성 Series 데이터의 조회 Series 산술 연산 Series 통계  1. Series Series란?
+ 1차원 데이터 Index + Value 로 구성(Python의 사전데이터와 유사)   먼저 Series 나 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 해야겠죠?(설치는 이전 블로그를 참고해주세요.)</description>
+    </item>
     
     <item>
       <title>[Pandas 기초]1.Pandas란 무엇인가?</title>
