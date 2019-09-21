@@ -1,1 +1,0 @@
-jupyter nbconvert --to html PandasBasic_9_DataFrame_GroupingFunction.ipynb --TemplateExporter.exclude_input_prompt=True --TemplateExporter.exclude_output_prompt=True --output PandasBasic_9_DataFrame_GroupingFunction.html
