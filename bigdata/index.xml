@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BigData on PSYda</title>
-    <link>/bigdata/</link>
+    <link>https://psyssai.github.io/bigdata/</link>
     <description>Recent content in BigData on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/bigdata/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://psyssai.github.io/bigdata/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Pandas 기초]2.Pandas의 자료구조-Series</title>
-      <link>/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/</link>
+      <link>https://psyssai.github.io/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/</guid>
+      <guid>https://psyssai.github.io/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/</guid>
       <description>안녕하세요. PSYda 입니다.
 Pandas는 2개의 자료구조(Series , DataFrame)를 가지고 있습니다.
 Series는 1차원 데이터 구조, DataFrame은 2차원 데이터 구조를 나타냅니다.
@@ -27,10 +27,10 @@ Series는 1차원 데이터 구조, DataFrame은 2차원 데이터 구조를 나
     
     <item>
       <title>[Pandas 기초]1.Pandas란 무엇인가?</title>
-      <link>/bigdata/pandas/pandas%EA%B8%B0%EC%B4%881.pandas%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/</link>
+      <link>https://psyssai.github.io/bigdata/pandas/pandas%EA%B8%B0%EC%B4%881.pandas%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/</link>
       <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/bigdata/pandas/pandas%EA%B8%B0%EC%B4%881.pandas%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/</guid>
+      <guid>https://psyssai.github.io/bigdata/pandas/pandas%EA%B8%B0%EC%B4%881.pandas%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/</guid>
       <description>안녕하세요. PSYda입니다.
 오늘은 Pandas가 무엇인지 알아보겠습니다.
 1. Pandas란? Pandas의 공식 Github 문서에서 설명하는 Pandas는 아래와 같습니다.
