@@ -24,7 +24,7 @@
         "datePublished": "2019-08-15 00:00:00 \x2b0000 UTC",
         "dateModified" : "2019-08-15 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/psyssai.github.io\/blog\/bigdata\/pandas\/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series\/",
-        "wordCount" : "909",
+        "wordCount" : "905",
         "keywords" : [ "Pandas","DataFrame","Series","Blog" ]
     }
     </script>
@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2019-08-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="909">
+<meta itemprop="wordCount" content="905">
 
 
 
@@ -327,8 +327,7 @@
   <header>
     <div class="title">
         
-            <h1><a href="https://psyssai.github.io/blog/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/">[Pandas 기초]2.Pandas의 자료구조-Series</a></h1>
-            
+            <h2><a href="https://psyssai.github.io/blog/bigdata/pandas/pandas%EA%B8%B0%EC%B4%882.pandas%EC%9D%98%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_series/">[Pandas 기초]2.Pandas의 자료구조-Series</a></h2>
         
         
             <p>Learn What is Series</p>
@@ -407,10 +406,10 @@ Series는 1차원 데이터 구조, DataFrame은 2차원 데이터 구조를 나
 
 <ul>
 <li>1차원 데이터</li>
-<li>Index + Value 로 구성(Python의 사전데이터와 유사) </li></li>
+<li>Index 와 Value 로 구성(Python의 사전데이터와 유사) </li></li>
 </ul>
 
-<p>먼저 Series 나 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 해야겠죠?(설치는 이전 블로그를 참고해주세요.)</p>
+<p>먼저 Series 나 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 해야합니다.(설치는 이전 블로그를 참고해주세요.)</p>
 
 <pre><code class="language-python"># pandas library import
 import pandas as pd
@@ -529,27 +528,30 @@ dtype: object
 <h2 id="1-2-series의-index">1.2 Series의 index</h2>
 
 <ul>
-<li>사전형으로 Series를 생성하면 사전형의 key값이 index로 저장</li>
+<li>사전형으로 Series를 생성하면사전형의 key값이 index로 저장</li>
 <li>사전형이 아닌 데이터로 Series 생성할 때 index를 명시적으로 입력 가능</li>
+<li>입력값이 없다면 0부터 순서대로 번호를 부여<br /></li>
+</ul>
 
-<li><p>입력값이 없다면 0부터 순서대로 번호를 부여</p>
+<h3 id="1-2-1-series-생성시에-index명-입력">1.2.1 Series 생성시에 Index명 입력</h3>
 
 <pre><code class="language-python">data3 = Series([&quot;토트넘&quot;, &quot;손흥민&quot; , 30], index = [&quot;팀명&quot;,&quot;선수명&quot;,&quot;Goal수&quot;])
 data3
 </code></pre>
 
-<p>팀명       토트넘
+<pre><code>팀명       토트넘
 선수명      손흥민
 Goal수     30
-dtype: object</p>
+dtype: object
+</code></pre>
 
 <pre><code class="language-python">data3.index
 </code></pre>
 
-<p>Index([&lsquo;팀명&rsquo;, &lsquo;선수명&rsquo;, &lsquo;Goal수&rsquo;], dtype=&lsquo;object&rsquo;)</p></li>
-</ul>
+<pre><code>Index(['팀명', '선수명', 'Goal수'], dtype='object')
+</code></pre>
 
-<p>이미 생성되어 있는 Series에도 index를 변경 할 수 있습니다.</p>
+<h3 id="1-2-2-이미-생성되어-있는-series의-index명-변경">1.2.2 이미 생성되어 있는 Series의 index명 변경</h3>
 
 <pre><code class="language-python">data3.index = [&quot;도시명&quot;, &quot;사는사람&quot; , &quot;나이&quot;]
 data3.index
@@ -700,24 +702,26 @@ dtype: int64
 
 <ul>
 <li>두 Series의 같은 index 끼리 연산함</li>
+<li>같은 index가 없을 경우 NaN으로 저장됨</li>
+</ul>
 
-<li><p>같은 index가 없을 경우 NaN으로 저장됨</p>
+<p>연산을 위해 새로운 Series 생성</p>
 
-<pre><code class="language-python"># 연산을 위해 새로운 Series 생성
-data5 = Series([10,20,30],index = [&quot;서울&quot;,&quot;대전&quot;,&quot;대구&quot;])
+<pre><code class="language-python">data5 = Series([10,20,30],index = [&quot;서울&quot;,&quot;대전&quot;,&quot;대구&quot;])
 data5
 </code></pre>
 
-<p>서울    10
+<pre><code>서울    10
 대전    20
 대구    30
-dtype: int64</p>
+dtype: int64
+</code></pre>
 
 <pre><code class="language-python">data6 = data4 + data5
 data6
 </code></pre>
 
-<p>광주     NaN
+<pre><code>광주     NaN
 대구    33.0
 대전    22.0
 마산     NaN
@@ -726,8 +730,8 @@ data6
 성남     NaN
 전주     NaN
 충주     NaN
-dtype: float64</p></li>
-</ul>
+dtype: float64
+</code></pre>
 
 <p>위의 과정을 보면 Series끼리의 연산이 어떻게 동작되는지 알 수 있습니다.<br />
 첫 번째로 두 Series의 <strong><span style = "color:red">Index명이 동일하면 연산을 수행</span></strong>합니다. 그 예시로 첫 번째 Series의 &ldquo;서울&rdquo;, &ldquo;대전&rdquo;, &ldquo;대구&rdquo; 의 데이터와 두 번째 Series의 &ldquo;서울&rdquo;, &ldquo;대전&rdquo;, &ldquo;대구&rdquo; 의 데이터가 합해지는 것을 볼 수 있습니다.<br />
@@ -736,8 +740,12 @@ NaN은 데이터가 없다는 뜻으로 타언어의 Null과 동일한 개념입
 
 <h2 id="1-5-nan-데이터-처리">1.5 NaN 데이터 처리</h2>
 
-<p>그러면 NaN 데이터는 어떻게 처리 할까요?
-먼저, 연산 할 때 부터 NaN이 발생할 경우 특정 값으로 대입할 수 있습니다.</p>
+<ul>
+    <li><strong><span style = "color:red">fill_value 옵션</span></strong> : NaN 데이터를 입력값으로 적용후에 함수 적용</li>
+    <li><strong><span style = "color:red">fillna 함수</span></strong> : NaN값을 입력값으로 변경</li>
+</ul>
+
+<p>add와 같은 산술연산함수를 적용할 때 fill_value 옵션을 적용하면 NaN이 발생할 경우 특정 값으로 대입할 수 있습니다.</p>
 
 <pre><code class="language-python">data4.add(data5, fill_value = 0)
 </code></pre>
@@ -754,8 +762,7 @@ NaN은 데이터가 없다는 뜻으로 타언어의 Null과 동일한 개념입
 dtype: float64
 </code></pre>
 
-<p>data4 Series에서는 index명이 &ldquo;광주&rdquo;인 데이터가 있고(값 = 5) data5에서는 index명이 &ldquo;광주&rdquo;인 데이터가 없습니다(NaN). 이때 fill_value = 0 옵션을 주면 NaN값이 0으로 할당된 상태로 더하기 연산이 되어 5가 되는 것을 확인 할 수 있습니다.<br />
-다른 방법으로 이미 NaN이 발생되어 있는 Series에서 NaN을 다르값으로 대체할 수 있습니다.</p>
+<p>Series에 NaN값이 있을 경우 fillna를 이용해 NaN을 입력값으로 변경할 수 있습니다.</p>
 
 <pre><code class="language-python"># fillna를 통해 NaN값을 특정값으로 할당
 data6.fillna(0)
@@ -774,6 +781,12 @@ dtype: float64
 </code></pre>
 
 <h2 id="1-6-통계">1.6 통계</h2>
+
+<ul>
+    <li><strong><span style = "color:red">describe 함수</span></strong> : 주요 통계 정보 보기</li>
+    <li><strong><span style = "color:red">mean 함수</span></strong> : 평균 구하기</li>
+    <li><strong><span style = "color:red">std 함수</span></strong> : 표준편차 구하기</li>
+</ul>
 
 <pre><code class="language-python"># 데이터 통계 정보 보기
 data4.describe()
