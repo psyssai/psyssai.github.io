@@ -21,8 +21,8 @@
 이번 포스팅에서는 Pandas의 DataFrame에 대해 알아보겠습니다.
 소개할 내용은 아래와 같습니다.
  DataFrame 생성 DataFrame에 Data추가/삭제/조회  2. DataFrame DataFrame 이란?
-  2차원 데이터   인덱스가 같은 하나 이상의 Series가 모여진 데이터   DBMS 의 관계형 Table 과 매우 유사   먼저 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 합니다.
-# pandas library import import pandas as pd from pandas import Series, DataFrame  2.1 DataFrame 데이터 생성 DataFrame을 생성하기 위해 셀에 DataFrame() 이라고 입력하고 괄호 안에서 Shift+tab 을 눌러보면 아래와 같은 정보가 보입니다.</description>
+  2차원 데이터   인덱스가 같은 하나 이상의 Series가 모여진 데이터   DBMS 의 관계형 Table 과 매우 유사    먼저 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 합니다.
+# pandas library import import pandas as pd from pandas import Series, DataFrame  2.</description>
     </item>
     
     <item>

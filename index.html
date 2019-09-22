@@ -271,7 +271,7 @@
         
 
         <a href="https://psyssai.github.io/blog/bigdata/pandas/1_overview/" class="image featured">
-            <img src="https://psyssai.github.io/Pandas/1_1_Pandas%ea%b7%b8%eb%a6%bc.png" alt="">
+            <img src="https://psyssai.github.io/img/Pandas/1_1_Pandas%ea%b7%b8%eb%a6%bc.png" alt="">
         </a>
     
 
@@ -377,7 +377,9 @@
     <li> DBMS 의 관계형 Table 과 매우 유사 </li>
 </ul>
 
-<p><img src="https://psyssai.github.io/img/Pandas/DataFrame_1.jpg" alt="DataFrame" /></p>
+<div class = 'CenterImg'>
+    <img src ="/img/Pandas/DataFrame_1.jpg" alt = "DataFrame_1" />
+</div>
 
 <p>먼저 DataFrame을 사용하기 위해 Pandas 라이브러리를 import 합니다.</p>
 
@@ -1246,47 +1248,31 @@ Data2[[&quot;키&quot;, &quot;몸무게&quot;]]
     <li><strong><span style = "color:red">DataFrame명.loc["index명"]</span></strong> 을 통해 특정 index만 조회 가능하다.</li>
     <li><strong><span style = "color:red">DataFrame명.iloc[index번호]</span></strong> 를 통해 특정 index만 조회 가능하다.</li>
 </ul>
-마찬가지로 하나의 index만 조회 할 경우 Series Type, 여러 index의 경우 DataFrame Type으로 출력한다.
 
+<p>마찬가지로 하나의 index만 조회 할 경우 Series Type, 여러 index의 경우 DataFrame Type으로 출력한다.</p>
 
-```python
-Data2.loc["사람1"]
-```
+<pre><code class="language-python">Data2.loc[&quot;사람1&quot;]
+</code></pre>
 
+<pre><code>키      180
+몸무게     75
+나이      30
+Name: 사람1, dtype: int64
+</code></pre>
 
-
-
-    키      180
-    몸무게     75
-    나이      30
-    Name: 사람1, dtype: int64
-
-
-
-
-```python
-# 1번 인덱스 --> 사람2의 정보만 출력
+<pre><code class="language-python"># 1번 인덱스 --&gt; 사람2의 정보만 출력
 Data2.iloc[1]
-```
+</code></pre>
 
+<pre><code>키      160
+몸무게     65
+나이      40
+Name: 사람2, dtype: int64
+</code></pre>
 
-
-
-    키      160
-    몸무게     65
-    나이      40
-    Name: 사람2, dtype: int64
-
-
-
-
-```python
-# 두 개 index를 index명으로 조회
-Data2.loc[["사람1","사람2"]]
-```
-
-
-
+<pre><code class="language-python"># 두 개 index를 index명으로 조회
+Data2.loc[[&quot;사람1&quot;,&quot;사람2&quot;]]
+</code></pre>
 
 <div>
 <style scoped>
@@ -1328,16 +1314,9 @@ Data2.loc[["사람1","사람2"]]
 </table>
 </div>
 
-
-
-
-```python
-# 여러 개의 index를 index번호로 조회
+<pre><code class="language-python"># 여러 개의 index를 index번호로 조회
 Data2.iloc[1:3]
-```
-
-
-
+</code></pre>
 
 <div>
 <style scoped>
@@ -1379,21 +1358,19 @@ Data2.iloc[1:3]
 </table>
 </div>
 
+<h3 id="2-3-3-index-와-column-동시-조회">2.3.3 Index 와 column 동시 조회</h3>
 
-
-### 2.3.3 Index 와 column 동시 조회
-
-하나의 index 명과 컬럼명에 해당하는 하나의 값 찾기
+<p>하나의 index 명과 컬럼명에 해당하는 하나의 값 찾기
 <ul>
-<li> DataFrame명.at["index명","컬럼명"]</li>
-<li> DataFrame명.loc["index명","컬럼명"]</li>
-<li> DataFrame명.loc["index명"]["컬럼명"]</li>
+<li> DataFrame명.at[&ldquo;index명&rdquo;,&ldquo;컬럼명&rdquo;]</li>
+<li> DataFrame명.loc[&ldquo;index명&rdquo;,&ldquo;컬럼명&rdquo;]</li>
+<li> DataFrame명.loc[&ldquo;index명&rdquo;][&ldquo;컬럼명&rdquo;]</li>
 </ul>
 여러 index명과 컬럼명에 해당하는 여러 값 찾기
 <ul>
-<li> DataFrame명.loc[["index명1","index명2"],["컬럼명1","컬럼명2"]]</li>
-<li> DataFrame명.loc[["index명1","index명2"]][["컬럼명1","컬럼명2"]]</li>
-</ul>
+<li> DataFrame명.loc[[&ldquo;index명1&rdquo;,&ldquo;index명2&rdquo;],[&ldquo;컬럼명1&rdquo;,&ldquo;컬럼명2&rdquo;]]</li>
+<li> DataFrame명.loc[[&ldquo;index명1&rdquo;,&ldquo;index명2&rdquo;]][[&ldquo;컬럼명1&rdquo;,&ldquo;컬럼명2&rdquo;]]</li>
+</ul></p>
 
 <pre><code class="language-python">#사람1의 나이 찾기
 Data2.loc[&quot;사람1&quot;,&quot;나이&quot;]
@@ -1700,9 +1677,6 @@ Data2[Data2[&quot;키&quot;] &gt;= 170]
 
 <p>감사합니다.</p>
 
-<pre><code class="language-python">
-</code></pre>
-
   </div>
 
   <footer>
@@ -1928,7 +1902,7 @@ Data2[Data2[&quot;키&quot;] &gt;= 170]
         
 
         <a href="https://psyssai.github.io/blog/bigdata/pandas/1_overview/" class="image featured">
-            <img src="https://psyssai.github.io/img/Pandas/1_1_Pandas%ea%b7%b8%eb%a6%bc.png" alt="">
+            <img src="https://psyssai.github.io/Pandas/1_1_Pandas%ea%b7%b8%eb%a6%bc.png" alt="">
         </a>
     
 
