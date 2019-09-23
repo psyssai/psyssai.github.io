@@ -6,10 +6,55 @@
     <description>Recent content in Tags on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>encoding</title>
+      <link>https://psyssai.github.io/tags/encoding/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/encoding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>read_csv</title>
+      <link>https://psyssai.github.io/tags/read_csv/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/read_csv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>read_excel</title>
+      <link>https://psyssai.github.io/tags/read_excel/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/read_excel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>파일쓰기</title>
+      <link>https://psyssai.github.io/tags/%ED%8C%8C%EC%9D%BC%EC%93%B0%EA%B8%B0/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%ED%8C%8C%EC%9D%BC%EC%93%B0%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>파일읽기</title>
+      <link>https://psyssai.github.io/tags/%ED%8C%8C%EC%9D%BC%EC%9D%BD%EA%B8%B0/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%ED%8C%8C%EC%9D%BC%EC%9D%BD%EA%B8%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Append</title>
