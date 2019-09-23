@@ -6,10 +6,25 @@
     <description>Recent content in Pandas on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Pandas 기초]4.여러 DataFrame 연결하기(Join)</title>
+      <link>https://psyssai.github.io/blog/bigdata/pandas/4_dataframe_merge/</link>
+      <pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/blog/bigdata/pandas/4_dataframe_merge/</guid>
+      <description>안녕하세요. PSYda 입니다.
+이번 포스팅에서는 두 개의 DataFrame을 연결하는 Join 기법에 대해 알아보겠습니다.
+소개할 내용은 아래와 같습니다.
+ 컬럼 기준 Join Index 기준 Join 행기준 Join Inner, Left, Right ,Outer Join  3. DataFrame Join 1) Join 이란?
+ 두 개의 DataFrame을 합치는 것 열기준 컬럼명으로 합치기 : merge 열기준 Index명로 합치기 : merge, concat 행기준으로 합치기 : concat, append
+  2) 합치는 방법은?
+ Inner : 두 DataFrame의 기준 컬럼에서 둘 다 존재하는 데이터만 Join Left Outer join : 왼쪽 DataFrame으로 합치기 Right Outer Join : 오른쪽 DataFrame으로 합치기 Outer Join : 두 DataFrame의 모든 Data를 합치기</description>
+    </item>
     
     <item>
       <title>[Pandas 기초]3.Pandas의 자료구조-DataFrame</title>
