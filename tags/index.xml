@@ -6,10 +6,46 @@
     <description>Recent content in Tags on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DataFrame 연산</title>
+      <link>https://psyssai.github.io/tags/dataframe-%EC%97%B0%EC%82%B0/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/dataframe-%EC%97%B0%EC%82%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pandas 연산</title>
+      <link>https://psyssai.github.io/tags/pandas-%EC%97%B0%EC%82%B0/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/pandas-%EC%97%B0%EC%82%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>데이터 분석</title>
+      <link>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>빅데이터</title>
+      <link>https://psyssai.github.io/tags/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>encoding</title>
@@ -111,15 +147,6 @@
     </item>
     
     <item>
-      <title>데이터 분석</title>
-      <link>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/</link>
-      <pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Series</title>
       <link>https://psyssai.github.io/tags/series/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
@@ -134,15 +161,6 @@
       <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>빅데이터</title>
-      <link>https://psyssai.github.io/tags/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/</link>
-      <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://psyssai.github.io/tags/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/</guid>
       <description></description>
     </item>
     

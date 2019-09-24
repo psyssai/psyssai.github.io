@@ -6,10 +6,24 @@
     <description>Recent content in Blog on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Pandas 기초]6.Pandas DataFrame 산술 연산</title>
+      <link>https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/</guid>
+      <description>안녕하세요. PSYda입니다.
+이번 포스팅에서는 Pandas DataFrame의 산술 연산에 대해 알아보겠습니다.
+소개할 내용은 아래와 같습니다.
+ DataFrame과 DataFrame의 연산 함수 소개 DataFrame과 Sereis의 연산 함수 소개   5.Pandas DataFrame 산술 연산 DataFrame 의 연산은 아래의 두 가지 케이스가 있습니다. - DataFrame vs DataFrame 연산 - DataFrame vs Series 연산
+5.1 DataFrame vs DataFrame 연산 DataFrame의 연산 규칙은 아래와 같습니다.
+ 같은 index 이면서 같은 column 명을 가진 두 value를 연산함 같은 index 이면서 같은 column 명을 가진 두 value 중 하나라도 NaN이 있으면 NaN으로 채워진다.</description>
+    </item>
     
     <item>
       <title>[Pandas 기초]5.Pandas의 파일 입출력</title>
