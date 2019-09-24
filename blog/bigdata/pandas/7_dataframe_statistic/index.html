@@ -1,0 +1,1372 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/psyssai.github.io"
+        },
+        "articleSection" : "blog",
+        "name" : "[Pandas 기초]7.Pandas DataFrame 통계",
+        "headline" : "[Pandas 기초]7.Pandas DataFrame 통계",
+        "description" : "Learn What is statistic for DataFrame",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-08-27 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-08-27 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/psyssai.github.io\/blog\/bigdata\/pandas\/7_dataframe_statistic\/",
+        "wordCount" : "866",
+        "keywords" : [ "decribe","상관계수","시각화","Pandas 통계","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[Pandas 기초]7.Pandas DataFrame 통계</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.57.2" />
+        
+
+
+        
+            <meta name="author" content="PSY">
+        
+        
+            <meta name="description" content="Learn What is statistic for DataFrame">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Pandas 기초]7.Pandas DataFrame 통계"/>
+<meta name="twitter:description" content="Learn What is statistic for DataFrame"/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="[Pandas 기초]7.Pandas DataFrame 통계" />
+<meta property="og:description" content="Learn What is statistic for DataFrame" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/" />
+<meta property="article:published_time" content="2019-08-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-27T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[Pandas 기초]7.Pandas DataFrame 통계">
+<meta itemprop="description" content="Learn What is statistic for DataFrame">
+
+
+<meta itemprop="datePublished" content="2019-08-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="866">
+
+
+
+<meta itemprop="keywords" content="decribe,상관계수,시각화,Pandas 통계," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/main.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/add-on.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/academicons.min.css">
+        
+
+        
+        
+            
+                
+            
+        
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://psyssai.github.io/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://psyssai.github.io/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://psyssai.github.io/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-27'>
+                                    August 27, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/">[Pandas 기초]6.Pandas DataFrame 산술 연산</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-22'>
+                                    August 22, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/5_dataframe_fileio/">[Pandas 기초]5.Pandas의 파일 입출력</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-20'>
+                                    August 20, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/4_dataframe_merge/">[Pandas 기초]4.여러 DataFrame 연결하기(Join)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-17'>
+                                    August 17, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/3_dataframe/">[Pandas 기초]3.Pandas의 자료구조-DataFrame</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-16'>
+                                    August 16, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a></h1>
+            
+        
+        
+            <p>Learn What is statistic for DataFrame</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-08-27'>
+            August 27, 2019</time>
+        <span class="author">PSY</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<p>안녕하세요. PSYda입니다.</p>
+
+<p>이번 포스팅에서는 Pandas DataFrame의 통계에 대해 알아보겠습니다.</p>
+
+<p>소개할 내용은 아래와 같습니다.</p>
+
+<div id = "summary">
+<ul>
+<li>DataFrame의 <strong><u><span style="color:red">통계 함수</span></u></strong> 소개(주요통계량 출력, 평균, 표준편차, 최대/최소값, 상관계수 등)</li>
+<li>DataFame의 통계에 대한 <strong><u><span style="color:red">시각화</span></u></strong>(히스토그램, 상관관계)</li>
+</ul>
+</div>
+
+<p>실습에 사용한 데이터는 fifa19에 등장하는 선술들의 능력치 데이터 입니다.<br />
+<a href="https://psyssai.github.io/data/pandas/Ch6_1_fifaStats.csv">여기</a>에서 다운로드 받을 수 있습니다.</p>
+
+<h1 id="6-pandas-dataframe-통계">6.Pandas DataFrame 통계</h1>
+
+<p>DataFrame의 주요한 통계 함수는 아래와 같습니다.</p>
+
+<ul>
+<li><span class="hlblock">Describe</span> : 전체 주요 통계량 출력</li>
+<li><strong>sum</strong> : 합계 출력</li>
+<li><strong>cumsum</strong> : 누적합계 출력</li>
+<li><strong>mean</strong> : 평균값 출력</li>
+<li><strong>Std</strong> : 표준 편차 출력</li>
+<li><strong>var</strong> : 분산 출력</li>
+<li><strong>median</strong> : 중앙값 출력</li>
+<li><strong>count</strong> : 데이터 개수 출력</li>
+<li><strong>min, max, idxmin, idxmax</strong> : 최소값,최대값,최소값의 index, 최대값의 index 출력</li>
+<li><strong>corr, cov</strong> : 상관계수, 공분산 출력</li>
+</ul>
+
+<p>위의 통계 함수를 비롯한 대부분의 함수에서 axis 옵션을 이용해 사용할 축을 설정할 수 있습니다.</p>
+
+<ul>
+<li><span class="hlblock">axis</span> = 0 : <strong><u>열방향</u></strong>으로 통계량 산출(Default)</li>
+<li><span class="hlblock">axis</span> = 1 : <strong><u>행방향</u></strong>으로 통계량 산출</li>
+</ul>
+
+<p>실습을 위해 Fifa19 선수들의 Stat 정보를 Load</p>
+
+<pre><code class="language-python">import pandas as pd
+from pandas import Series, DataFrame
+import numpy as np
+</code></pre>
+
+<pre><code class="language-python">players = pd.read_csv('data/Ch6_1_fifaStats.csv', index_col = 'Name')
+players.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>L. Messi</th>
+      <td>90.0</td>
+      <td>97.0</td>
+      <td>87.0</td>
+      <td>96.0</td>
+    </tr>
+    <tr>
+      <th>Cristiano Ronaldo</th>
+      <td>81.0</td>
+      <td>88.0</td>
+      <td>77.0</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>Neymar Jr</th>
+      <td>84.0</td>
+      <td>96.0</td>
+      <td>78.0</td>
+      <td>95.0</td>
+    </tr>
+    <tr>
+      <th>De Gea</th>
+      <td>50.0</td>
+      <td>18.0</td>
+      <td>51.0</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>K. De Bruyne</th>
+      <td>92.0</td>
+      <td>86.0</td>
+      <td>91.0</td>
+      <td>91.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="6-1-전체-통계량-요약-보기-describe">6.1 전체 통계량 요약 보기(describe)</h2>
+
+<p><span class = "hlblock">describe 함수</span> : <strong><u>컬럼별 전체 통계량을 요약</strong></u>해서 볼 수 있음</p>
+
+<ul>
+<li>데이터 개수, 평균, 표준편차, 최소값, 4분위값, 최대값 출력</li>
+<li>숫자형 컬럼만 통계량을 출력함</li>
+</ul>
+
+<p>decribe 함수 호출</p>
+
+<pre><code class="language-python">players.describe()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>18159.000000</td>
+      <td>18159.000000</td>
+      <td>18159.000000</td>
+      <td>18159.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>58.686712</td>
+      <td>55.371001</td>
+      <td>52.711933</td>
+      <td>58.369459</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>14.699495</td>
+      <td>18.910371</td>
+      <td>15.327870</td>
+      <td>16.686595</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>7.000000</td>
+      <td>4.000000</td>
+      <td>9.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>54.000000</td>
+      <td>49.000000</td>
+      <td>43.000000</td>
+      <td>54.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>62.000000</td>
+      <td>61.000000</td>
+      <td>56.000000</td>
+      <td>63.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>68.000000</td>
+      <td>68.000000</td>
+      <td>64.000000</td>
+      <td>69.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>93.000000</td>
+      <td>97.000000</td>
+      <td>93.000000</td>
+      <td>96.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="6-2-함수별-통계량-보기">6.2 함수별 통계량 보기</h2>
+
+<h3 id="6-2-1-sum-합계-출력">6.2.1 sum():합계 출력</h3>
+
+<pre><code class="language-python">players.sum()
+</code></pre>
+
+<pre><code>ShortPassing    1065692.0
+Dribbling       1005482.0
+LongPassing      957196.0
+BallControl     1059931.0
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-2-cumsum-누적합계-출력">6.2.2 cumsum():누적합계 출력</h3>
+
+<pre><code class="language-python"># 선수별 능력치 누적 합계 출력
+players.head().cumsum(axis = 1)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>L. Messi</th>
+      <td>90.0</td>
+      <td>187.0</td>
+      <td>274.0</td>
+      <td>370.0</td>
+    </tr>
+    <tr>
+      <th>Cristiano Ronaldo</th>
+      <td>81.0</td>
+      <td>169.0</td>
+      <td>246.0</td>
+      <td>340.0</td>
+    </tr>
+    <tr>
+      <th>Neymar Jr</th>
+      <td>84.0</td>
+      <td>180.0</td>
+      <td>258.0</td>
+      <td>353.0</td>
+    </tr>
+    <tr>
+      <th>De Gea</th>
+      <td>50.0</td>
+      <td>68.0</td>
+      <td>119.0</td>
+      <td>161.0</td>
+    </tr>
+    <tr>
+      <th>K. De Bruyne</th>
+      <td>92.0</td>
+      <td>178.0</td>
+      <td>269.0</td>
+      <td>360.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="6-2-3-mean-평균값-출력">6.2.3 mean(): 평균값 출력</h3>
+
+<p>Stat별 평균(컬럼 기준)</p>
+
+<pre><code class="language-python">players.mean()
+</code></pre>
+
+<pre><code>ShortPassing    58.686712
+Dribbling       55.371001
+LongPassing     52.711933
+BallControl     58.369459
+dtype: float64
+</code></pre>
+
+<p>선수별 평균(행 기준)</p>
+
+<pre><code class="language-python">players.mean(axis=1).head()
+</code></pre>
+
+<pre><code>Name
+L. Messi             92.50
+Cristiano Ronaldo    85.00
+Neymar Jr            88.25
+De Gea               40.25
+K. De Bruyne         90.00
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-4-std-표준편차-출력">6.2.4 std(): 표준편차 출력</h3>
+
+<pre><code class="language-python">players.std()
+</code></pre>
+
+<pre><code>ShortPassing    14.699495
+Dribbling       18.910371
+LongPassing     15.327870
+BallControl     16.686595
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-5-var-분산-출력">6.2.5 var():분산 출력</h3>
+
+<pre><code class="language-python">players.var()
+</code></pre>
+
+<pre><code>ShortPassing    216.075157
+Dribbling       357.602135
+LongPassing     234.943613
+BallControl     278.442466
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-6-median-중앙값-출력">6.2.6 median():중앙값 출력</h3>
+
+<pre><code class="language-python">players.median()
+</code></pre>
+
+<pre><code>ShortPassing    62.0
+Dribbling       61.0
+LongPassing     56.0
+BallControl     63.0
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-7-count-데이터-개수-출력">6.2.7 count() : 데이터 개수 출력</h3>
+
+<pre><code class="language-python">players.count()
+</code></pre>
+
+<pre><code>ShortPassing    18159
+Dribbling       18159
+LongPassing     18159
+BallControl     18159
+dtype: int64
+</code></pre>
+
+<h3 id="6-2-8-max-min-최대값-최소값-출력">6.2.8 max(), min() : 최대값, 최소값 출력</h3>
+
+<pre><code class="language-python">players.max()
+</code></pre>
+
+<pre><code>ShortPassing    93.0
+Dribbling       97.0
+LongPassing     93.0
+BallControl     96.0
+dtype: float64
+</code></pre>
+
+<pre><code class="language-python">players.min()
+</code></pre>
+
+<pre><code>ShortPassing    7.0
+Dribbling       4.0
+LongPassing     9.0
+BallControl     5.0
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-9-idxmin-idxmax-최대값-최소값에-해당하는-인덱스-출력">6.2.9 idxmin(), idxmax():최대값,최소값에 해당하는 인덱스 출력</h3>
+
+<p>선수별 가장 낮은 능력치는?</p>
+
+<pre><code class="language-python">players.idxmin(axis = 1).head()
+</code></pre>
+
+<pre><code>Name
+L. Messi             LongPassing
+Cristiano Ronaldo    LongPassing
+Neymar Jr            LongPassing
+De Gea                 Dribbling
+K. De Bruyne           Dribbling
+dtype: object
+</code></pre>
+
+<p>스탯별 최고의 선수는?</p>
+
+<pre><code class="language-python">players.idxmax()
+</code></pre>
+
+<pre><code>ShortPassing    L. Modrić
+Dribbling        L. Messi
+LongPassing      T. Kroos
+BallControl      L. Messi
+dtype: object
+</code></pre>
+
+<h3 id="6-2-10-corr-cov-상관계수-공분산-출력">6.2.10 corr(), cov(): 상관계수, 공분산 출력</h3>
+
+<p>전체 컬럼별 상관계수 행렬 출력</p>
+
+<pre><code class="language-python">corr_mat = players.corr()
+corr_mat
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ShortPassing</th>
+      <td>1.000000</td>
+      <td>0.843722</td>
+      <td>0.895722</td>
+      <td>0.911451</td>
+    </tr>
+    <tr>
+      <th>Dribbling</th>
+      <td>0.843722</td>
+      <td>1.000000</td>
+      <td>0.722465</td>
+      <td>0.938942</td>
+    </tr>
+    <tr>
+      <th>LongPassing</th>
+      <td>0.895722</td>
+      <td>0.722465</td>
+      <td>1.000000</td>
+      <td>0.788650</td>
+    </tr>
+    <tr>
+      <th>BallControl</th>
+      <td>0.911451</td>
+      <td>0.938942</td>
+      <td>0.788650</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>특정 컬럼과 상관도가 높은 순서대로 출력</p>
+
+<pre><code class="language-python">corr_mat['ShortPassing'].sort_values(ascending = False)
+</code></pre>
+
+<pre><code>ShortPassing    1.000000
+BallControl     0.911451
+LongPassing     0.895722
+Dribbling       0.843722
+Name: ShortPassing, dtype: float64
+</code></pre>
+
+<p>전체 컬럼별 공분산 행렬 출력</p>
+
+<pre><code class="language-python">cov_mat = players.cov()
+cov_mat
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ShortPassing</th>
+      <td>216.075157</td>
+      <td>234.531811</td>
+      <td>201.816840</td>
+      <td>223.564867</td>
+    </tr>
+    <tr>
+      <th>Dribbling</th>
+      <td>234.531811</td>
+      <td>357.602135</td>
+      <td>209.410657</td>
+      <td>296.282958</td>
+    </tr>
+    <tr>
+      <th>LongPassing</th>
+      <td>201.816840</td>
+      <td>209.410657</td>
+      <td>234.943613</td>
+      <td>201.712999</td>
+    </tr>
+    <tr>
+      <th>BallControl</th>
+      <td>223.564867</td>
+      <td>296.282958</td>
+      <td>201.712999</td>
+      <td>278.442466</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>특정 컬럼과 공분산이 낮은 순서대로 출력</p>
+
+<pre><code class="language-python">cov_mat['Dribbling'].sort_values(ascending = True)
+</code></pre>
+
+<pre><code>LongPassing     209.410657
+ShortPassing    234.531811
+BallControl     296.282958
+Dribbling       357.602135
+Name: Dribbling, dtype: float64
+</code></pre>
+
+<h2 id="6-3-통계량-시각화하기">6.3 통계량 시각화하기</h2>
+
+<h3 id="6-3-1-histogram-시각화">6.3.1 histogram 시각화</h3>
+
+<pre><code class="language-python">players.hist(figsize = (15,10))
+</code></pre>
+
+<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6CA2E6A0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6CA2D898&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6C860080&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6C8872E8&gt;]],
+      dtype=object)
+</code></pre>
+
+<p><img src="https://psyssai.github.io/blog/BigData/pandas/7_dataframe_statistic_50_1.png" alt="png" /></p>
+
+<h3 id="6-3-2-상관계수-그래프-시각화">6.3.2 상관계수 그래프 시각화</h3>
+
+<pre><code class="language-python">pd.plotting.scatter_matrix(players, figsize = (15,10))
+</code></pre>
+
+<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E38F1D0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E6F50B8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E3D6358&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E3FD898&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E426E10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4573C8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E47F940&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4A8EF0&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4A8F28&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4FE9E8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E525F60&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E556518&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E580A90&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E5B2048&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E5D95C0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E601B38&gt;]],
+      dtype=object)
+</code></pre>
+
+<p><img src="https://psyssai.github.io/blog/BigData/pandas/7_dataframe_statistic_52_1.png" alt="png" /></p>
+
+<p>위의 Jupyter notebook 내용은 <a href="https://github.com/psyssai/PandasBasic/blob/master/PandasBasic_6_DataFrame_Statistic.ipynb">여기</a> Github에서도 확인 할 수 있습니다.</p>
+
+<p>다음 포스팅은 Pandas DataFrame의 sort(정렬)와 rank(순위)에 관해 알아볼 예정입니다.<br />
+<a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank">다음포스팅 바로 가기</a></p>
+
+<p>감사합니다.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas">빅데이터분석/Pandas</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/decribe">decribe</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98">상관계수</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%8B%9C%EA%B0%81%ED%99%94">시각화</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/pandas-%ED%86%B5%EA%B3%84">Pandas 통계</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/"
+                class="button big previous">[Pandas 기초]6.Pandas DataFrame 산술 연산</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='https://psyssai.github.io/'><img src="https://psyssai.github.io/img/main/logo1.jpg" width="200" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>PSYda</h2>
+        <p>평범한 개발자 입니다. 틈틈히 공부한 내용을 올리고 있습니다.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-27'>
+                August 27, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/">[Pandas 기초]6.Pandas DataFrame 산술 연산</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-22'>
+                August 22, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/5_dataframe_fileio/">[Pandas 기초]5.Pandas의 파일 입출력</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-20'>
+                August 20, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/4_dataframe_merge/">[Pandas 기초]4.여러 DataFrame 연결하기(Join)</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-17'>
+                August 17, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/3_dataframe/">[Pandas 기초]3.Pandas의 자료구조-DataFrame</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-16'>
+                August 16, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://psyssai.github.io/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          PSYda
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://psyssai.github.io/js/util.js"></script>
+      <script src="https://psyssai.github.io/js/main.js"></script>
+      <script src="https://psyssai.github.io/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

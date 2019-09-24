@@ -6,10 +6,46 @@
     <description>Recent content in Tags on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>decribe</title>
+      <link>https://psyssai.github.io/tags/decribe/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/decribe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandas 통계</title>
+      <link>https://psyssai.github.io/tags/pandas-%ED%86%B5%EA%B3%84/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/pandas-%ED%86%B5%EA%B3%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>상관계수</title>
+      <link>https://psyssai.github.io/tags/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>시각화</title>
+      <link>https://psyssai.github.io/tags/%EC%8B%9C%EA%B0%81%ED%99%94/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%EC%8B%9C%EA%B0%81%ED%99%94/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DataFrame 연산</title>

@@ -6,10 +6,25 @@
     <description>Recent content in 빅데이터분석/Pandas on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Pandas 기초]7.Pandas DataFrame 통계</title>
+      <link>https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/</guid>
+      <description>안녕하세요. PSYda입니다.
+이번 포스팅에서는 Pandas DataFrame의 통계에 대해 알아보겠습니다.
+소개할 내용은 아래와 같습니다.
+ DataFrame의 통계 함수 소개(주요통계량 출력, 평균, 표준편차, 최대/최소값, 상관계수 등) DataFame의 통계에 대한 시각화(히스토그램, 상관관계)   실습에 사용한 데이터는 fifa19에 등장하는 선술들의 능력치 데이터 입니다.
+여기에서 다운로드 받을 수 있습니다.
+6.Pandas DataFrame 통계 DataFrame의 주요한 통계 함수는 아래와 같습니다.
+ Describe : 전체 주요 통계량 출력 sum : 합계 출력 cumsum : 누적합계 출력 mean : 평균값 출력 Std : 표준 편차 출력 var : 분산 출력 median : 중앙값 출력 count : 데이터 개수 출력 min, max, idxmin, idxmax : 최소값,최대값,최소값의 index, 최대값의 index 출력 corr, cov : 상관계수, 공분산 출력  위의 통계 함수를 비롯한 대부분의 함수에서 axis 옵션을 이용해 사용할 축을 설정할 수 있습니다.</description>
+    </item>
     
     <item>
       <title>[Pandas 기초]6.Pandas DataFrame 산술 연산</title>

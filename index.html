@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-08-22 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-08-22 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-08-27 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-08-27 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/psyssai.github.io\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -57,7 +57,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://psyssai.github.io/" />
 
-<meta property="og:updated_time" content="2019-08-22T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-08-27T00:00:00+00:00" />
 
         <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
         <meta property="og:image:type" content="image/png">
@@ -220,6 +220,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-27'>
+                                    August 27, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/">[Pandas 기초]6.Pandas DataFrame 산술 연산</a></h3>
                                 
                                 <time class="published" datetime=
@@ -266,18 +278,6 @@
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/2_series/">[Pandas 기초]2.Pandas의 자료구조-Series</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-08-15'>
-                                    August 15, 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -300,21 +300,21 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/">[Pandas 기초]6.Pandas DataFrame 산술 연산</a></h2>
+            <h2><a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a></h2>
         
         
-            <p>Learn What is Arithmetic Operation of DataFrame</p>
+            <p>Learn What is statistic for DataFrame</p>
         
     </div>
     <div class="meta">
         
 
         <time class="published"
-            datetime='2019-08-22'>
-            August 22, 2019</time>
+            datetime='2019-08-27'>
+            August 27, 2019</time>
         <span class="author">PSY</span>
         
-            <p>3 minute read</p>
+            <p>5 minute read</p>
         
         
     </div>
@@ -361,69 +361,53 @@
 
 <p>안녕하세요. PSYda입니다.</p>
 
-<p>이번 포스팅에서는 <strong><u>Pandas DataFrame의 산술 연산</u></strong>에 대해 알아보겠습니다.</p>
+<p>이번 포스팅에서는 Pandas DataFrame의 통계에 대해 알아보겠습니다.</p>
 
 <p>소개할 내용은 아래와 같습니다.</p>
 
-<div id="summary">
+<div id = "summary">
 <ul>
-    <li><strong><span style = "color:red">DataFrame과 DataFrame의 연산</strong></span> 함수 소개</li>
-    <li><strong><span style = "color:red">DataFrame과 Sereis의 연산</strong></span> 함수 소개</li>
-      
-</ul>  
-
+<li>DataFrame의 <strong><u><span style="color:red">통계 함수</span></u></strong> 소개(주요통계량 출력, 평균, 표준편차, 최대/최소값, 상관계수 등)</li>
+<li>DataFame의 통계에 대한 <strong><u><span style="color:red">시각화</span></u></strong>(히스토그램, 상관관계)</li>
+</ul>
 </div>
 
-<h1 id="5-pandas-dataframe-산술-연산">5.Pandas DataFrame 산술 연산</h1>
+<p>실습에 사용한 데이터는 fifa19에 등장하는 선술들의 능력치 데이터 입니다.<br />
+<a href="https://psyssai.github.io/data/pandas/Ch6_1_fifaStats.csv">여기</a>에서 다운로드 받을 수 있습니다.</p>
 
-<p>DataFrame 의 연산은 아래의 두 가지 케이스가 있습니다.</p>
+<h1 id="6-pandas-dataframe-통계">6.Pandas DataFrame 통계</h1>
 
-<ul>
-<li>DataFrame vs DataFrame 연산</li>
-<li>DataFrame vs Series 연산</li>
-</ul>
-
-<h2 id="5-1-dataframe-vs-dataframe-연산">5.1 DataFrame vs DataFrame 연산</h2>
-
-<p>DataFrame의 연산 규칙은 아래와 같습니다.</p>
+<p>DataFrame의 주요한 통계 함수는 아래와 같습니다.</p>
 
 <ul>
-<li><strong><u>같은 index 이면서 같은 column 명</u></strong>을 가진 두 value를 연산함</li>
-<li>같은 index 이면서 같은 column 명을 가진 두 value 중 <strong><u>하나라도 NaN이 있으면 <span style = "color:red">NaN</span></u></strong>으로 채워진다.</li>
-<li><strong><u>index나 column 명이 다르면 <span style = "color:red">NaN</span></u></strong>으로 채워진다.
-<div class = "CenterImg">
-<img src = "/img/Pandas/OperationRule.jpg" alt="OperationRule" />
-</div></li>
+<li><span class="hlblock">Describe</span> : 전체 주요 통계량 출력</li>
+<li><strong>sum</strong> : 합계 출력</li>
+<li><strong>cumsum</strong> : 누적합계 출력</li>
+<li><strong>mean</strong> : 평균값 출력</li>
+<li><strong>Std</strong> : 표준 편차 출력</li>
+<li><strong>var</strong> : 분산 출력</li>
+<li><strong>median</strong> : 중앙값 출력</li>
+<li><strong>count</strong> : 데이터 개수 출력</li>
+<li><strong>min, max, idxmin, idxmax</strong> : 최소값,최대값,최소값의 index, 최대값의 index 출력</li>
+<li><strong>corr, cov</strong> : 상관계수, 공분산 출력</li>
 </ul>
 
-<p>연산하는 방법에는 두 가지 방법이 있습니다.</p>
+<p>위의 통계 함수를 비롯한 대부분의 함수에서 axis 옵션을 이용해 사용할 축을 설정할 수 있습니다.</p>
 
 <ul>
-<li><strong><span style = "color:red">연산자( +, -, *, / )</span></strong>를 이용한 연산</li>
-<li><strong><span style = "color:red">함수( add, sub, mul, div )</span></strong>를 이용한 연산</li>
+<li><span class="hlblock">axis</span> = 0 : <strong><u>열방향</u></strong>으로 통계량 산출(Default)</li>
+<li><span class="hlblock">axis</span> = 1 : <strong><u>행방향</u></strong>으로 통계량 산출</li>
 </ul>
 
-<p>기본 연산은 동일하지만 함수를 사용하면 <strong><span style = "color:red">fill_value</span></strong>와 <strong><span style = "color:red">axis 옵션</span></strong>을 사용할 수 있습니다.</p>
-
-<p>Ex)<span class = "hlblock">df1.add(df2, fill_value = 0, axis = 0)</span></p>
-
-<ul>
-<li><strong><span style = "color:red">fill_value = 0</span></strong> : NaN값을 0으로 간주하고 연산, 0이 아닌 값 입력 가능</li>
-<li><strong><span style = "color:red">axis = 0</span></strong> : DataFrame와 Series간의 연산에서 방향을 지정(5.1.2 참고)
-<div class = "CenterImg">
-<img src = "/img/Pandas/OperationRule2.jpg" alt="OperationRule2" />
-</div></li>
-</ul>
-
-<p>곱하기, 나누기, 빼기 등도 동일한 방법이므로, 대표로 더하기에 대해서만 실습해보겠습니다.</p>
+<p>실습을 위해 Fifa19 선수들의 Stat 정보를 Load</p>
 
 <pre><code class="language-python">import pandas as pd
 from pandas import Series, DataFrame
 import numpy as np
 </code></pre>
 
-<pre><code class="language-python">df1 = DataFrame([[1,3,5],[7,9,11],[5,13,15]])
-df1
+<pre><code class="language-python">players = pd.read_csv('data/Ch6_1_fifaStats.csv', index_col = 'Name')
+players.head()
 </code></pre>
 
 <div>
@@ -444,236 +428,381 @@ df1
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>3</td>
-      <td>5</td>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
     </tr>
     <tr>
-      <th>1</th>
-      <td>7</td>
-      <td>9</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5</td>
-      <td>13</td>
-      <td>15</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">df2 = DataFrame([[1,2,3],[4,np.nan,6],[7,8,9]], columns=[0,1,3], index=[0,1,3])
-df2
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
+      <th>Name</th>
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>2.0</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4</td>
-      <td>NaN</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>7</td>
-      <td>8.0</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">df1 + df2
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2.0</td>
-      <td>5.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>11.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">df1.add(df2,fill_value=0)
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>2.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>3.0</td>
+      <th>L. Messi</th>
+      <td>90.0</td>
+      <td>97.0</td>
+      <td>87.0</td>
+      <td>96.0</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>11.0</td>
-      <td>9.0</td>
-      <td>11.0</td>
-      <td>6.0</td>
+      <th>Cristiano Ronaldo</th>
+      <td>81.0</td>
+      <td>88.0</td>
+      <td>77.0</td>
+      <td>94.0</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>5.0</td>
-      <td>13.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
+      <th>Neymar Jr</th>
+      <td>84.0</td>
+      <td>96.0</td>
+      <td>78.0</td>
+      <td>95.0</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>7.0</td>
-      <td>8.0</td>
-      <td>NaN</td>
-      <td>9.0</td>
+      <th>De Gea</th>
+      <td>50.0</td>
+      <td>18.0</td>
+      <td>51.0</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>K. De Bruyne</th>
+      <td>92.0</td>
+      <td>86.0</td>
+      <td>91.0</td>
+      <td>91.0</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<h2 id="5-2-dataframe-vs-series-연산">5.2 DataFrame vs Series 연산</h2>
+<h2 id="6-1-전체-통계량-요약-보기-describe">6.1 전체 통계량 요약 보기(describe)</h2>
 
-<p>연산 함수(add, sub, mul, div) 의 axis 옵션을 통해 행, 열 방향으로 연산 가능</p>
-
-<p>Ex) df1.add(df2, axis = 0)</p>
-
-<p><strong><span style="color:red">axis = 0</span></strong> : <strong><u>Index방향</u></strong>(행방향)으로 DataFrame과 Series 연산</p>
+<p><span class = "hlblock">describe 함수</span> : <strong><u>컬럼별 전체 통계량을 요약</strong></u>해서 볼 수 있음</p>
 
 <ul>
-<li>DataFrame과 Series가 동일한 Index를 가지면 연산, 다르면거나 한쪽만 있으면 NaN</li>
+<li>데이터 개수, 평균, 표준편차, 최소값, 4분위값, 최대값 출력</li>
+<li>숫자형 컬럼만 통계량을 출력함</li>
 </ul>
 
-<p><strong><span style="color:red">axis = 1</span></strong> : <strong><u>Column방향</u></strong>으로 DataFrame과 Series 연산</p>
+<p>decribe 함수 호출</p>
 
-<ul>
-<li>DataFrame과 Series가 동일한 Column명을 가지면 연산, 다르면거나 한쪽만 있으면 NaN</li>
-</ul>
-
-<p>연산을 위한 Sereis 생성</p>
-
-<pre><code class="language-python">s1 = Series([1,2,3,4])
-s1
+<pre><code class="language-python">players.describe()
 </code></pre>
 
-<pre><code>0    1
-1    2
-2    3
-3    4
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>18159.000000</td>
+      <td>18159.000000</td>
+      <td>18159.000000</td>
+      <td>18159.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>58.686712</td>
+      <td>55.371001</td>
+      <td>52.711933</td>
+      <td>58.369459</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>14.699495</td>
+      <td>18.910371</td>
+      <td>15.327870</td>
+      <td>16.686595</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>7.000000</td>
+      <td>4.000000</td>
+      <td>9.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>54.000000</td>
+      <td>49.000000</td>
+      <td>43.000000</td>
+      <td>54.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>62.000000</td>
+      <td>61.000000</td>
+      <td>56.000000</td>
+      <td>63.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>68.000000</td>
+      <td>68.000000</td>
+      <td>64.000000</td>
+      <td>69.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>93.000000</td>
+      <td>97.000000</td>
+      <td>93.000000</td>
+      <td>96.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="6-2-함수별-통계량-보기">6.2 함수별 통계량 보기</h2>
+
+<h3 id="6-2-1-sum-합계-출력">6.2.1 sum():합계 출력</h3>
+
+<pre><code class="language-python">players.sum()
+</code></pre>
+
+<pre><code>ShortPassing    1065692.0
+Dribbling       1005482.0
+LongPassing      957196.0
+BallControl     1059931.0
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-2-cumsum-누적합계-출력">6.2.2 cumsum():누적합계 출력</h3>
+
+<pre><code class="language-python"># 선수별 능력치 누적 합계 출력
+players.head().cumsum(axis = 1)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>L. Messi</th>
+      <td>90.0</td>
+      <td>187.0</td>
+      <td>274.0</td>
+      <td>370.0</td>
+    </tr>
+    <tr>
+      <th>Cristiano Ronaldo</th>
+      <td>81.0</td>
+      <td>169.0</td>
+      <td>246.0</td>
+      <td>340.0</td>
+    </tr>
+    <tr>
+      <th>Neymar Jr</th>
+      <td>84.0</td>
+      <td>180.0</td>
+      <td>258.0</td>
+      <td>353.0</td>
+    </tr>
+    <tr>
+      <th>De Gea</th>
+      <td>50.0</td>
+      <td>68.0</td>
+      <td>119.0</td>
+      <td>161.0</td>
+    </tr>
+    <tr>
+      <th>K. De Bruyne</th>
+      <td>92.0</td>
+      <td>178.0</td>
+      <td>269.0</td>
+      <td>360.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="6-2-3-mean-평균값-출력">6.2.3 mean(): 평균값 출력</h3>
+
+<p>Stat별 평균(컬럼 기준)</p>
+
+<pre><code class="language-python">players.mean()
+</code></pre>
+
+<pre><code>ShortPassing    58.686712
+Dribbling       55.371001
+LongPassing     52.711933
+BallControl     58.369459
+dtype: float64
+</code></pre>
+
+<p>선수별 평균(행 기준)</p>
+
+<pre><code class="language-python">players.mean(axis=1).head()
+</code></pre>
+
+<pre><code>Name
+L. Messi             92.50
+Cristiano Ronaldo    85.00
+Neymar Jr            88.25
+De Gea               40.25
+K. De Bruyne         90.00
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-4-std-표준편차-출력">6.2.4 std(): 표준편차 출력</h3>
+
+<pre><code class="language-python">players.std()
+</code></pre>
+
+<pre><code>ShortPassing    14.699495
+Dribbling       18.910371
+LongPassing     15.327870
+BallControl     16.686595
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-5-var-분산-출력">6.2.5 var():분산 출력</h3>
+
+<pre><code class="language-python">players.var()
+</code></pre>
+
+<pre><code>ShortPassing    216.075157
+Dribbling       357.602135
+LongPassing     234.943613
+BallControl     278.442466
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-6-median-중앙값-출력">6.2.6 median():중앙값 출력</h3>
+
+<pre><code class="language-python">players.median()
+</code></pre>
+
+<pre><code>ShortPassing    62.0
+Dribbling       61.0
+LongPassing     56.0
+BallControl     63.0
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-7-count-데이터-개수-출력">6.2.7 count() : 데이터 개수 출력</h3>
+
+<pre><code class="language-python">players.count()
+</code></pre>
+
+<pre><code>ShortPassing    18159
+Dribbling       18159
+LongPassing     18159
+BallControl     18159
 dtype: int64
 </code></pre>
 
-<pre><code class="language-python">df1
+<h3 id="6-2-8-max-min-최대값-최소값-출력">6.2.8 max(), min() : 최대값, 최소값 출력</h3>
+
+<pre><code class="language-python">players.max()
+</code></pre>
+
+<pre><code>ShortPassing    93.0
+Dribbling       97.0
+LongPassing     93.0
+BallControl     96.0
+dtype: float64
+</code></pre>
+
+<pre><code class="language-python">players.min()
+</code></pre>
+
+<pre><code>ShortPassing    7.0
+Dribbling       4.0
+LongPassing     9.0
+BallControl     5.0
+dtype: float64
+</code></pre>
+
+<h3 id="6-2-9-idxmin-idxmax-최대값-최소값에-해당하는-인덱스-출력">6.2.9 idxmin(), idxmax():최대값,최소값에 해당하는 인덱스 출력</h3>
+
+<p>선수별 가장 낮은 능력치는?</p>
+
+<pre><code class="language-python">players.idxmin(axis = 1).head()
+</code></pre>
+
+<pre><code>Name
+L. Messi             LongPassing
+Cristiano Ronaldo    LongPassing
+Neymar Jr            LongPassing
+De Gea                 Dribbling
+K. De Bruyne           Dribbling
+dtype: object
+</code></pre>
+
+<p>스탯별 최고의 선수는?</p>
+
+<pre><code class="language-python">players.idxmax()
+</code></pre>
+
+<pre><code>ShortPassing    L. Modrić
+Dribbling        L. Messi
+LongPassing      T. Kroos
+BallControl      L. Messi
+dtype: object
+</code></pre>
+
+<h3 id="6-2-10-corr-cov-상관계수-공분산-출력">6.2.10 corr(), cov(): 상관계수, 공분산 출력</h3>
+
+<p>전체 컬럼별 상관계수 행렬 출력</p>
+
+<pre><code class="language-python">corr_mat = players.corr()
+corr_mat
 </code></pre>
 
 <div>
@@ -694,35 +823,61 @@ dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>3</td>
-      <td>5</td>
+      <th>ShortPassing</th>
+      <td>1.000000</td>
+      <td>0.843722</td>
+      <td>0.895722</td>
+      <td>0.911451</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>7</td>
-      <td>9</td>
-      <td>11</td>
+      <th>Dribbling</th>
+      <td>0.843722</td>
+      <td>1.000000</td>
+      <td>0.722465</td>
+      <td>0.938942</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>5</td>
-      <td>13</td>
-      <td>15</td>
+      <th>LongPassing</th>
+      <td>0.895722</td>
+      <td>0.722465</td>
+      <td>1.000000</td>
+      <td>0.788650</td>
+    </tr>
+    <tr>
+      <th>BallControl</th>
+      <td>0.911451</td>
+      <td>0.938942</td>
+      <td>0.788650</td>
+      <td>1.000000</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<pre><code class="language-python">df1.add(s1, axis = 0)
+<p>특정 컬럼과 상관도가 높은 순서대로 출력</p>
+
+<pre><code class="language-python">corr_mat['ShortPassing'].sort_values(ascending = False)
+</code></pre>
+
+<pre><code>ShortPassing    1.000000
+BallControl     0.911451
+LongPassing     0.895722
+Dribbling       0.843722
+Name: ShortPassing, dtype: float64
+</code></pre>
+
+<p>전체 컬럼별 공분산 행렬 출력</p>
+
+<pre><code class="language-python">cov_mat = players.cov()
+cov_mat
 </code></pre>
 
 <div>
@@ -743,102 +898,105 @@ dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
+      <th>ShortPassing</th>
+      <th>Dribbling</th>
+      <th>LongPassing</th>
+      <th>BallControl</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>6.0</td>
+      <th>ShortPassing</th>
+      <td>216.075157</td>
+      <td>234.531811</td>
+      <td>201.816840</td>
+      <td>223.564867</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>9.0</td>
-      <td>11.0</td>
-      <td>13.0</td>
+      <th>Dribbling</th>
+      <td>234.531811</td>
+      <td>357.602135</td>
+      <td>209.410657</td>
+      <td>296.282958</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>8.0</td>
-      <td>16.0</td>
-      <td>18.0</td>
+      <th>LongPassing</th>
+      <td>201.816840</td>
+      <td>209.410657</td>
+      <td>234.943613</td>
+      <td>201.712999</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>BallControl</th>
+      <td>223.564867</td>
+      <td>296.282958</td>
+      <td>201.712999</td>
+      <td>278.442466</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<pre><code class="language-python">df1.add(s1, axis = 1)
+<p>특정 컬럼과 공분산이 낮은 순서대로 출력</p>
+
+<pre><code class="language-python">cov_mat['Dribbling'].sort_values(ascending = True)
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre><code>LongPassing     209.410657
+ShortPassing    234.531811
+BallControl     296.282958
+Dribbling       357.602135
+Name: Dribbling, dtype: float64
+</code></pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<h2 id="6-3-통계량-시각화하기">6.3 통계량 시각화하기</h2>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2</td>
-      <td>5</td>
-      <td>8</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>8</td>
-      <td>11</td>
-      <td>14</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>6</td>
-      <td>15</td>
-      <td>18</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<h3 id="6-3-1-histogram-시각화">6.3.1 histogram 시각화</h3>
 
-<p>위의 Jupyter notebook 내용은 <a href="https://github.com/psyssai/PandasBasic/blob/master/PandasBasic_5_DataFrame_ArithmeticOperation.ipynb">여기</a> Github에서도 확인 할 수 있습니다,</p>
+<pre><code class="language-python">players.hist(figsize = (15,10))
+</code></pre>
 
-<p>다음 포스팅은 DataFrame의 통계에 대해 알아볼 예정입니다.<br />
-<a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic">다음 포스팅 바로 가기</a></p>
+<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6CA2E6A0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6CA2D898&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6C860080&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6C8872E8&gt;]],
+      dtype=object)
+</code></pre>
+
+<p><img src="https://psyssai.github.io/blog/BigData/pandas/7_dataframe_statistic_50_1.png" alt="png" /></p>
+
+<h3 id="6-3-2-상관계수-그래프-시각화">6.3.2 상관계수 그래프 시각화</h3>
+
+<pre><code class="language-python">pd.plotting.scatter_matrix(players, figsize = (15,10))
+</code></pre>
+
+<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E38F1D0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E6F50B8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E3D6358&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E3FD898&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E426E10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4573C8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E47F940&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4A8EF0&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4A8F28&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E4FE9E8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E525F60&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E556518&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E580A90&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E5B2048&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E5D95C0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000020A6E601B38&gt;]],
+      dtype=object)
+</code></pre>
+
+<p><img src="https://psyssai.github.io/blog/BigData/pandas/7_dataframe_statistic_52_1.png" alt="png" /></p>
+
+<p>위의 Jupyter notebook 내용은 <a href="https://github.com/psyssai/PandasBasic/blob/master/PandasBasic_6_DataFrame_Statistic.ipynb">여기</a> Github에서도 확인 할 수 있습니다.</p>
+
+<p>다음 포스팅은 Pandas DataFrame의 sort(정렬)와 rank(순위)에 관해 알아볼 예정입니다.<br />
+<a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank">다음포스팅 바로 가기</a></p>
 
 <p>감사합니다.</p>
-
-<pre><code class="language-python">
-</code></pre>
 
   </div>
 
@@ -866,16 +1024,16 @@ dtype: int64
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/dataframe-%EC%97%B0%EC%82%B0">DataFrame 연산</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/decribe">decribe</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/pandas-%EC%97%B0%EC%82%B0">pandas 연산</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98">상관계수</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D">데이터 분석</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%8B%9C%EA%B0%81%ED%99%94">시각화</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0">빅데이터</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/pandas-%ED%86%B5%EA%B3%84">Pandas 통계</a></li>
                 
             
         
@@ -913,8 +1071,8 @@ dtype: int64
 
 <ul class="actions pagination">
     
-        <li><a href="https://psyssai.github.io/blog/bigdata/pandas/5_dataframe_fileio/"
-                class="button big previous">[Pandas 기초]5.Pandas의 파일 입출력</a></li>
+        <li><a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/"
+                class="button big previous">[Pandas 기초]6.Pandas DataFrame 산술 연산</a></li>
     
 
     
@@ -1012,6 +1170,20 @@ dtype: int64
           <article class="mini-post">
             <header>
               <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-27'>
+                August 27, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/">[Pandas 기초]6.Pandas DataFrame 산술 연산</a>
               </h3>
               
@@ -1065,20 +1237,6 @@ dtype: int64
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://psyssai.github.io/blog/bigdata/pandas/2_series/">[Pandas 기초]2.Pandas의 자료구조-Series</a>
-              </h3>
-              
-              <time class="published" datetime='2019-08-15'>
-                August 15, 2019
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -1112,7 +1270,7 @@ dtype: int64
             <header>
               
                 <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
-                <span style="float:right;">6</span>
+                <span style="float:right;">7</span>
               
             </header>
           </article>
