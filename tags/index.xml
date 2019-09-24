@@ -6,10 +6,37 @@
     <description>Recent content in Tags on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sort_index</title>
+      <link>https://psyssai.github.io/tags/sort_index/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/sort_index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sort_values</title>
+      <link>https://psyssai.github.io/tags/sort_values/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/sort_values/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>데이터프레임 정렬</title>
+      <link>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%94%84%EB%A0%88%EC%9E%84-%EC%A0%95%EB%A0%AC/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%94%84%EB%A0%88%EC%9E%84-%EC%A0%95%EB%A0%AC/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>decribe</title>
