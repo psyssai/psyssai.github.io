@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>그룹 on PSYda</title>
+    <link>https://psyssai.github.io/tags/%EA%B7%B8%EB%A3%B9/</link>
+    <description>Recent content in 그룹 on PSYda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://psyssai.github.io/tags/%EA%B7%B8%EB%A3%B9/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</title>
+      <link>https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/</link>
+      <pubDate>Sat, 31 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/</guid>
+      <description>안녕하세요. PSYda입니다.
+이번 포스팅에서는 DataFrame의 집계(그루핑) 함수에 대해 알아보겠습니다.
+집계함수란 데이터를 몇몇의 집단으로 나누어 집단간 평균, 합계 등의 연산을 수행하는 함수를 얘기합니다.
+예를 들어 고등학교 학생 전체 성적 데이터가 있을 경우 반별로 영어성적에 대한 평균을 내거나, 과목별로 학생들의 성적에 대한 평균을 내는 것과 같습니다.
+예와 같이 집계함수를 적용하기 위해서는 3가지 값이 필요하며, 그 값은 그룹할 기준(반별 또는 과목별), 연산을 수행할 값(영어성적), 연산 함수(평균) 입니다.
+이번 포스팅에서 소개할 내용을 요약하면 아래와 같습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
