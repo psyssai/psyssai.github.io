@@ -6,10 +6,23 @@
     <description>Recent content on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</title>
+      <link>https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/</link>
+      <pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/</guid>
+      <description>안녕하세요. PSYda입니다.
+Series와 DataFrame을 다루다 보면 각각의 열/행 데이터에 함수를 일괄적으로 적용해야 할 때가 있습니다.
+이번 포스팅에서는 Series와 DataFrame의 요소에 함수를 적용하는 방법에 대해 알아보겠습니다.
+소개할 내용은 아래와 같습니다.
+ Series 각각 요소에 함수 일괄 적용(map함수)  DataFrame의 행, 열 별 함수 일괄 적용(apply함수) DataFrame의 요소에 함수 일괄 적용(applymap함수)   8. Series와 DataFrame에 외부 함수 적용하기  map 함수 : Series에서 사용하며 모든 요소에 함수 일괄 적용 apply 함수 : DataFrame에서 사용하며 각각의 행 또는 열(Series)에 함수 일괄 적용 applymap 함수 : DataFrame에서 사용하며 모든 요소에 함수 일괄 적용  8.</description>
+    </item>
     
     <item>
       <title>[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</title>

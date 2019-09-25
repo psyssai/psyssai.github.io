@@ -1,0 +1,1165 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/psyssai.github.io"
+        },
+        "articleSection" : "blog",
+        "name" : "[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기",
+        "headline" : "[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기",
+        "description" : "안녕하세요. PSYda입니다.\nSeries와 DataFrame을 다루다 보면 각각의 열\/행 데이터에 함수를 일괄적으로 적용해야 할 때가 있습니다.\n이번 포스팅에서는 Series와 DataFrame의 요소에 함수를 적용하는 방법에 대해 알아보겠습니다.\n소개할 내용은 아래와 같습니다.\n Series 각각 요소에 함수 일괄 적용(map함수)  DataFrame의 행, 열 별 함수 일괄 적용(apply함수) DataFrame의 요소에 함수 일괄 적용(applymap함수)   8. Series와 DataFrame에 외부 함수 적용하기  map 함수 : Series에서 사용하며 모든 요소에 함수 일괄 적용 apply 함수 : DataFrame에서 사용하며 각각의 행 또는 열(Series)에 함수 일괄 적용 applymap 함수 : DataFrame에서 사용하며 모든 요소에 함수 일괄 적용  8.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-08-29 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-08-29 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/psyssai.github.io\/blog\/bigdata\/pandas\/9_dataframe_applyfunction\/",
+        "wordCount" : "586",
+        "keywords" : [ "apply","applymap","dataframe 함수적용","map","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.57.2" />
+        
+
+
+        
+            <meta name="author" content="PSY">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기"/>
+<meta name="twitter:description" content="안녕하세요. PSYda입니다.
+Series와 DataFrame을 다루다 보면 각각의 열/행 데이터에 함수를 일괄적으로 적용해야 할 때가 있습니다.
+이번 포스팅에서는 Series와 DataFrame의 요소에 함수를 적용하는 방법에 대해 알아보겠습니다.
+소개할 내용은 아래와 같습니다.
+ Series 각각 요소에 함수 일괄 적용(map함수)  DataFrame의 행, 열 별 함수 일괄 적용(apply함수) DataFrame의 요소에 함수 일괄 적용(applymap함수)   8. Series와 DataFrame에 외부 함수 적용하기  map 함수 : Series에서 사용하며 모든 요소에 함수 일괄 적용 apply 함수 : DataFrame에서 사용하며 각각의 행 또는 열(Series)에 함수 일괄 적용 applymap 함수 : DataFrame에서 사용하며 모든 요소에 함수 일괄 적용  8."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기" />
+<meta property="og:description" content="안녕하세요. PSYda입니다.
+Series와 DataFrame을 다루다 보면 각각의 열/행 데이터에 함수를 일괄적으로 적용해야 할 때가 있습니다.
+이번 포스팅에서는 Series와 DataFrame의 요소에 함수를 적용하는 방법에 대해 알아보겠습니다.
+소개할 내용은 아래와 같습니다.
+ Series 각각 요소에 함수 일괄 적용(map함수)  DataFrame의 행, 열 별 함수 일괄 적용(apply함수) DataFrame의 요소에 함수 일괄 적용(applymap함수)   8. Series와 DataFrame에 외부 함수 적용하기  map 함수 : Series에서 사용하며 모든 요소에 함수 일괄 적용 apply 함수 : DataFrame에서 사용하며 각각의 행 또는 열(Series)에 함수 일괄 적용 applymap 함수 : DataFrame에서 사용하며 모든 요소에 함수 일괄 적용  8." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/" />
+<meta property="article:published_time" content="2019-08-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-29T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기">
+<meta itemprop="description" content="안녕하세요. PSYda입니다.
+Series와 DataFrame을 다루다 보면 각각의 열/행 데이터에 함수를 일괄적으로 적용해야 할 때가 있습니다.
+이번 포스팅에서는 Series와 DataFrame의 요소에 함수를 적용하는 방법에 대해 알아보겠습니다.
+소개할 내용은 아래와 같습니다.
+ Series 각각 요소에 함수 일괄 적용(map함수)  DataFrame의 행, 열 별 함수 일괄 적용(apply함수) DataFrame의 요소에 함수 일괄 적용(applymap함수)   8. Series와 DataFrame에 외부 함수 적용하기  map 함수 : Series에서 사용하며 모든 요소에 함수 일괄 적용 apply 함수 : DataFrame에서 사용하며 각각의 행 또는 열(Series)에 함수 일괄 적용 applymap 함수 : DataFrame에서 사용하며 모든 요소에 함수 일괄 적용  8.">
+
+
+<meta itemprop="datePublished" content="2019-08-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="586">
+
+
+
+<meta itemprop="keywords" content="apply,applymap,dataframe 함수적용,map," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/main.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/add-on.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/academicons.min.css">
+        
+
+        
+        
+            
+                
+            
+        
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://psyssai.github.io/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://psyssai.github.io/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://psyssai.github.io/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-29'>
+                                    August 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-28'>
+                                    August 28, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-27'>
+                                    August 27, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/">[Pandas 기초]6.Pandas DataFrame 산술 연산</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-22'>
+                                    August 22, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/5_dataframe_fileio/">[Pandas 기초]5.Pandas의 파일 입출력</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-20'>
+                                    August 20, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-08-29'>
+            August 29, 2019</time>
+        <span class="author">PSY</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<p>안녕하세요. PSYda입니다.</p>
+
+<p>Series와 DataFrame을 다루다 보면 각각의 열/행 데이터에 함수를 일괄적으로 적용해야 할 때가 있습니다.</p>
+
+<p>이번 포스팅에서는 Series와 DataFrame의 요소에 함수를 적용하는 방법에 대해 알아보겠습니다.</p>
+
+<p>소개할 내용은 아래와 같습니다.</p>
+
+<div id = "summary">
+<ul>
+<li>Series 각각 요소에 함수 일괄 적용(<strong><u><span style = "color:red">map함수</span></u></strong>) </li>
+<li>DataFrame의 행, 열 별 함수 일괄 적용(<strong><u><span style = "color:red">apply함수</span></u></strong>)</li>
+<li>DataFrame의 요소에 함수 일괄 적용(<strong><u><span style = "color:red">applymap함수</span></u></strong>)</li>
+</ul>
+</div>
+
+<h1 id="8-series와-dataframe에-외부-함수-적용하기">8. Series와 DataFrame에 외부 함수 적용하기</h1>
+
+<ul>
+<li><strong><u>map</u></strong> 함수 : <strong>Series</strong>에서 사용하며 <strong>모든 요소</strong>에 함수 일괄 적용</li>
+<li><strong><u>apply</u></strong> 함수 : <strong>DataFrame</strong>에서 사용하며 <strong>각각의 행 또는 열(Series)</strong>에 함수 일괄 적용</li>
+<li><strong><u>applymap</u></strong> 함수 : <strong>DataFrame</strong>에서 사용하며 <strong>모든 요소</strong>에 함수 일괄 적용</li>
+</ul>
+
+<h2 id="8-1-series의-각각의-요소에-함수-적용하기">8.1 Series의 각각의 요소에 함수 적용하기</h2>
+
+<p><span class = "hlblock">map(Function name)</span></p>
+
+<ul>
+<li><strong><u>Series</u></strong>에서 사용가능한 함수</li>
+<li>Series의 <strong><u>모든값(values)</u></strong>에 대해 입력된 함수 일괄 적용
+<div class = "CenterImg">
+<img src = "/img/Pandas/mapFunction.jpg" alt="mapFunction" />
+</div></li>
+</ul>
+
+<p>pandas library import</p>
+
+<pre><code class="language-python">import pandas as pd
+from pandas import Series , DataFrame
+</code></pre>
+
+<pre><code class="language-python">srAge = Series([10,13,15,23,22,36])
+srAge
+</code></pre>
+
+<pre><code>0    10
+1    13
+2    15
+3    23
+4    22
+5    36
+dtype: int64
+</code></pre>
+
+<p>나이의 범위에 따라 10대, 20대, 30대로 변경하는 함수 생성</p>
+
+<ul>
+<li>10~19 : 10대</li>
+<li>20~29 : 20대</li>
+<li>30~39 : 30대</li>
+<li>그외 : NaN값</li>
+</ul>
+
+<p>으로 변경</p>
+
+<pre><code class="language-python">def weekday2weeknumber(age):
+    if age &gt;= 10 and age &lt; 20:
+        ageRange = '10대'
+    elif age &gt;= 20 and age &lt; 30:
+        ageRange = '20대'
+    elif age &gt;= 30 and age &lt; 40:
+        ageRange = '30대'
+    else:
+        ageRange = pd.np.nan
+    return ageRange
+</code></pre>
+
+<p>map 함수로 Series의 각각의 값에 함수 적용</p>
+
+<pre><code class="language-python">srAgeRange = srAge.map(weekday2weeknumber)
+srAgeRange
+</code></pre>
+
+<pre><code>0    10대
+1    10대
+2    10대
+3    20대
+4    20대
+5    30대
+dtype: object
+</code></pre>
+
+<h2 id="8-2-dataframe의-각-열-또는-행에-함수-일괄-적용하기">8.2 DataFrame의 각 열 또는 행에 함수 일괄 적용하기</h2>
+
+<p><span class ="hlblock">apply(Function name)</span></p>
+
+<ul>
+<li><strong><u>DataFrame</u></strong>에서 사용 가능한 함수</li>
+<li>DataFrame의 <strong><u>행 또는 열에 해당하는 Series</u></strong>에 함수를 일괄 적용</li>
+</ul>
+
+<p><strong>axis 옵션</strong></p>
+
+<ul>
+<li><strong><u>axis = 0(Defualt)</u></strong> : 열기준 함수 적용</li>
+<li><strong><u>axis = 1</u></strong> : 행기준 함수 적용
+<div class = "CenterImg">
+<img src = "/img/Pandas/applyFunction.jpg" alt="applyFunction" />
+</div></li>
+</ul>
+
+<p>DataFrame 생성</p>
+
+<pre><code class="language-python">df = DataFrame([[1,3,5],[4,5,6],[7,8,10]])
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7</td>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>행 또는 열의 최대값과 최소값의 차이를 구하는 함수 생성</p>
+
+<pre><code class="language-python">def maxMinusMin(sr):
+    return sr.max() - sr.min()
+</code></pre>
+
+<pre><code class="language-python">df.apply(maxMinusMin, axis = 0)
+</code></pre>
+
+<pre><code>0    6
+1    5
+2    5
+dtype: int64
+</code></pre>
+
+<pre><code class="language-python">df.apply(maxMinusMin, axis = 1)
+</code></pre>
+
+<pre><code>0    4
+1    2
+2    3
+dtype: int64
+</code></pre>
+
+<p>return값을 조정하여 <strong><u>여러개의 열 또는 컬럼으로 출력</u></strong> 가능</p>
+
+<pre><code class="language-python">def maxMinusMin2(sr):
+    sr2 = Series([sr.max(), sr.min(), sr.max()-sr.min()], index = ['최대값','최소값','차이'])
+    return sr2
+</code></pre>
+
+<pre><code class="language-python">df.apply(maxMinusMin2, axis =0)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>최대값</th>
+      <td>7</td>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>최소값</th>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>차이</th>
+      <td>6</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.apply(maxMinusMin2, axis =1)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>최대값</th>
+      <th>최소값</th>
+      <th>차이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>7</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="8-3-datafrmae의-각각-요소에-함수-일괄-적용하기">8.3 DataFrmae의 각각 요소에 함수 일괄 적용하기</h2>
+
+<p><span class = "hlblock">applymap(Function name)</span></p>
+
+<ul>
+<li><strong><u>DataFrame</u></strong>에서 사용가능한 함수</li>
+<li>DataFrame의 <strong><u>모든값(values)</u></strong>에 대해 함수 일괄 적용</li>
+</ul>
+
+<p><img src = "/img/pandas/applymapFunction.jpg" alt="applymapFunction" /></p>
+
+<p>DataFrame 생성</p>
+
+<pre><code class="language-python">df2 = DataFrame([[1,1,1],[2,2,2],[3,3,3]])
+df2
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>입력값의 제곱을 리턴하는 함수 생성</p>
+
+<pre><code class="language-python">def square(x):
+    y = x * x
+    return y
+</code></pre>
+
+<pre><code class="language-python">df2.applymap(square)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>위의 Jupyter notebook 내용은 <a href="https://github.com/psyssai/PandasBasic/blob/master/PandasBasic_8_Pandas_apply_function.ipynb">여기</a> Github에서도 확인 할 수 있습니다.</p>
+
+<p>다음 포스팅은 Pandas DataFrame 집계(그룹핑) 함수에 대해 알아볼 예정입니다.</p>
+
+<p><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_grouping">다음 포스팅 바로가기</a></p>
+
+<p>감사합니다.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas">빅데이터분석/Pandas</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/apply">apply</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/applymap">applymap</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/dataframe-%ED%95%A8%EC%88%98%EC%A0%81%EC%9A%A9">dataframe 함수적용</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/map">map</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/"
+                class="button big previous">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='https://psyssai.github.io/'><img src="https://psyssai.github.io/img/main/logo1.jpg" width="200" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>PSYda</h2>
+        <p>평범한 개발자 입니다. 틈틈히 공부한 내용을 올리고 있습니다.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-29'>
+                August 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-28'>
+                August 28, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/">[Pandas 기초]7.Pandas DataFrame 통계</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-27'>
+                August 27, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/6_dataframe_calc/">[Pandas 기초]6.Pandas DataFrame 산술 연산</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-22'>
+                August 22, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/5_dataframe_fileio/">[Pandas 기초]5.Pandas의 파일 입출력</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-20'>
+                August 20, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://psyssai.github.io/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
+                <span style="float:right;">9</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          PSYda
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://psyssai.github.io/js/util.js"></script>
+      <script src="https://psyssai.github.io/js/main.js"></script>
+      <script src="https://psyssai.github.io/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

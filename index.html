@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-08-28 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-08-28 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-08-29 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-08-29 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/psyssai.github.io\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -57,7 +57,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://psyssai.github.io/" />
 
-<meta property="og:updated_time" content="2019-08-28T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-08-29T00:00:00+00:00" />
 
         <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
         <meta property="og:image:type" content="image/png">
@@ -220,6 +220,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-29'>
+                                    August 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></h3>
                                 
                                 <time class="published" datetime=
@@ -266,18 +278,6 @@
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/4_dataframe_merge/">[Pandas 기초]4.여러 DataFrame 연결하기(Join)</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-08-17'>
-                                    August 17, 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -300,21 +300,19 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></h2>
+            <h2><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a></h2>
         
-        
-            <p>Learn What is sort and rank function for DataFrame</p>
         
     </div>
     <div class="meta">
         
 
         <time class="published"
-            datetime='2019-08-28'>
-            August 28, 2019</time>
+            datetime='2019-08-29'>
+            August 29, 2019</time>
         <span class="author">PSY</span>
         
-            <p>9 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -361,317 +359,120 @@
 
 <p>안녕하세요. PSYda입니다.</p>
 
-<p>이번 포스팅에서는 Pandas DataFrame의 sort(정렬), rank(순위)에 대해 알아보겠습니다.</p>
+<p>Series와 DataFrame을 다루다 보면 각각의 열/행 데이터에 함수를 일괄적으로 적용해야 할 때가 있습니다.</p>
+
+<p>이번 포스팅에서는 Series와 DataFrame의 요소에 함수를 적용하는 방법에 대해 알아보겠습니다.</p>
 
 <p>소개할 내용은 아래와 같습니다.</p>
 
 <div id = "summary">
 <ul>
-    <li>DataFrame의 정렬 함수(<strong><u><span style="color:red">sort_values, sort_index</span></u></strong>)</li>
-    <li>DataFrame의 순위 측정 함수(<strong><u><span style="color:red">rank</span></u></strong>)</li>    
+<li>Series 각각 요소에 함수 일괄 적용(<strong><u><span style = "color:red">map함수</span></u></strong>) </li>
+<li>DataFrame의 행, 열 별 함수 일괄 적용(<strong><u><span style = "color:red">apply함수</span></u></strong>)</li>
+<li>DataFrame의 요소에 함수 일괄 적용(<strong><u><span style = "color:red">applymap함수</span></u></strong>)</li>
 </ul>
 </div>
 
-<p>실습에 사용한 데이터는 fifa19에 등장하는 축구선수들의 능력치 데이터 입니다.<br />
-<a href="https://psyssai.github.io/data/pandas/Ch6_1_fifaStats.csv">여기</a>에서 다운 받을 수 있습니다.</p>
-
-<h1 id="7-dataframe의-sort-rank-함수">7. DataFrame의 sort, rank 함수</h1>
+<h1 id="8-series와-dataframe에-외부-함수-적용하기">8. Series와 DataFrame에 외부 함수 적용하기</h1>
 
 <ul>
-<li>sort 함수 : 데이터를 정렬하는 함수(sort_values, sort_index)</li>
-<li>rank 함수 : 데이터의 순위를 매기는 함수</li>
+<li><strong><u>map</u></strong> 함수 : <strong>Series</strong>에서 사용하며 <strong>모든 요소</strong>에 함수 일괄 적용</li>
+<li><strong><u>apply</u></strong> 함수 : <strong>DataFrame</strong>에서 사용하며 <strong>각각의 행 또는 열(Series)</strong>에 함수 일괄 적용</li>
+<li><strong><u>applymap</u></strong> 함수 : <strong>DataFrame</strong>에서 사용하며 <strong>모든 요소</strong>에 함수 일괄 적용</li>
 </ul>
 
-<h2 id="7-1-dataframe의-sort">7.1 DataFrame의 sort</h2>
+<h2 id="8-1-series의-각각의-요소에-함수-적용하기">8.1 Series의 각각의 요소에 함수 적용하기</h2>
 
-<p>DataFrame에서는 sort를 index 및 column 기준으로 sort를 할 수 있다.</p>
-
-<ul>
-<li><strong><span style="color:red">sort_values(axis = 0)</span></strong> : <strong><u>열방향</u></strong> 정렬(default)</li>
-<li><strong><span style="color:red">sort_values(axis = 1)</span></strong> : <strong><u>행방향</u></strong> 정렬</li>
-<li><strong><span style="color:red">sort_index(axis = 0)</span></strong> : <strong><u>인덱스명</u></strong> 정렬(defualt)</li>
-<li><strong><span style="color:red">sort_index(axis = 1)</span></strong> : <strong><u>컬럼명</u></strong> 정렬</li>
-</ul>
-
-<p>정렬은 ascending 옵션을 통해 오름차순과 내림차순 정렬이 가능하다.</p>
+<p><span class = "hlblock">map(Function name)</span></p>
 
 <ul>
-<li><strong><span style="color:red">ascending = True</span></strong> : <strong><u>오름차순 정렬</u></strong>, 영어의 경우 a 부터</li>
-<li><strong><span style="color:red">ascending = False</span></strong> : <strong><u>내림차순 정렬</u></strong>, 영어의 경우 z부터</li>
-</ul>
-
-<h3 id="7-1-1-sort-values-열방향-또는-행방향-데이터-정렬">7.1.1 sort_values() : 열방향 또는 행방향 데이터 정렬</h3>
-
-<p><strong><u>sort_values</u></strong> 함수 옵션</p>
-
-<ul>
-<li><strong><span style="color:red">ascending = True</span></strong> : True 이면 오름차순, False이면 내림차순 정렬</li>
-<li><strong><span style="color:red">inplace = False</span></strong> : True 이면 정렬한 값을 DataFrame에 바로 반영</li>
-<li><strong><span style="color:red">by</span></strong> : 정렬할 기준 변수 지정</li>
-<li><strong><span style="color:red">na_position = last</span></strong> : NaN값 위치 지정, last이면 마지막, first이면 처음</li>
-<li><strong><span style="color:red">axis = 0</span></strong> : 0이면 열방향 정렬, 1이면 행방향 정렬</li>
+<li><strong><u>Series</u></strong>에서 사용가능한 함수</li>
+<li>Series의 <strong><u>모든값(values)</u></strong>에 대해 입력된 함수 일괄 적용
+<div class = "CenterImg">
+<img src = "/img/Pandas/mapFunction.jpg" alt="mapFunction" />
+</div></li>
 </ul>
 
 <p>pandas library import</p>
 
 <pre><code class="language-python">import pandas as pd
-from pandas import Series, DataFrame
-import numpy as np
+from pandas import Series , DataFrame
 </code></pre>
 
-<pre><code class="language-python">players = pd.read_csv('data/Ch6_1_fifaStats.csv', index_col = 'Name')
-players.head()
+<pre><code class="language-python">srAge = Series([10,13,15,23,22,36])
+srAge
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre><code>0    10
+1    13
+2    15
+3    23
+4    22
+5    36
+dtype: int64
+</code></pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>L. Messi</th>
-      <td>90.0</td>
-      <td>97.0</td>
-      <td>87.0</td>
-      <td>96.0</td>
-    </tr>
-    <tr>
-      <th>Cristiano Ronaldo</th>
-      <td>81.0</td>
-      <td>88.0</td>
-      <td>77.0</td>
-      <td>94.0</td>
-    </tr>
-    <tr>
-      <th>Neymar Jr</th>
-      <td>84.0</td>
-      <td>96.0</td>
-      <td>78.0</td>
-      <td>95.0</td>
-    </tr>
-    <tr>
-      <th>De Gea</th>
-      <td>50.0</td>
-      <td>18.0</td>
-      <td>51.0</td>
-      <td>42.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>92.0</td>
-      <td>86.0</td>
-      <td>91.0</td>
-      <td>91.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h4 id="7-1-1-1-by-옵션">7.1.1.1 by 옵션</h4>
-
-<p>DataFrame에서 정렬할 변수를 지정 할 수 있다.(Serise의 경우 한 컬럼이므로 by옵션 설정 필요 없음)</p>
+<p>나이의 범위에 따라 10대, 20대, 30대로 변경하는 함수 생성</p>
 
 <ul>
-<li><strong><u>axis = 0</u></strong> 이면 컬럼명을 정렬 기준 변수로 지정(default)</li>
-<li><strong><u>axis = 1</u></strong> 이면 인덱스명을 정렬 기준 변수로 지정</li>
+<li>10~19 : 10대</li>
+<li>20~29 : 20대</li>
+<li>30~39 : 30대</li>
+<li>그외 : NaN값</li>
 </ul>
 
-<p>ShortPassing 능력치 컬럼 기준 오름차순 정렬</p>
+<p>으로 변경</p>
 
-<pre><code class="language-python">players.sort_values(by = 'ShortPassing', axis = 0).head()
+<pre><code class="language-python">def weekday2weeknumber(age):
+    if age &gt;= 10 and age &lt; 20:
+        ageRange = '10대'
+    elif age &gt;= 20 and age &lt; 30:
+        ageRange = '20대'
+    elif age &gt;= 30 and age &lt; 40:
+        ageRange = '30대'
+    else:
+        ageRange = pd.np.nan
+    return ageRange
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<p>map 함수로 Series의 각각의 값에 함수 적용</p>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code class="language-python">srAgeRange = srAge.map(weekday2weeknumber)
+srAgeRange
+</code></pre>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Deng Xiaofei</th>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>12.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>Zhang Chong</th>
-      <td>7.0</td>
-      <td>16.0</td>
-      <td>9.0</td>
-      <td>22.0</td>
-    </tr>
-    <tr>
-      <th>Cheng Yuelei</th>
-      <td>8.0</td>
-      <td>13.0</td>
-      <td>10.0</td>
-      <td>18.0</td>
-    </tr>
-    <tr>
-      <th>A. Donnarumma</th>
-      <td>11.0</td>
-      <td>19.0</td>
-      <td>11.0</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>Gabri Prestão</th>
-      <td>11.0</td>
-      <td>18.0</td>
-      <td>12.0</td>
-      <td>20.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<pre><code>0    10대
+1    10대
+2    10대
+3    20대
+4    20대
+5    30대
+dtype: object
+</code></pre>
 
-<h4 id="7-1-1-2-ascending-옵션">7.1.1.2 ascending 옵션</h4>
+<h2 id="8-2-dataframe의-각-열-또는-행에-함수-일괄-적용하기">8.2 DataFrame의 각 열 또는 행에 함수 일괄 적용하기</h2>
+
+<p><span class ="hlblock">apply(Function name)</span></p>
 
 <ul>
-<li><strong><u>True(Default)</u></strong> : 오른차순 정렬</li>
-<li><strong><u>False</u></strong> : 내림차순 정렬,</li>
+<li><strong><u>DataFrame</u></strong>에서 사용 가능한 함수</li>
+<li>DataFrame의 <strong><u>행 또는 열에 해당하는 Series</u></strong>에 함수를 일괄 적용</li>
 </ul>
 
-<p>ShortPassing 컬럼 기준 내림차순 정렬</p>
-
-<pre><code class="language-python">players.sort_values(ascending = False,by = 'ShortPassing').head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>93.0</td>
-      <td>89.0</td>
-      <td>87.0</td>
-      <td>94.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>93.0</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>93.0</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>92.0</td>
-      <td>81.0</td>
-      <td>93.0</td>
-      <td>90.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>92.0</td>
-      <td>86.0</td>
-      <td>91.0</td>
-      <td>91.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>91.0</td>
-      <td>84.0</td>
-      <td>88.0</td>
-      <td>91.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h4 id="7-1-1-3-na-position-옵션">7.1.1.3 na_position 옵션</h4>
+<p><strong>axis 옵션</strong></p>
 
 <ul>
-<li><strong><u>&lsquo;last&rsquo;(Defualt)</u></strong> : 결측값(NaN)을 뒤로 정렬</li>
-<li><strong><u>&lsquo;first&rsquo;</u></strong> : 결측값(NaN)을 앞으로 정렬</li>
+<li><strong><u>axis = 0(Defualt)</u></strong> : 열기준 함수 적용</li>
+<li><strong><u>axis = 1</u></strong> : 행기준 함수 적용
+<div class = "CenterImg">
+<img src = "/img/Pandas/applyFunction.jpg" alt="applyFunction" />
+</div></li>
 </ul>
 
-<p>ShortPassing 컬럼 기준 내림차순 정렬하면서 NaN을 처음에 배치</p>
+<p>DataFrame 생성</p>
 
-<pre><code class="language-python">players.sort_values(ascending = False,by = 'ShortPassing', na_position='first').head()
+<pre><code class="language-python">df = DataFrame([[1,3,5],[4,5,6],[7,8,10]])
+df
 </code></pre>
 
 <div>
@@ -692,70 +493,178 @@ players.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>J. McNulty</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>0</th>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>J. Barrera</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
     </tr>
     <tr>
-      <th>J. Stead</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>A. Semprini</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>R. Bingham</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>2</th>
+      <td>7</td>
+      <td>8</td>
+      <td>10</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<h4 id="7-1-1-4-inplace-옵션">7.1.1.4 inplace 옵션</h4>
+<p>행 또는 열의 최대값과 최소값의 차이를 구하는 함수 생성</p>
+
+<pre><code class="language-python">def maxMinusMin(sr):
+    return sr.max() - sr.min()
+</code></pre>
+
+<pre><code class="language-python">df.apply(maxMinusMin, axis = 0)
+</code></pre>
+
+<pre><code>0    6
+1    5
+2    5
+dtype: int64
+</code></pre>
+
+<pre><code class="language-python">df.apply(maxMinusMin, axis = 1)
+</code></pre>
+
+<pre><code>0    4
+1    2
+2    3
+dtype: int64
+</code></pre>
+
+<p>return값을 조정하여 <strong><u>여러개의 열 또는 컬럼으로 출력</u></strong> 가능</p>
+
+<pre><code class="language-python">def maxMinusMin2(sr):
+    sr2 = Series([sr.max(), sr.min(), sr.max()-sr.min()], index = ['최대값','최소값','차이'])
+    return sr2
+</code></pre>
+
+<pre><code class="language-python">df.apply(maxMinusMin2, axis =0)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>최대값</th>
+      <td>7</td>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>최소값</th>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>차이</th>
+      <td>6</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.apply(maxMinusMin2, axis =1)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>최대값</th>
+      <th>최소값</th>
+      <th>차이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>7</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="8-3-datafrmae의-각각-요소에-함수-일괄-적용하기">8.3 DataFrmae의 각각 요소에 함수 일괄 적용하기</h2>
+
+<p><span class = "hlblock">applymap(Function name)</span></p>
 
 <ul>
-<li><strong><u>False(Default)</u></strong> : 정렬된 내용을 단순 출력만함</li>
-<li><strong><u>True</u></strong> : 정렬된 내용을 DataFrame에 저장</li>
+<li><strong><u>DataFrame</u></strong>에서 사용가능한 함수</li>
+<li>DataFrame의 <strong><u>모든값(values)</u></strong>에 대해 함수 일괄 적용</li>
 </ul>
 
-<p>players DataFrame에 정렬된 데이터를 저장</p>
+<p><img src = "/img/pandas/applymapFunction.jpg" alt="applymapFunction" /></p>
 
-<pre><code class="language-python">players.sort_values(ascending = False,by = 'ShortPassing', inplace = True)
-players.head()
+<p>DataFrame 생성</p>
+
+<pre><code class="language-python">df2 = DataFrame([[1,1,1],[2,2,2],[3,3,3]])
+df2
 </code></pre>
 
 <div>
@@ -776,69 +685,42 @@ players.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>David Silva</th>
-      <td>93.0</td>
-      <td>89.0</td>
-      <td>87.0</td>
-      <td>94.0</td>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>L. Modrić</th>
-      <td>93.0</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>93.0</td>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>T. Kroos</th>
-      <td>92.0</td>
-      <td>81.0</td>
-      <td>93.0</td>
-      <td>90.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>92.0</td>
-      <td>86.0</td>
-      <td>91.0</td>
-      <td>91.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>91.0</td>
-      <td>84.0</td>
-      <td>88.0</td>
-      <td>91.0</td>
+      <th>2</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<h4 id="7-1-1-5-axis-옵션">7.1.1.5 axis 옵션</h4>
+<p>입력값의 제곱을 리턴하는 함수 생성</p>
 
-<ul>
-<li><strong><u>axis = 0</u></strong> : 열방향으로 정렬(위에서 아래로)</li>
-<li><strong><u>axis = 1</u></strong> : 행방향으로 정렬(좌에서 우로)</li>
-</ul>
+<pre><code class="language-python">def square(x):
+    y = x * x
+    return y
+</code></pre>
 
-<p>Index 명의 David Silva 기준으로 행방향 정렬</p>
-
-<pre><code class="language-python">players.sort_values(axis = 1, by = 'David Silva').head()
+<pre><code class="language-python">df2.applymap(square)
 </code></pre>
 
 <div>
@@ -859,1095 +741,39 @@ players.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>LongPassing</th>
-      <th>Dribbling</th>
-      <th>ShortPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>David Silva</th>
-      <td>87.0</td>
-      <td>89.0</td>
-      <td>93.0</td>
-      <td>94.0</td>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>L. Modrić</th>
-      <td>88.0</td>
-      <td>90.0</td>
-      <td>93.0</td>
-      <td>93.0</td>
+      <th>1</th>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
-      <th>T. Kroos</th>
-      <td>93.0</td>
-      <td>81.0</td>
-      <td>92.0</td>
-      <td>90.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>91.0</td>
-      <td>86.0</td>
-      <td>92.0</td>
-      <td>91.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>88.0</td>
-      <td>84.0</td>
-      <td>91.0</td>
-      <td>91.0</td>
+      <th>2</th>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<h3 id="7-1-2-sort-index-인덱스명-정렬">7.1.2 sort_index() : 인덱스명 정렬</h3>
+<p>위의 Jupyter notebook 내용은 <a href="https://github.com/psyssai/PandasBasic/blob/master/PandasBasic_8_Pandas_apply_function.ipynb">여기</a> Github에서도 확인 할 수 있습니다.</p>
 
-<p>sort_index 함수의 옵션(sort_values 와 옵션이 거의 동일)</p>
+<p>다음 포스팅은 Pandas DataFrame 집계(그룹핑) 함수에 대해 알아볼 예정입니다.</p>
 
-<ul>
-<li><strong><u>axis = 0(Default)</u></strong> : index명을 정렬</li>
-<li><strong><u>axis = 1</u></strong> : 컬럼명을 정렬</li>
-</ul>
-
-<p>A 부터 오름차순 정렬</p>
-
-<pre><code class="language-python">players.sort_index().head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A. Abang</th>
-      <td>52.0</td>
-      <td>56.0</td>
-      <td>28.0</td>
-      <td>59.0</td>
-    </tr>
-    <tr>
-      <th>A. Abdellaoui</th>
-      <td>53.0</td>
-      <td>39.0</td>
-      <td>45.0</td>
-      <td>47.0</td>
-    </tr>
-    <tr>
-      <th>A. Abdennour</th>
-      <td>58.0</td>
-      <td>48.0</td>
-      <td>62.0</td>
-      <td>51.0</td>
-    </tr>
-    <tr>
-      <th>A. Abdi</th>
-      <td>74.0</td>
-      <td>70.0</td>
-      <td>72.0</td>
-      <td>74.0</td>
-    </tr>
-    <tr>
-      <th>A. Abdu Jaber</th>
-      <td>49.0</td>
-      <td>61.0</td>
-      <td>40.0</td>
-      <td>59.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>내림차순 정렬</p>
-
-<pre><code class="language-python">players.sort_index(ascending = False).head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Óscar Whalley</th>
-      <td>32.0</td>
-      <td>16.0</td>
-      <td>30.0</td>
-      <td>18.0</td>
-    </tr>
-    <tr>
-      <th>Óscar Valentín</th>
-      <td>68.0</td>
-      <td>58.0</td>
-      <td>63.0</td>
-      <td>68.0</td>
-    </tr>
-    <tr>
-      <th>Óscar Plano</th>
-      <td>68.0</td>
-      <td>72.0</td>
-      <td>65.0</td>
-      <td>73.0</td>
-    </tr>
-    <tr>
-      <th>Óscar Pinchi</th>
-      <td>65.0</td>
-      <td>69.0</td>
-      <td>63.0</td>
-      <td>70.0</td>
-    </tr>
-    <tr>
-      <th>Óscar Gil</th>
-      <td>37.0</td>
-      <td>57.0</td>
-      <td>34.0</td>
-      <td>50.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>컬럼명 정렬</p>
-
-<pre><code class="language-python">players.sort_index(axis = 1).head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>BallControl</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>ShortPassing</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>94.0</td>
-      <td>89.0</td>
-      <td>87.0</td>
-      <td>93.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>93.0</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>93.0</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>90.0</td>
-      <td>81.0</td>
-      <td>93.0</td>
-      <td>92.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>91.0</td>
-      <td>86.0</td>
-      <td>91.0</td>
-      <td>92.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>91.0</td>
-      <td>84.0</td>
-      <td>88.0</td>
-      <td>91.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h2 id="7-2-dataframe의-rank">7.2 DataFrame의 rank</h2>
-
-<p>rank 함수 (데이터의 순위를 측정) 옵션</p>
-
-<ul>
-<li><strong><span style="color:red">ascending</span></strong> : False 이면 숫자가 큰 것이 순위가 높음(rank 값이 작음)</li>
-<li><strong><span style="color:red">axis</span></strong> : 0이면 열방향, 1이면 행방향으로 순위 측정</li>
-<li><strong><span style="color:red">method</span></strong> : 동점인 경우 순위 측정에 사용할 방법(평균, 최소값, 최대값 등)</li>
-<li><strong><span style="color:red">pct</span></strong> : True 이면 상위 몇% 인지 보여줌</li>
-</ul>
-
-<h3 id="7-2-1-ascending-옵션">7.2.1 ascending 옵션</h3>
-
-<ul>
-<li><strong><u>True(Default)</u></strong> : 데이터 수치가 클 수록 rank값이 커짐(순위가 낮아짐)</li>
-<li><strong><u>False</u></strong> : 데이터 수치가 작을 수록 rank값이 작아짐(순위가 높아짐)</li>
-</ul>
-
-<p>컬럼별로 순위 측정(데이터 수치가 클수록 rank가 높음)</p>
-
-<pre><code class="language-python">players.rank().head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>18158.5</td>
-      <td>18131.5</td>
-      <td>18145.0</td>
-      <td>18155.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>18158.5</td>
-      <td>18141.5</td>
-      <td>18150.5</td>
-      <td>18152.5</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>18156.5</td>
-      <td>17790.5</td>
-      <td>18159.0</td>
-      <td>18137.5</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>18156.5</td>
-      <td>18061.0</td>
-      <td>18158.0</td>
-      <td>18145.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>18155.0</td>
-      <td>17982.5</td>
-      <td>18150.5</td>
-      <td>18145.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">players.rank(ascending = False).head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>1.5</td>
-      <td>28.5</td>
-      <td>15.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>1.5</td>
-      <td>18.5</td>
-      <td>9.5</td>
-      <td>7.5</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>3.5</td>
-      <td>369.5</td>
-      <td>1.0</td>
-      <td>22.5</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>3.5</td>
-      <td>99.0</td>
-      <td>2.0</td>
-      <td>15.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>5.0</td>
-      <td>177.5</td>
-      <td>9.5</td>
-      <td>15.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="7-2-2-axis-옵션">7.2.2 axis 옵션</h3>
-
-<ul>
-<li><strong><u>axis = 0(Defualt)</u></strong> : 열방향으로 순위 측정</li>
-<li><strong><u>axis = 1</u></strong> : 행방향으로 순위 측정</li>
-</ul>
-
-<p>행방향으루 순위 측정(David Silva의 경우 BallControl 컬럼의 순위가 가장 높음)</p>
-
-<pre><code class="language-python">players.rank(ascending = False, axis = 1).head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>1.5</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>1.5</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>2.5</td>
-      <td>2.5</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>1.5</td>
-      <td>4.0</td>
-      <td>3.0</td>
-      <td>1.5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="7-2-3-method-옵션">7.2.3 method 옵션</h3>
-
-<p>데이터 수치가 동점일 경우 순위 측정 방법</p>
-
-<ul>
-<li><strong><u>average(Default)</u></strong> : 평균으로 순위 측정( Ex. 1위가 2명인경우 1.5 )</li>
-<li><strong><u>first</u></strong> : 동점없이 정렬된 순서대로 순위 측정( Ex. 1위가 3명인 경위 위에서부터 1,2,3 )</li>
-<li><strong><u>max</u></strong> : 동점인 데이터들 중 순위가 낮은 값 선정( Ex. 1위가 3명인 경우 3 )</li>
-<li><strong><u>min</u></strong> : 동점인 데이터들 중 순위가 높은 값 선정( Ex. 1위가 3명인 경우 1등, 4번째 데이터의 경우 4등 )</li>
-<li><strong><u>dense</u></strong> : min과 비슷하지만 동점 다음 데이터 순위 측정에서 차이가 있음( Ex. 1위가 3명인 경우 1등, 4번째 데이터의 경우 2등 )</li>
-</ul>
-
-<p>순위가 동점이면 평균값 측정(David Silva와 L.Modric이 공동 1등이므로 1.5값 부여)</p>
-
-<pre><code class="language-python">players.rank(ascending = False, method = 'average').head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>1.5</td>
-      <td>28.5</td>
-      <td>15.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>1.5</td>
-      <td>18.5</td>
-      <td>9.5</td>
-      <td>7.5</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>3.5</td>
-      <td>369.5</td>
-      <td>1.0</td>
-      <td>22.5</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>3.5</td>
-      <td>99.0</td>
-      <td>2.0</td>
-      <td>15.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>5.0</td>
-      <td>177.5</td>
-      <td>9.5</td>
-      <td>15.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">players.rank(ascending = False, method = 'first').head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>1.0</td>
-      <td>25.0</td>
-      <td>11.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>2.0</td>
-      <td>13.0</td>
-      <td>9.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>3.0</td>
-      <td>332.0</td>
-      <td>1.0</td>
-      <td>18.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>4.0</td>
-      <td>80.0</td>
-      <td>2.0</td>
-      <td>13.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>5.0</td>
-      <td>153.0</td>
-      <td>10.0</td>
-      <td>14.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">players.rank(ascending = False, method = 'max').head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>2.0</td>
-      <td>32.0</td>
-      <td>19.0</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>2.0</td>
-      <td>24.0</td>
-      <td>10.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>4.0</td>
-      <td>407.0</td>
-      <td>1.0</td>
-      <td>27.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>4.0</td>
-      <td>118.0</td>
-      <td>2.0</td>
-      <td>17.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>5.0</td>
-      <td>202.0</td>
-      <td>10.0</td>
-      <td>17.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">players.rank(ascending = False, method = 'min').head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>1.0</td>
-      <td>25.0</td>
-      <td>11.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>1.0</td>
-      <td>13.0</td>
-      <td>9.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>3.0</td>
-      <td>332.0</td>
-      <td>1.0</td>
-      <td>18.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>3.0</td>
-      <td>80.0</td>
-      <td>2.0</td>
-      <td>13.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>5.0</td>
-      <td>153.0</td>
-      <td>9.0</td>
-      <td>13.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">players.rank(ascending = False, method = 'dense').head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>1.0</td>
-      <td>9.0</td>
-      <td>6.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>1.0</td>
-      <td>8.0</td>
-      <td>5.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>2.0</td>
-      <td>17.0</td>
-      <td>1.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>2.0</td>
-      <td>12.0</td>
-      <td>2.0</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>3.0</td>
-      <td>14.0</td>
-      <td>5.0</td>
-      <td>6.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3 id="7-2-4-pct-옵션">7.2.4 pct 옵션</h3>
-
-<ul>
-<li><strong><u>False(Default)</u></strong> : rank를 순위(숫자)로 매김</li>
-<li><strong><u>True</u></strong> : 순위의 퍼센테이지값으로 매김(ex. 4명 중 1등인 경우 0.25, 4등은 1.0)</li>
-</ul>
-
-<p>players 데이터 확인</p>
-
-<pre><code class="language-python">players.head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>93.0</td>
-      <td>89.0</td>
-      <td>87.0</td>
-      <td>94.0</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>93.0</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>93.0</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>92.0</td>
-      <td>81.0</td>
-      <td>93.0</td>
-      <td>90.0</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>92.0</td>
-      <td>86.0</td>
-      <td>91.0</td>
-      <td>91.0</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>91.0</td>
-      <td>84.0</td>
-      <td>88.0</td>
-      <td>91.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>행방향으로 퍼센테이지 순위 측정(David Silva의 경우 BallControl이 1등이므로 0.25)</p>
-
-<pre><code class="language-python">players.rank(ascending = False, axis = 1, pct = True).head()
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ShortPassing</th>
-      <th>Dribbling</th>
-      <th>LongPassing</th>
-      <th>BallControl</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>David Silva</th>
-      <td>0.500</td>
-      <td>0.75</td>
-      <td>1.000</td>
-      <td>0.250</td>
-    </tr>
-    <tr>
-      <th>L. Modrić</th>
-      <td>0.375</td>
-      <td>0.75</td>
-      <td>1.000</td>
-      <td>0.375</td>
-    </tr>
-    <tr>
-      <th>T. Kroos</th>
-      <td>0.500</td>
-      <td>1.00</td>
-      <td>0.250</td>
-      <td>0.750</td>
-    </tr>
-    <tr>
-      <th>K. De Bruyne</th>
-      <td>0.250</td>
-      <td>1.00</td>
-      <td>0.625</td>
-      <td>0.625</td>
-    </tr>
-    <tr>
-      <th>C. Eriksen</th>
-      <td>0.375</td>
-      <td>1.00</td>
-      <td>0.750</td>
-      <td>0.375</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>위의 Jupyter notebook 내용은 <a href="https://github.com/psyssai/PandasBasic/blob/master/PandasBasic_7_DataFrame_sort_rank.ipynb">여기</a> Github에서도 확인 할 수 있습니다.</p>
-
-<p>다음 포스팅은 Series와 DataFrame에 함수를 적용하는 방법에 대해 알아볼 예정입니다.</p>
-
-<p><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction">다음포스팅 바로가기</a></p>
+<p><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_grouping">다음 포스팅 바로가기</a></p>
 
 <p>감사합니다.</p>
 
@@ -1977,13 +803,16 @@ players.head()
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/sort_index">sort_index</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/apply">apply</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/sort_values">sort_values</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/applymap">applymap</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%94%84%EB%A0%88%EC%9E%84-%EC%A0%95%EB%A0%AC">데이터프레임 정렬</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/dataframe-%ED%95%A8%EC%88%98%EC%A0%81%EC%9A%A9">dataframe 함수적용</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/map">map</a></li>
                 
             
         
@@ -2021,8 +850,8 @@ players.head()
 
 <ul class="actions pagination">
     
-        <li><a href="https://psyssai.github.io/blog/bigdata/pandas/7_dataframe_statistic/"
-                class="button big previous">[Pandas 기초]7.Pandas DataFrame 통계</a></li>
+        <li><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/"
+                class="button big previous">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></li>
     
 
     
@@ -2120,6 +949,20 @@ players.head()
           <article class="mini-post">
             <header>
               <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-29'>
+                August 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a>
               </h3>
               
@@ -2173,20 +1016,6 @@ players.head()
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://psyssai.github.io/blog/bigdata/pandas/4_dataframe_merge/">[Pandas 기초]4.여러 DataFrame 연결하기(Join)</a>
-              </h3>
-              
-              <time class="published" datetime='2019-08-17'>
-                August 17, 2019
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -2220,7 +1049,7 @@ players.head()
             <header>
               
                 <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
-                <span style="float:right;">8</span>
+                <span style="float:right;">9</span>
               
             </header>
           </article>
