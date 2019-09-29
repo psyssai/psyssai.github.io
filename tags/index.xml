@@ -6,10 +6,73 @@
     <description>Recent content in Tags on PSYda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://psyssai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FrontEnd</title>
+      <link>https://psyssai.github.io/tags/frontend/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node.js</title>
+      <link>https://psyssai.github.io/tags/node.js/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>https://psyssai.github.io/tags/npm/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npx</title>
+      <link>https://psyssai.github.io/tags/npx/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/npx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://psyssai.github.io/tags/react/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react app 구조</title>
+      <link>https://psyssai.github.io/tags/react-app-%EA%B5%AC%EC%A1%B0/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/react-app-%EA%B5%AC%EC%A1%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>노마드코더</title>
+      <link>https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>dataframe 그룹핑</title>

@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://psyssai.github.io/frontend/react/react_2_introduction/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/categories/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/frontend/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/frontend/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/categories/frontend/react/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/node.js/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/npm/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/npx/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/react/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/react-app-%EA%B5%AC%EC%A1%B0/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/frontend/react/react_1_overview/</loc>
+    <lastmod>2019-09-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psyssai.github.io/about/</loc>
     <lastmod>2019-09-21T00:00:00+00:00</lastmod>
   </url>
@@ -18,11 +88,6 @@
   </url>
   
   <url>
-    <loc>https://psyssai.github.io/categories/</loc>
-    <lastmod>2019-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psyssai.github.io/tags/dataframe-%EA%B7%B8%EB%A3%B9%ED%95%91/</loc>
     <lastmod>2019-08-31T00:00:00+00:00</lastmod>
   </url>
@@ -34,16 +99,6 @@
   
   <url>
     <loc>https://psyssai.github.io/tags/pivot_table/</loc>
-    <lastmod>2019-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psyssai.github.io/</loc>
-    <lastmod>2019-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psyssai.github.io/tags/</loc>
     <lastmod>2019-08-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -240,6 +295,15 @@
   <url>
     <loc>https://psyssai.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/</loc>
     <lastmod>2019-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/hugo/shortcode/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://psyssai.github.io/hugo/</loc>
   </url>
   
 </urlset>

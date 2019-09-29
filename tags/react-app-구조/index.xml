@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react app 구조 on PSYda</title>
+    <link>https://psyssai.github.io/tags/react-app-%EA%B5%AC%EC%A1%B0/</link>
+    <description>Recent content in react app 구조 on PSYda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://psyssai.github.io/tags/react-app-%EA%B5%AC%EC%A1%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[React]1.React 소개와 설치</title>
+      <link>https://psyssai.github.io/frontend/react/react_2_introduction/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/frontend/react/react_2_introduction/</guid>
+      <description>안녕하세요. PSYda 입니다.
+오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.
+이전 시간에 말씀드린 것 처럼 Nomad Coders 의 &amp;ldquo;React JS로 웹서비스 만들기&amp;rdquo;를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+ React에 대한 소개 React Setup React App 구조 및 동작 원리   1. React 소개 1.1 Why React? 1) 많은 회사들이 React를 사용
+ React는 Facebook이 만들었고, 모든 Facebook은 React로 구현 Airbnb, npm, Netflix 등 유명한 서비스들이 React로 구현  2) 많은 개발자가 React를 사용</description>
+    </item>
+    
+  </channel>
+</rss>

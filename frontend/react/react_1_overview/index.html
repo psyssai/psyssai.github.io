@@ -1,0 +1,844 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/psyssai.github.io"
+        },
+        "articleSection" : "frontend",
+        "name" : "[React]0.개요",
+        "headline" : "[React]0.개요",
+        "description" : "react 강의 소개 및 블로그 포스팅 계획",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-09-26 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-09-26 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/psyssai.github.io\/frontend\/react\/react_1_overview\/",
+        "wordCount" : "97",
+        "keywords" : [ "React","FrontEnd","노마드코더","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[React]0.개요</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.57.2" />
+        
+
+
+        
+            <meta name="author" content="PSYda">
+        
+        
+            <meta name="description" content="react 강의 소개 및 블로그 포스팅 계획">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[React]0.개요"/>
+<meta name="twitter:description" content="react 강의 소개 및 블로그 포스팅 계획"/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="[React]0.개요" />
+<meta property="og:description" content="react 강의 소개 및 블로그 포스팅 계획" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psyssai.github.io/frontend/react/react_1_overview/" />
+<meta property="article:published_time" content="2019-09-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-26T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[React]0.개요">
+<meta itemprop="description" content="react 강의 소개 및 블로그 포스팅 계획">
+
+
+<meta itemprop="datePublished" content="2019-09-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="97">
+
+
+
+<meta itemprop="keywords" content="React,FrontEnd,노마드코더," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/main.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/add-on.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/academicons.min.css">
+        
+
+        
+        
+            
+                
+            
+        
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://psyssai.github.io/">frontend</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://psyssai.github.io/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://psyssai.github.io/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-27'>
+                                    September 27, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_1_overview/">[React]0.개요</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-26'>
+                                    September 26, 2019</time>
+                            </header>
+                            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_1_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-31'>
+                                    August 31, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-29'>
+                                    August 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-28'>
+                                    August 28, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://psyssai.github.io/frontend/react/react_1_overview/">[React]0.개요</a></h1>
+            
+        
+        
+            <p>react 강의 소개 및 블로그 포스팅 계획</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-09-26'>
+            September 26, 2019</time>
+        <span class="author">PSYda</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_1_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+  <div id="content">
+    
+
+<p>안녕하세요. PSYda 입니다.</p>
+
+<p>최근 <strong><u>Nomad Coders</u></strong> 의 &ldquo;<strong><span style = "color:red">React JS로 웹서비스 만들기</span></strong>&rdquo; 과정을 통해 React를 스터디 하고 있습니다.<br />
+강의를 들으며 제가 이해한 내용을 정리하여 올릴 예정입니다.</p>
+
+<p>강의는 총 25개로 구성되어 있으며 한 강의당 10분 내외로 듣기에 부담이 없어 좋습니다.<br />
+해당 사이트를 통해 React 뿐만 아니라 Frontend 개발과 관련한 다른 좋은 강의들이 있어서 도움을 많이 받고 있습니다.</p>
+
+<p><a href="https://academy.nomadcoders.co/courses/">여기</a> 사이트를 통해 무료 교육과 필요시 유료 교육을 들으실 수 있고, 강사님이 개발자들에 필요한 유용한 정보들을 <a href="https://www.youtube.com/channel/UCUpJs89fSBXNolQGOYKn0YQ">Youtube</a>에도 올려주시니 구독하시고 자주 들으시면 도움이 될 것 같습니다.</p>
+
+<p>정리한 내용은 아래의 목차로 구성되며, 클릭하시면 해당 부분으로 이동할 수 있습니다.</p>
+
+<h1 id="포스팅-목차">포스팅 목차</h1>
+
+<ol>
+<li><a href="https://psyssai.github.io/frontend/react/react_2_introduction">React 소개와 설치</a></li>
+<li></li>
+<li></li>
+</ol>
+
+<p>감사합니다.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/categories/frontend/react">FrontEnd/React</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/react">React</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/frontend">FrontEnd</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94">노마드코더</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "psyssai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+
+    
+        <li><a href="https://psyssai.github.io/frontend/react/react_2_introduction/"
+                class="button big next">[React]1.React 소개와 설치</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='https://psyssai.github.io/'><img src="https://psyssai.github.io/img/main/logo1.jpg" width="200" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>PSYda</h2>
+        <p>평범한 개발자 입니다. 틈틈히 공부한 내용을 올리고 있습니다.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-27'>
+                September 27, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_1_overview/">[React]0.개요</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-26'>
+                September 26, 2019
+              </time>
+            </header>
+            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_1_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-31'>
+                August 31, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-29'>
+                August 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-28'>
+                August 28, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://psyssai.github.io/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/frontend/react/">frontend/react</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          PSYda
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://psyssai.github.io/js/util.js"></script>
+      <script src="https://psyssai.github.io/js/main.js"></script>
+      <script src="https://psyssai.github.io/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

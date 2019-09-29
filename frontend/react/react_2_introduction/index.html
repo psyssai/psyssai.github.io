@@ -1,0 +1,1799 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/psyssai.github.io"
+        },
+        "articleSection" : "frontend",
+        "name" : "[React]1.React 소개와 설치",
+        "headline" : "[React]1.React 소개와 설치",
+        "description" : "안녕하세요. PSYda 입니다.\n오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.\n이전 시간에 말씀드린 것 처럼 Nomad Coders 의 \x26ldquo;React JS로 웹서비스 만들기\x26rdquo;를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.\n React에 대한 소개 React Setup React App 구조 및 동작 원리   1. React 소개 1.1 Why React? 1) 많은 회사들이 React를 사용\n React는 Facebook이 만들었고, 모든 Facebook은 React로 구현 Airbnb, npm, Netflix 등 유명한 서비스들이 React로 구현  2) 많은 개발자가 React를 사용",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-09-27 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-09-27 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/psyssai.github.io\/frontend\/react\/react_2_introduction\/",
+        "wordCount" : "698",
+        "keywords" : [ "React","FrontEnd","노마드코더","node.js","npm","npx","react app 구조","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[React]1.React 소개와 설치</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.57.2" />
+        
+
+
+        
+            <meta name="author" content="PSYda">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[React]1.React 소개와 설치"/>
+<meta name="twitter:description" content="안녕하세요. PSYda 입니다.
+오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.
+이전 시간에 말씀드린 것 처럼 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+ React에 대한 소개 React Setup React App 구조 및 동작 원리   1. React 소개 1.1 Why React? 1) 많은 회사들이 React를 사용
+ React는 Facebook이 만들었고, 모든 Facebook은 React로 구현 Airbnb, npm, Netflix 등 유명한 서비스들이 React로 구현  2) 많은 개발자가 React를 사용"/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="[React]1.React 소개와 설치" />
+<meta property="og:description" content="안녕하세요. PSYda 입니다.
+오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.
+이전 시간에 말씀드린 것 처럼 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+ React에 대한 소개 React Setup React App 구조 및 동작 원리   1. React 소개 1.1 Why React? 1) 많은 회사들이 React를 사용
+ React는 Facebook이 만들었고, 모든 Facebook은 React로 구현 Airbnb, npm, Netflix 등 유명한 서비스들이 React로 구현  2) 많은 개발자가 React를 사용" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psyssai.github.io/frontend/react/react_2_introduction/" />
+<meta property="article:published_time" content="2019-09-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-27T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[React]1.React 소개와 설치">
+<meta itemprop="description" content="안녕하세요. PSYda 입니다.
+오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.
+이전 시간에 말씀드린 것 처럼 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+ React에 대한 소개 React Setup React App 구조 및 동작 원리   1. React 소개 1.1 Why React? 1) 많은 회사들이 React를 사용
+ React는 Facebook이 만들었고, 모든 Facebook은 React로 구현 Airbnb, npm, Netflix 등 유명한 서비스들이 React로 구현  2) 많은 개발자가 React를 사용">
+
+
+<meta itemprop="datePublished" content="2019-09-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="698">
+
+
+
+<meta itemprop="keywords" content="React,FrontEnd,노마드코더,node.js,npm,npx,react app 구조," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/main.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/add-on.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/academicons.min.css">
+        
+
+        
+        
+            
+                
+            
+        
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://psyssai.github.io/">frontend</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://psyssai.github.io/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://psyssai.github.io/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-27'>
+                                    September 27, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_1_overview/">[React]0.개요</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-26'>
+                                    September 26, 2019</time>
+                            </header>
+                            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_1_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-31'>
+                                    August 31, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-29'>
+                                    August 29, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-28'>
+                                    August 28, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-09-27'>
+            September 27, 2019</time>
+        <span class="author">PSYda</span>
+        
+            <p>4 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<p>안녕하세요. PSYda 입니다.</p>
+
+<p>오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.<br />
+이전 시간에 말씀드린 것 처럼 <a href="https://academy.nomadcoders.co/courses/">Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;</a>를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.</p>
+
+<div id = "summary">
+<br>
+<ol>
+    <li><strong>React에 대한 소개</strong></li>
+    <li><strong>React Setup</strong></li>
+    <li><strong>React App 구조 및 동작 원리</strong></li>
+</ol>
+</div>
+
+<h1 id="1-react-소개">1. React 소개</h1>
+
+<h2 id="1-1-why-react">1.1 Why React?</h2>
+
+<p><strong><u>1) 많은 회사들이 React를 사용</u></strong></p>
+
+<ul>
+<li>React는 Facebook이 만들었고, 모든 Facebook은 React로 구현</li>
+<li>Airbnb, npm, Netflix 등 유명한 서비스들이 React로 구현</li>
+</ul>
+
+<p><strong><u>2) 많은 개발자가 React를 사용</u></strong></p>
+
+<ul>
+<li>npm에서 react library 다운로드 정보를 살펴보면 500만건/1주</li>
+</ul>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+                <a href = "https://www.npmjs.com/package/react" class = "image fetured" target="_blank">
+                <img src="https://psyssai.github.io/img/react/1/1_5.png" alt="">
+                </a>
+            </span></p>
+        
+    
+
+
+
+<ul>
+<li>2018년 프론트엔드 개발 생태계 설문조사에서 React가 압도적 1등</li>
+</ul>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+                <a href = "https://2018.stateofjs.com/front-end-frameworks/overview/?no-cache=1" class = "image fetured" target="_blank">
+                <img src="https://psyssai.github.io/img/react/1/1_6.png" alt="">
+                </a>
+            </span></p>
+        
+    
+
+
+
+<p><strong><u>3) 활성화가 잘 된 커뮤니티</u></strong></p>
+
+<p><strong><u>4) Javascript 기반의 언어(라이브러리)</u></strong></p>
+
+<ul>
+<li>React가 사라지더라도 Javascript에 대한 Skill은 향상 가능</li>
+<li>Angular의 경우 자체적인 문법을 사용하기 때문에 배우기 어렵고, 망하면 남는게 없음<br /></li>
+</ul>
+
+<p>5) 그 외 이유는 아래 그림 및 링크 참고
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+                <a href = "https://2018.stateofjs.com/front-end-frameworks/react/" class = "image fetured" target="_blank">
+                <img src="https://psyssai.github.io/img/react/1/1_7.png" alt="">
+                </a>
+            </span></p>
+        
+    
+
+</p>
+
+<h2 id="1-2-필요한-사전-지식">1.2 필요한 사전 지식</h2>
+
+<p>React를 배우기 전에 알고 있으면 좋은 Skill 들은 아래와 같습니다.</p>
+
+<p>1) HTML<br />
+2) CSS<br />
+3) Javascript<br />
+4) node.js</p>
+
+<h2 id="1-3-설치할-프로그램들">1.3 설치할 프로그램들</h2>
+
+<p>1) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">node.js</span></strong>
+    
+
+ : <a href="https://nodejs.org/ko/download/">node.js 공식 홈페이지</a>에서 설치</p>
+
+<ul>
+<li><p>설치 후 cmd창(터미널)에서 <Strong><u>node -v</u></strong> 입력하여 version 확인</p>
+
+<pre><code class="language-cmd">&gt;node-v
+v10.16.2
+</code></pre></li>
+</ul>
+
+<p>2) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm </span></strong>
+    
+
+: node.js를 설치하면 자동으로 설치</p>
+
+<ul>
+<li><p>설치 후 cmd창(터미널)에서 <strong><u>npm -v</u></strong> 입력하여 version 확인</p>
+
+<pre><code class="language-cmd">&gt;npm -v
+6.10.3
+</code></pre></li>
+</ul>
+
+<p>3) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npx</span></strong>
+    
+
+ : npm을 통해서 설치</p>
+
+<ul>
+<li><p>cmd창(터미널)에서 <strong><u>npm install npx -g</u></strong> 명령어 입력하여 설치</p>
+
+<pre><code class="language-cmd">&gt;npm install npx -g
+</code></pre></li>
+</ul>
+
+<p>4) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">git</span></strong>
+    
+
+ : <a href="https://git-scm.com/download/win">git 공식 홈페이지</a>에서 자신의 OS에 맞게 설치</p>
+
+<ul>
+<li><p>설치 후 cmd창(터미널)에서 <strong><u>git &ndash;version</u></strong> 입력하여 version 확인</p>
+
+<pre><code class="language-cmd">&gt;git --version
+git version 20.22.0.windows.1
+</code></pre></li>
+</ul>
+
+<p>5) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">vscode</span></strong>
+    
+
+ : 요즘 많이들 쓰는 IDE(코드 편집기)</p>
+
+<ul>
+<li>원래 쓰는 IDE가 있으면 굳이 설치할 필요 없음</li>
+</ul>
+
+<h1 id="2-react-setup">2.React Setup</h1>
+
+<h2 id="2-1-react-app-만들기">2.1 React App 만들기</h2>
+
+<p>React는 아름다운(?) Component를 만들 수 있는 언어이지만, Browser에서 React 코드를 이해하지 못하기 때문에, 못생긴(이해 가능한) 코드로 변경해줘야합니다. 이를 위해 Webpack, Babel을 다운로드 해야 하고 React 코드를 컴파일을 해야 하는 등 번거로운 작업들이 필요했었습니다. 하지만 2016년 이후부터는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">&#39;create react app&#39;</span></strong>
+    
+
+ 을 통해 <strong><u>간단하게 React Wep App을 만들 수 있습니다.</u></strong></p>
+
+<p><strong><u>1) App 설치</u></strong></p>
+
+<ul>
+<li><p>cmd(터미널)창에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npx create-react-app APP이름</span></strong>
+    
+
+ 을 입력</p>
+
+<pre><code class="language-cmd">&gt;npx create-react-app movie_app_2019
+npx: installed 91 in 9.768s
+creating a new React app in path\moview_app_2019
+installing packages. This might take a couple of minues.
+</code></pre></li>
+</ul>
+
+<p><strong><u>2) VS code 열기</u></strong></p>
+
+<ul>
+<li><p>cmd(터미널)창에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">code moview_app_2019</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">&gt;code movie_app_2019
+</code></pre>
+
+<p><strong><u>3) APP 실행</u></strong></p></li>
+
+<li><p>VS code 상의 Terminal에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm start</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt; npm start
+</code></pre>
+
+<p><strong><u>4) APP 구동 확인</u></strong></p></li>
+
+<li><p>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">http://localhost:3000</span></strong>
+    
+
+ 에 접속하여 동작하는지 확인</p></li>
+</ul>
+
+<h2 id="2-2-github-repository-만들기">2.2 Github Repository 만들기</h2>
+
+<p>React App 을 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">git</span></strong>
+    
+
+으로 관리하며 원격 서버는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Github</span></strong>
+    
+
+를 이용할 예정입니다. 따라서 Github Repository를 만들어 git과 연동하는 방법을 설명합니다. Repository 생성을 위해서는 Github에 별도의 가입이 필요하며, 계정이 있다는 가정하에 진행합니다.</p>
+
+<p>1) Gitgub 사이트에서 <strong><u>새로운 Repository 생성</u></strong>
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/1/1_11.png" alt="">
+            </span></p>
+        
+    
+
+</p>
+
+<p>2) <strong><u>git 저장소 생성</u></strong><br />
+생성된 React App 폴더에 git 저장소를 생성합니다.</p>
+
+<ul>
+<li><p>cmd창(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">git init</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt; git init
+initialized empty Git repository in movie_app_2019/.git/
+</code></pre></li>
+</ul>
+
+<p>3) <strong><u>git에게 원격 서버 알려주기</u></strong><br />
+1번에서 생성한 Repository 주소를 입력합니다.</p>
+
+<ul>
+<li><p>cmd창(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">git remote add origin 원격서버주소</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;git remote add origin https://github.com/psyssai/movie_app_2019.git
+</code></pre></li>
+</ul>
+
+<p><strong><u>4) 원격 서버에 프로젝트 저장</u></strong></p>
+
+<ul>
+<li>cmd창(터미널)에서 아래와 같이 순서대로 입력</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">git add.</span></strong>
+    
+
+</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">git commit -m &#39;입력할 메시지&#39;</span></strong>
+    
+
+</li>
+
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">git push origin master</span></strong>
+    
+
+
+
+<pre><code class="language-cmd">git add.
+git commit -m &quot;#1.0 Creating Your React App&quot;
+git push origin master
+</code></pre></li>
+</ul>
+
+<p><strong><u>5) 원격저장소 확인</u></strong><br />
+Github 사이트로 이동하여 원격 저장소에 잘 발행되었는지 확인합니다.</p>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+                <a href = "https://github.com/psyssai/movie_app_2019" class = "image fetured" target="_blank">
+                <img src="https://psyssai.github.io/img/react/1/1_17.png" alt="">
+                </a>
+            </span></p>
+        
+    
+
+
+
+<h1 id="3-react-app-구조-및-동작-원리">3. React App 구조 및 동작 원리</h1>
+
+<h2 id="3-1-react-app-project-구조">3.1 React App Project 구조</h2>
+
+<p>
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/1/1_18.png" alt="">
+            </span></p>
+        
+    
+
+
+위의 그림과 같이 React App Project는 3개의 폴더를 가집니다.<br />
+
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">1) node_modules</span></strong>
+    
+
+<br />
+
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">2) public</span></strong>
+    
+
+</p>
+
+<ul>
+<li><strong><u>favicon.ico</u></strong> : Browser Tab에 나오는 아이콘
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/1/1_21.png" alt="">
+            </span></p>
+        
+    
+
+</li>
+<li><strong><u>index.html</u></strong> : index만 가지고 있는 html</li>
+<li><strong><u>manifest.json</u></strong> : (추후 설명)</li>
+</ul>
+
+<p>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">3) src</span></strong>
+    
+
+ : 각종 소스가 모여 있는 폴더</p>
+
+<ul>
+<li>App.js와 Index.js를 제외하고 모두 삭제(처음부터 새로 만들기 위해)</li>
+<li><strong><u>App.js</u></strong> : 컴포넌트에 해당하는 부분</li>
+<li><strong><u>index.js</u></strong> : 컴포넌트를 그려주는 부분</li>
+</ul>
+
+<h2 id="3-2-react의-특징">3.2 React의 특징</h2>
+
+<p><strong><u>1) 실시간 적용</u></strong></p>
+
+<ul>
+<li>App.js 를 수정하면 그 결과가 바로 적용되어 확인 가능</li>
+</ul>
+
+<p><strong><u>2) Virtual DOM</u></strong></p>
+
+<ul>
+<li>Application이 Load할 때 빈 html을 로드 하고, react가 HTML에 정보를 밀어 넣음</li>
+</ul>
+
+<h2 id="3-3-동작-원리">3.3 동작 원리</h2>
+
+<p>1) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">App.js</span></strong>
+    
+
+에 있는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">App 함수</span></strong>
+    
+
+에서 <strong><u>생성하고 싶은 부분을 명시</u></strong><br />
+2) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">index.js</span></strong>
+    
+
+ 에서 <strong><u>App을 불러오고 index.html에서 찾을 요소를 명시</u></strong><br />
+3) 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">index.html</span></strong>
+    
+
+ 에서 찾아진 요소 부분에 <strong><u>App에서 명시한 것이 생성</u></strong></p>
+
+<p>아래와 같이 코드를 입력하고, 결과를 확인합니다.</p>
+
+<pre><code class="language-js">//App.js
+import React from 'react';
+
+function App() {
+    return &lt;div&gt;Hello!!!!!&lt;/div&gt;
+}
+
+export default App
+</code></pre>
+
+<pre><code class="language-js">//index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
+</code></pre>
+
+<pre><code class="language-html">&lt;!-- index.html 의 body 부분 --&gt;
+    &lt;noscript&gt;You need to enable JavaScript to run this app.&lt;/noscript&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/1/1_22.png" alt="">
+            </span></p>
+        
+    
+
+
+
+<ul>
+<li>실제로 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">index.html은 비어 있지만</span></strong>
+    
+
+, 아래와 같이 <strong><u>Browser에 표시됨</u></strong></li>
+<li>F12(개발자 도구)를 눌러보면 Hello!!!! 가 id root에 생성되어 있음
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/1/1_23.png" alt="">
+            </span></p>
+        
+    
+
+</li>
+</ul>
+
+<p>감사합니다.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/categories/frontend/react">FrontEnd/React</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/react">React</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/frontend">FrontEnd</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94">노마드코더</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/node.js">node.js</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/npm">npm</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/npx">npx</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/react-app-%EA%B5%AC%EC%A1%B0">react app 구조</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "psyssai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://psyssai.github.io/frontend/react/react_1_overview/"
+                class="button big previous">[React]0.개요</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='https://psyssai.github.io/'><img src="https://psyssai.github.io/img/main/logo1.jpg" width="200" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>PSYda</h2>
+        <p>평범한 개발자 입니다. 틈틈히 공부한 내용을 올리고 있습니다.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-27'>
+                September 27, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_1_overview/">[React]0.개요</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-26'>
+                September 26, 2019
+              </time>
+            </header>
+            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_1_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-31'>
+                August 31, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/9_dataframe_applyfunction/">[Pandas 기초]9.Series와 DataFrmae에 함수 적용하기</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-29'>
+                August 29, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-28'>
+                August 28, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://psyssai.github.io/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/frontend/react/">frontend/react</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          PSYda
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://psyssai.github.io/js/util.js"></script>
+      <script src="https://psyssai.github.io/js/main.js"></script>
+      <script src="https://psyssai.github.io/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

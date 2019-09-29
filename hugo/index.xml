@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on PSYda</title>
+    <link>https://psyssai.github.io/hugo/</link>
+    <description>Recent content in Hugo on PSYda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://psyssai.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://psyssai.github.io/hugo/shortcode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/hugo/shortcode/</guid>
+      <description> 1. short code 란? markdown 내에 html을 편리하게 넣는 방법이다.
+shortcode 정보
+2. 이미지 포스팅  관련 short code : img-post.html 사용방법  
+ path : 이미지 파일이 존재하는 폴더를 명시 file : 이미지 파일이름 명시(확장자 포함) alt : 이미지 별칭 명시 type : 정렬 방법 명시(center, left, right) 실 사용예시 
+  </description>
+    </item>
+    
+  </channel>
+</rss>
