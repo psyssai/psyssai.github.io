@@ -13,10 +13,10 @@
     
     <item>
       <title>[React]1.React 소개와 설치</title>
-      <link>https://psyssai.github.io/frontend/react/react_2_introduction/</link>
+      <link>https://psyssai.github.io/frontend/react/react_1_introduction/</link>
       <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://psyssai.github.io/frontend/react/react_2_introduction/</guid>
+      <guid>https://psyssai.github.io/frontend/react/react_1_introduction/</guid>
       <description>안녕하세요. PSYda 입니다.
 오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.
 이전 시간에 말씀드린 것 처럼 Nomad Coders 의 &amp;ldquo;React JS로 웹서비스 만들기&amp;rdquo;를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.

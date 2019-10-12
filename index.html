@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-09-27 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-09-27 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-10-08 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-10-08 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/psyssai.github.io\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -57,7 +57,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://psyssai.github.io/" />
 
-<meta property="og:updated_time" content="2019-09-27T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-10-08T00:00:00+00:00" />
 
         <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
         <meta property="og:image:type" content="image/png">
@@ -220,7 +220,19 @@
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a></h3>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/">[React]2.Component, JSX, Props</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-08'>
+                                    October 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_1_introduction/">[React]1.React 소개와 설치</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2019-09-27'>
@@ -232,7 +244,7 @@
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://psyssai.github.io/frontend/react/react_1_overview/">[React]0.개요</a></h3>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_0_overview/">[React]0.개요</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2019-09-26'>
@@ -259,7 +271,7 @@
         
         
 
-        <a href="https://psyssai.github.io/frontend/react/react_1_overview/" class="image featured">
+        <a href="https://psyssai.github.io/frontend/react/react_0_overview/" class="image featured">
             <div class = "CenterImg">
             <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
             </div>
@@ -293,18 +305,6 @@
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-08-28'>
-                                    August 28, 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -327,7 +327,7 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a></h2>
+            <h2><a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/">[React]2.Component, JSX, Props</a></h2>
         
         
     </div>
@@ -335,11 +335,11 @@
         
 
         <time class="published"
-            datetime='2019-09-27'>
-            September 27, 2019</time>
+            datetime='2019-10-08'>
+            October 8, 2019</time>
         <span class="author">PSYda</span>
         
-            <p>4 minute read</p>
+            <p>5 minute read</p>
         
         
     </div>
@@ -386,933 +386,156 @@
 
 <p>안녕하세요. PSYda 입니다.</p>
 
-<p>오늘은 React에 대해 간략하게 소개하고, 설치하는 과정을 포스팅할 예정입니다.<br />
-이전 시간에 말씀드린 것 처럼 <a href="https://academy.nomadcoders.co/courses/">Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;</a>를 통해 학습한 내용을 정리하였으며, 이번 포스팅에서 알아볼 내용은 아래와 같습니다.</p>
+<p>본 포스팅은 <a href="https://academy.nomadcoders.co/courses/">Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;</a>를 통해 학습한 내용을 정리한 것입니다.</p>
+
+<p>이번 포스팅에서는 Component와 JSX에 대해 알아볼 예정이며 목차는 아래와 같습니다.</p>
 
 <div id = "summary">
 <br>
 <ol>
-    <li><strong>React에 대한 소개</strong></li>
-    <li><strong>React Setup</strong></li>
-    <li><strong>React App 구조 및 동작 원리</strong></li>
+<strong>
+<li>Component</li>
+<li>JSX & props</li>
+<li>동적인 Component 사용(Map함수 이용)</li>
+<li>유효한 Props 인지 Check하기</li>
+</strong>
 </ol>
 </div>
 
-<h1 id="1-react-소개">1. React 소개</h1>
+<h1 id="1-component">1. Component</h1>
 
-<h2 id="1-1-why-react">1.1 Why React?</h2>
-
-<p><strong><u>1) 많은 회사들이 React를 사용</u></strong></p>
+<h2 id="1-1-component란">1.1 Component란?</h2>
 
 <ul>
-<li>React는 Facebook이 만들었고, 모든 Facebook은 React로 구현</li>
-<li>Airbnb, npm, Netflix 등 유명한 서비스들이 React로 구현</li>
+<li>HTML을 반환해주는 함수 또는 클래스</li>
+<li>함수 컴포넌트와 클래스 컴포넌트가 있음</li>
+<li>독립적인 단위로서 재사용성이 높음</li>
 </ul>
 
-<p><strong><u>2) 많은 개발자가 React를 사용</u></strong></p>
+<h2 id="1-2-component-만들기">1.2 Component 만들기</h2>
 
-<ul>
-<li>npm에서 react library 다운로드 정보를 살펴보면 500만건/1주</li>
-</ul>
-
-
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-                <a href = "https://www.npmjs.com/package/react" class = "image fetured" target="_blank">
-                <img src="https://psyssai.github.io/img/react/1/1_5.png" alt="">
-                </a>
-            </span></p>
-        
-    
-
-
-
-<ul>
-<li>2018년 프론트엔드 개발 생태계 설문조사에서 React가 압도적 1등</li>
-</ul>
-
-
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-                <a href = "https://2018.stateofjs.com/front-end-frameworks/overview/?no-cache=1" class = "image fetured" target="_blank">
-                <img src="https://psyssai.github.io/img/react/1/1_6.png" alt="">
-                </a>
-            </span></p>
-        
-    
-
-
-
-<p><strong><u>3) 활성화가 잘 된 커뮤니티</u></strong></p>
-
-<p><strong><u>4) Javascript 기반의 언어(라이브러리)</u></strong></p>
-
-<ul>
-<li>React가 사라지더라도 Javascript에 대한 Skill은 향상 가능</li>
-<li>Angular의 경우 자체적인 문법을 사용하기 때문에 배우기 어렵고, 망하면 남는게 없음<br /></li>
-</ul>
-
-<p>5) 그 외 이유는 아래 그림 및 링크 참고
-
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-                <a href = "https://2018.stateofjs.com/front-end-frameworks/react/" class = "image fetured" target="_blank">
-                <img src="https://psyssai.github.io/img/react/1/1_7.png" alt="">
-                </a>
-            </span></p>
-        
-    
-
-</p>
-
-<h2 id="1-2-필요한-사전-지식">1.2 필요한 사전 지식</h2>
-
-<p>React를 배우기 전에 알고 있으면 좋은 Skill 들은 아래와 같습니다.</p>
-
-<p>1) HTML<br />
-2) CSS<br />
-3) Javascript<br />
-4) node.js</p>
-
-<h2 id="1-3-설치할-프로그램들">1.3 설치할 프로그램들</h2>
-
-<p>1) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">node.js</span></strong>
-    
-
- : <a href="https://nodejs.org/ko/download/">node.js 공식 홈페이지</a>에서 설치</p>
-
-<ul>
-<li><p>설치 후 cmd창(터미널)에서 <Strong><u>node -v</u></strong> 입력하여 version 확인</p>
-
-<pre><code class="language-cmd">&gt;node-v
-v10.16.2
-</code></pre></li>
-</ul>
-
-<p>2) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">npm </span></strong>
-    
-
-: node.js를 설치하면 자동으로 설치</p>
-
-<ul>
-<li><p>설치 후 cmd창(터미널)에서 <strong><u>npm -v</u></strong> 입력하여 version 확인</p>
-
-<pre><code class="language-cmd">&gt;npm -v
-6.10.3
-</code></pre></li>
-</ul>
-
-<p>3) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">npx</span></strong>
-    
-
- : npm을 통해서 설치</p>
-
-<ul>
-<li><p>cmd창(터미널)에서 <strong><u>npm install npx -g</u></strong> 명령어 입력하여 설치</p>
-
-<pre><code class="language-cmd">&gt;npm install npx -g
-</code></pre></li>
-</ul>
-
-<p>4) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">git</span></strong>
-    
-
- : <a href="https://git-scm.com/download/win">git 공식 홈페이지</a>에서 자신의 OS에 맞게 설치</p>
-
-<ul>
-<li><p>설치 후 cmd창(터미널)에서 <strong><u>git &ndash;version</u></strong> 입력하여 version 확인</p>
-
-<pre><code class="language-cmd">&gt;git --version
-git version 20.22.0.windows.1
-</code></pre></li>
-</ul>
-
-<p>5) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">vscode</span></strong>
-    
-
- : 요즘 많이들 쓰는 IDE(코드 편집기)</p>
-
-<ul>
-<li>원래 쓰는 IDE가 있으면 굳이 설치할 필요 없음</li>
-</ul>
-
-<h1 id="2-react-setup">2.React Setup</h1>
-
-<h2 id="2-1-react-app-만들기">2.1 React App 만들기</h2>
-
-<p>React는 아름다운(?) Component를 만들 수 있는 언어이지만, Browser에서 React 코드를 이해하지 못하기 때문에, 못생긴(이해 가능한) 코드로 변경해줘야합니다. 이를 위해 Webpack, Babel을 다운로드 해야 하고 React 코드를 컴파일을 해야 하는 등 번거로운 작업들이 필요했었습니다. 하지만 2016년 이후부터는 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">&#39;create react app&#39;</span></strong>
-    
-
- 을 통해 간단하게 React Wep App을 만들 수 있습니다.</p>
-
-<p><strong><u>1) App 설치</u></strong></p>
-
-<ul>
-<li><p>cmd(터미널)창에서 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">npx create-react-app APP이름</span></strong>
-    
-
- 을 입력</p>
-
-<pre><code class="language-cmd">&gt;npx create-react-app movie_app_2019
-npx: installed 91 in 9.768s
-creating a new React app in path\moview_app_2019
-installing packages. This might take a couple of minues.
-</code></pre></li>
-</ul>
-
-<p><strong><u>2) VS code 열기</u></strong></p>
-
-<ul>
-<li><p>cmd(터미널)창에서 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">code moview_app_2019</span></strong>
-    
-
- 입력</p>
-
-<pre><code class="language-cmd">&gt;code movie_app_2019
-</code></pre></li>
-</ul>
-
-<p><strong><u>3) APP 실행</u></strong></p>
-
-<ul>
-<li><p>VS code 상의 Terminal에서 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">npm start</span></strong>
-    
-
- 입력</p>
-
-<pre><code class="language-cmd">movie_app_2019&gt; npm start
-</code></pre></li>
-</ul>
-
-<p><strong><u>4) APP 구동 확인</u></strong></p>
-
-<ul>
-<li>
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">http://localhost:3000</span></strong>
-    
-
- 에 접속하여 동작하는지 확인</li>
-</ul>
-
-<h2 id="2-2-github-repository-만들기">2.2 Github Repository 만들기</h2>
-
-<p>React App 을 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">git</span></strong>
-    
-
-으로 관리하며 원격 서버는 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">Github</span></strong>
-    
-
-를 이용할 예정입니다. 따라서 Github Repository를 만들어 git과 연동하는 방법을 설명합니다. Repository 생성을 위해서는 Github에 별도의 가입이 필요하며, 계정이 있다는 가정하에 진행합니다.</p>
-
-<p>1) Gitgub 사이트에서 <strong><u>새로운 Repository 생성</u></strong>
-
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-            <img src="https://psyssai.github.io/img/react/1/1_11.png" alt="">
-            </span></p>
-        
-    
-
-</p>
-
-<p>2) <strong><u>git 저장소 생성</u></strong><br />
-생성된 React App 폴더에 git 저장소를 생성합니다.</p>
-
-<ul>
-<li><p>cmd창(터미널)에서 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">git init</span></strong>
-    
-
- 입력</p>
-
-<pre><code class="language-cmd">movie_app_2019&gt; git init
-initialized empty Git repository in movie_app_2019/.git/
-</code></pre></li>
-</ul>
-
-<p>3) <strong><u>git에게 원격 서버 알려주기</u></strong><br />
-1번에서 생성한 Repository 주소를 입력합니다.</p>
-
-<ul>
-<li><p>cmd창(터미널)에서 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">git remote add origin 원격서버주소</span></strong>
-    
-
- 입력</p>
-
-<pre><code class="language-cmd">movie_app_2019&gt;git remote add origin https://github.com/psyssai/movie_app_2019.git
-</code></pre></li>
-</ul>
-
-<p><strong><u>4) 원격 서버에 프로젝트 저장</u></strong></p>
-
-<ul>
-<li>cmd창(터미널)에서 아래와 같이 순서대로 입력</li>
-<li>
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">git add.</span></strong>
-    
-
-</li>
-<li>
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">git commit -m &#39;입력할 메시지&#39;</span></strong>
-    
-
-</li>
-
-<li>
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">git push origin master</span></strong>
-    
-
-
-
-<pre><code class="language-cmd">git add.
-git commit -m &quot;#1.0 Creating Your React App&quot;
-git push origin master
-</code></pre></li>
-</ul>
-
-<p><strong><u>5) 원격저장소 확인</u></strong><br />
-Github 사이트로 이동하여 원격 저장소에 잘 발행되었는지 확인합니다.</p>
-
-
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-                <a href = "https://github.com/psyssai/movie_app_2019" class = "image fetured" target="_blank">
-                <img src="https://psyssai.github.io/img/react/1/1_17.png" alt="">
-                </a>
-            </span></p>
-        
-    
-
-
-
-<h1 id="3-react-app-구조-및-동작-원리">3. React App 구조 및 동작 원리</h1>
-
-<h2 id="3-1-react-app-project-구조">3.1 React App Project 구조</h2>
-
-<p>
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-            <img src="https://psyssai.github.io/img/react/1/1_18.png" alt="">
-            </span></p>
-        
-    
-
-
-위의 그림과 같이 React App Project는 3개의 폴더를 가집니다.<br />
-
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">1) node_modules</span></strong>
-    
-
-<br />
-
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">2) public</span></strong>
-    
-
-</p>
-
-<ul>
-<li><strong><u>favicon.ico</u></strong> : Browser Tab에 나오는 아이콘
-
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-            <img src="https://psyssai.github.io/img/react/1/1_21.png" alt="">
-            </span></p>
-        
-    
-
-</li>
-<li><strong><u>index.html</u></strong> : index만 가지고 있는 html</li>
-<li><strong><u>manifest.json</u></strong> : (추후 설명)</li>
-</ul>
-
-<p>
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">3) src</span></strong>
-    
-
- : 각종 소스가 모여 있는 폴더</p>
-
-<ul>
-<li>App.js와 Index.js를 제외하고 모두 삭제(처음부터 새로 만들기 위해)</li>
-<li><strong><u>App.js</u></strong> : 컴포넌트에 해당하는 부분</li>
-<li><strong><u>index.js</u></strong> : 컴포넌트를 그려주는 부분</li>
-</ul>
-
-<h2 id="3-2-react의-특징">3.2 React의 특징</h2>
-
-<p><strong><u>1) 실시간 적용</u></strong></p>
-
-<ul>
-<li>App.js 를 수정하면 그 결과가 바로 적용되어 확인 가능</li>
-</ul>
-
-<p><strong><u>2) Virtual DOM</u></strong></p>
-
-<ul>
-<li>Application이 Load할 때 빈 html을 로드 하고, react가 HTML에 정보를 밀어 넣음</li>
-</ul>
-
-<h2 id="3-3-동작-원리">3.3 동작 원리</h2>
-
-<p>1) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">App.js</span></strong>
-    
-
-에 있는 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">App 함수</span></strong>
-    
-
-에서 <strong><u>생성하고 싶은 부분을 명시</u></strong><br />
-2) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">index.js</span></strong>
-    
-
- 에서 <strong><u>App을 불러오고 index.html에서 찾을 요소를 명시</u></strong><br />
-3) 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">index.html</span></strong>
-    
-
- 에서 찾아진 요소 부분에 <strong><u>App에서 명시한 것이 생성</u></strong></p>
-
-<p>아래와 같이 코드를 입력하고, 결과를 확인합니다.</p>
+<p>별도의 Javascript 파일을 생성하여 아래와 같이 간단하게 Component를 만들 수 있습니다.</p>
 
 <pre><code class="language-js">//App.js
 import React from 'react';
-
-function App() {
-    return &lt;div&gt;Hello!!!!!&lt;/div&gt;
+function App(){
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Hello&lt;/h1&gt;
+            &lt;/div&gt;
+        )
 }
-
-export default App
+export default App;
 </code></pre>
+
+<p>세부적으로 파헤쳐 보면 아래와 같습니다.</p>
+
+<p><strong>1) react import</strong></p>
+
+<pre><code class="language-js">import react from 'react';
+</code></pre>
+
+<p><strong>2) 함수(Component)를 생성하고 HTML을 return하도록 작성</strong></p>
+
+<pre><code class="language-js">function App(){return (&lt;div&gt;&lt;h1&gt;Hello&lt;/h1&gt;&lt;/div&gt;)}
+</code></pre>
+
+<p><strong>3) export할 Component명 명시</strong></p>
+
+<pre><code class="language-js">export default App;
+</code></pre>
+
+<h2 id="1-3-component-사용하기">1.3 Component 사용하기</h2>
+
+<p>위에서 생성한 Component를 다른 javascript 파일에서 import하여 아래와 같이 사용할 수 있습니다.</p>
 
 <pre><code class="language-js">//index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
-ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
+ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
 </code></pre>
 
-<pre><code class="language-html">&lt;!-- index.html 의 body 부분 --&gt;
-    &lt;noscript&gt;You need to enable JavaScript to run this app.&lt;/noscript&gt;
-    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
-</code></pre>
+<p>세부적으로 살펴보겠습니다.</p>
 
-
-
-
-    
-    
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-
-    
-        
-            <p><span class="image center">
-            <img src="https://psyssai.github.io/img/react/1/1_22.png" alt="">
-            </span></p>
-        
-    
-
-
+<p><strong>1) import</strong></p>
 
 <ul>
-<li>실제로 
+<li>
 
 
 
     
         
     
-    <strong><span style = "color:red">index.html은 비어 있지만</span></strong>
+    <strong><span style = "color:red">react</span></strong>
     
 
-, 아래와 같이 <strong><u>Browser에 표시됨</u></strong></li>
-<li>F12(개발자 도구)를 눌러보면 Hello!!!! 가 id root에 생성되어 있음
+ import</li>
+<li>rendering을 위한 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">react-dom</span></strong>
+    
+
+ import</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Component</span></strong>
+    
+
+가 있는 Javascript import</li>
+</ul>
+
+<p><strong>2) ReactDOM.render 함수 호출</strong></p>
+
+<ul>
+<li>사용될 <strong>Component 명 명시</strong>(
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">&lt;App /&gt;</span></strong>
+    
+
+)</li>
+<li>rendering 할 <strong>DOM 선택</strong>(
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">document.getElementById(&#39;root&#39;)</span></strong>
+    
+
+)<br /></li>
+</ul>
+
+<p><strong>3) index.html에서 rendering</strong></p>
+
+<ul>
+<li>index.html의 dom에 해당하는 부분에 작성된 Component가 저장되어 표출</li>
+</ul>
+
+<p><strong>4) 동작 확인 </strong></p>
+
+<ul>
+<li>터미널에서 npm start</li>
+<li><a href="localhost:3000">localhost:3000</a> 접속</li>
+</ul>
+
 
 
 
@@ -1363,8 +586,550 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
         
     
 
+
+
+<h2 id="1-4-여러-개의-component를-만들기">1.4 여러 개의 Component를 만들기</h2>
+
+<p>하나의 File에 여러 개의 Component를 만들어 사용 할 수 있습니다. 위의 App.js에 Food라는 Component를 하나 더 생성해보겠습니다.</p>
+
+<pre><code class="language-js">//App.js
+import React from 'react';
+//Food Component
+function Food(){
+  return (&lt;h2&gt;Apple&lt;/h2&gt;)
+}
+//App Component
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello!!!!!&lt;/h1&gt;
+      &lt;Food /&gt;  
+    &lt;/div&gt;
+    );
+}
+
+export default App;
+</code></pre>
+
+<p><strong>1) App.js 에 Food Component 추가</strong></p>
+
+<pre><code class="language-js">function Food(){return (&lt;h2&gt;Apple&lt;/h2&gt;)}
+</code></pre>
+
+<p><strong>2) App Component에서 Food Component 사용</strong></p>
+
+<pre><code class="language-js">function App(){ return ... &lt;Food /&gt; ... }
+</code></pre>
+
+<p><strong>3) 동작 확인</strong></p>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/2/2_1.png" alt="">
+            </span></p>
+        
+    
+
+
+
+<h1 id="2-jsx-props">2. JSX &amp; Props</h1>
+
+<h2 id="2-1-jsx-javascript-xml-란">2.1 JSX(Javascript XML)란?</h2>
+
+<p>위에서 Component를 return 할 때 사용한 HTML과 비슷한 부분을 JSX라고 합니다. JSX는 HTML 뿐만 아니라 Javascript를 이용한 동적인 부분도 작성할 수 있습니다. 간단히 JSX를 알아보면 아래와 같습니다.</p>
+
+<ul>
+<li>XML과 유사한 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Javascript를 확장</span></strong>
+    
+
+한 문법</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Javascript와 HTML의 조합</span></strong>
+    
+
+으로 작성</li>
+<li>React가 필요로하는 유일한 추가적인 개념(JSX 이외에는 Javascript 개념만 알면 됨)</li>
+</ul>
+
+<h2 id="2-2-props-properties">2.2 Props(Properties)</h2>
+
+<ul>
+<li><u>Component에 Data를 전달하기 위한 방법</u>으로 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Component의 속성값</span></strong>
+    
+
+을 의미</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Component명({Props})</span></strong>
+    
+
+ 의 형태로 사용</li>
+</ul>
+
+<p>예를 들어 App Component에서 Food Component로 특정 데이터를 보내고, Food Component에서 전달받은 데이터를 사용하는 예시를 알아보겠습니다.</p>
+
+<pre><code class="language-js">//App.js
+import React from 'react';
+function Food({name}){
+  return (&lt;h2&gt;I like {name}&lt;/h2&gt;)
+}
+function App() {
+  return (&lt;div&gt;
+      &lt;Food name = &quot;apple&quot;/&gt;
+      &lt;Food name = &quot;banana&quot;/&gt;
+    &lt;/div&gt;);
+}
+
+export default App;
+</code></pre>
+
+<p><strong>1)Food Component에서 props 설정</strong></p>
+
+<pre><code class="language-js">function Food({name}){
+  return (&lt;h2&gt;I like {name}&lt;/h2&gt;)
+}
+</code></pre>
+
+<ul>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">name</span></strong>
+    
+
+이라는 값을 props로 설정</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">{name}</span></strong>
+    
+
+의 형태로 props 사용</li>
+</ul>
+
+<p><strong>2)App Component에서 Food Component에 props 전달</strong></p>
+
+<pre><code class="language-js">//apple props을 가지는 Food Component
+    &lt;Food name = &quot;apple&quot;/&gt;
+//banana props을 가지는 Food Component
+    &lt;Food name = &quot;banana&quot;/&gt;
+</code></pre>
+
+<p><strong>3) 동작 확인</strong></p>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/2/2_2.png" alt="">
+            </span></p>
+        
+    
+
+
+
+<h1 id="3-동적인-component-사용-map함수-이용">3. 동적인 Component 사용(Map함수 이용)</h1>
+
+<p>위의 예시에서 Component를 만들어 보았고, 만든 Component를 하나씩 입력하여 사용해보았습니다. 이런 경우에 만약 같은 Component를 5번 사용할 경우 5번을 입력해야할 것입니다.<br />
+이런 경우 Map 함수를 이용하면 동적으로 Component를 사용 할 수 있습니다.</p>
+
+<h2 id="3-1-map-함수란">3.1 Map 함수란?</h2>
+
+<ul>
+<li>Map 함수의 인자로 <strong>입력 된 함수</strong>를 Object의 <strong>각 요소에 적용</strong>하는 함수</li>
+<li>사용방법 : 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Ojbect.Map(func)</span></strong>
+    
+
 </li>
 </ul>
+
+<h2 id="3-2-동적인-component-사용-예시">3.2 동적인 Component 사용 예시</h2>
+
+<pre><code class="language-js">import React from 'react';
+
+//Food Component
+function Food({name, evaluation}){
+  return (&lt;h2&gt;I like {name}. It is {evaluation}.&lt;/h2&gt;)
+}
+
+//Object
+const foodILike = [
+  {
+    name: &quot;Pizza&quot;,
+    evaluation: &quot;Good&quot;
+  },
+  {
+    name:&quot;Steak&quot;,
+    evaluation:&quot;Excellent&quot;
+  }
+];
+
+//food Render 함수
+function foodRender(food)
+{
+  return (&lt;Food name = {food.name} evaluation = {food.evaluation}/&gt;);
+}
+
+//App Component
+function App() {
+  return (
+    &lt;div&gt;
+      {foodILike.map(foodRender)}
+    &lt;/div&gt;);
+}
+
+export default App;
+
+</code></pre>
+
+<p>세부적으로 살펴보겠습니다.</p>
+
+<p><strong>1) Javascript Object 생성</strong></p>
+
+<ul>
+<li>foodILike Object를 생성(name, evaluation으로 구성)</li>
+</ul>
+
+<p><strong>2) food Component에서 2개 props 받기</strong></p>
+
+<pre><code class="language-js">function Food({name, evaluation}){
+  return (&lt;h2&gt;I like {name}. It is {evaluation}.&lt;/h2&gt;)
+}
+</code></pre>
+
+<ul>
+<li>Object의 name 과 evaluation를 입력받아 h2 Tag로 출력</li>
+</ul>
+
+<p><strong>3) Component를 생성하는 함수 만들기</strong></p>
+
+<pre><code class="language-js">function foodRender(food)
+{
+  return (&lt;Food name = {food.name} evaluation = {food.evaluation}/&gt;);
+}
+</code></pre>
+
+<ul>
+<li>food : foodILike Object 여러 요소 중 하나의 요소</li>
+<li>함수 역할 : name 과 evaluation props를 가지는 Food Component 생성</li>
+</ul>
+
+<p><strong>4) Object의 Map 함수를 이용해 Component 동적 생성</strong></p>
+
+<pre><code class="language-js">{foodILike.map(foodRender)}
+</code></pre>
+
+<ul>
+<li>foodILike : Map을 적용할 object명</li>
+<li>foodRender : foodILike Object의 각각의 요소에 적용할 함수</li>
+<li>map 함수 적용 결과 : 각 Ojbect의 name 과 evaluation props를 가지는 Food Component 생성</li>
+</ul>
+
+<p><strong>5) 동작 확인</strong>
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/2/2_3.png" alt="">
+            </span></p>
+        
+    
+
+</p>
+
+<p><strong> 6) 기타 사항</strong></p>
+
+<p>브라우저를 실행시키면 위와 같이 동작하는 것을 확인 할 수 있지만, 개발자도구(F12)를 실행시켜서 콘솔창을 보면 아래와 같은 Warning Message를 확인 할 수 있습니다.
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/2/2_4.png" alt="">
+            </span></p>
+        
+    
+
+</p>
+
+<p>이는 Ojbect의 각각의 값에 id라는 props를 저장하고, Component를 사용할 때 이 id를 key값으로 설정해줌으로서 해결할 수 있습니다.</p>
+
+<pre><code class="language-js">//Ojbect
+const foodILike = [
+  {
+    id: 1,
+    name: &quot;Pizza&quot;,
+    evaluation: &quot;Good&quot;
+  },
+  {
+    id: 2,
+    name:&quot;Steak&quot;,
+    evaluation:&quot;Excellent&quot;
+  }
+];
+
+//food Render 함수
+function foodRender(food)
+{
+  return (&lt;Food key = {food.id} name = {food.name} evaluation = {food.evaluation}/&gt;);
+}
+</code></pre>
+
+<ul>
+<li>foodILike Object의 각각의 요소에 id값 저장</li>
+<li>Component에 key값으로 food.id값 사용</li>
+</ul>
+
+<h1 id="4-유효한-props-인지-check하기">4. 유효한 Props 인지 Check하기</h1>
+
+<p>Component에서 전달받은 props는 우리의 의도와는 다른 props가 전달 될 수 있습니다.
+그러므로 우리는 전달받은 props가 유효한 props인지 확인해야합니다.
+props types 라는 것을 통해 유효성을 check할 수 있습니다.</p>
+
+<h1 id="4-1-props-types-설치하기">4.1 props types 설치하기</h1>
+
+<ul>
+<li>cmd(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm i prop-types</span></strong>
+    
+
+ 입력</li>
+
+<li><p>package.json 의 &ldquo;dependencies&rdquo; 항목에서 설치 되었는지 확인</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;nmp i prop-types
+</code></pre></li>
+</ul>
+
+<h1 id="4-2-props-types-사용하기">4.2 props types 사용하기</h1>
+
+<p><strong>1) props types import</strong></p>
+
+<pre><code class="language-js">import PropTypes from &quot;prop-types&quot;;
+</code></pre>
+
+<p><strong>2) 확인할 props와 유효성 체크항목 명시</strong></p>
+
+<pre><code class="language-js">Food.PropTypes = {
+  name: PropTypes.string.isRequired,
+  evaluation : PropTypes.string.isRequired
+}
+</code></pre>
+
+<p><strong>3) 유효성이 어긋나는 경우 확인</strong></p>
+
+<p>위에서 작성한 유효성에 어긋날 경우 개발자 도구 -&gt; 콘솔창에서 Warning을 확인 할 수 있습니다.</p>
 
 <p>감사합니다.</p>
 
@@ -1403,16 +1168,13 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
                 <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94">노마드코더</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/node.js">node.js</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8">컴포넌트</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/npm">npm</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/jsx">JSX</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/npx">npx</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://psyssai.github.io/tags/react-app-%EA%B5%AC%EC%A1%B0">react app 구조</a></li>
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/proptypes">PropTypes</a></li>
                 
             
         
@@ -1450,8 +1212,8 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
 
 <ul class="actions pagination">
     
-        <li><a href="https://psyssai.github.io/frontend/react/react_1_overview/"
-                class="button big previous">[React]0.개요</a></li>
+        <li><a href="https://psyssai.github.io/frontend/react/react_1_introduction/"
+                class="button big previous">[React]1.React 소개와 설치</a></li>
     
 
     
@@ -1549,7 +1311,21 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://psyssai.github.io/frontend/react/react_2_introduction/">[React]1.React 소개와 설치</a>
+                <a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/">[React]2.Component, JSX, Props</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-08'>
+                October 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_1_introduction/">[React]1.React 소개와 설치</a>
               </h3>
               
               <time class="published" datetime='2019-09-27'>
@@ -1563,7 +1339,7 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://psyssai.github.io/frontend/react/react_1_overview/">[React]0.개요</a>
+                <a href="https://psyssai.github.io/frontend/react/react_0_overview/">[React]0.개요</a>
               </h3>
               
               <time class="published" datetime='2019-09-26'>
@@ -1591,7 +1367,7 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
         
         
 
-        <a href="https://psyssai.github.io/frontend/react/react_1_overview/" class="image featured">
+        <a href="https://psyssai.github.io/frontend/react/react_0_overview/" class="image featured">
             <div class = "CenterImg">
             <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
             </div>
@@ -1623,20 +1399,6 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
               
               <time class="published" datetime='2019-08-29'>
                 August 29, 2019
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://psyssai.github.io/blog/bigdata/pandas/8_dataframe_sortrank/">[Pandas 기초]8.Pandas DataFrame의 sort, rank 함수</a>
-              </h3>
-              
-              <time class="published" datetime='2019-08-28'>
-                August 28, 2019
               </time>
             </header>
             
@@ -1687,7 +1449,7 @@ ReactDOM.render(&lt;App /&gt;, document.getElementByID('root'))
             <header>
               
                 <a href="https://psyssai.github.io/categories/frontend/react/">frontend/react</a>
-                <span style="float:right;">2</span>
+                <span style="float:right;">3</span>
               
             </header>
           </article>
