@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>클래스 컴포넌트 on PSYda</title>
+    <link>https://psyssai.github.io/tags/%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/</link>
+    <description>Recent content in 클래스 컴포넌트 on PSYda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://psyssai.github.io/tags/%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[React]3.State &amp; Component Life Cycle</title>
+      <link>https://psyssai.github.io/frontend/react/react_3_state_lifecycle/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/frontend/react/react_3_state_lifecycle/</guid>
+      <description>안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &amp;ldquo;React JS로 웹서비스 만들기&amp;rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+  Class Component State Component LifeCycle    1. Class Component Component는 함수 Component와 Class Component과 있으며, 이전 포스팅에 이어 이번에는 Class Component에 대해 알아보겠습니다.
+1.1 Class Component 생성 //App.js import React from &#39;react&#39;; class App extends React.Component{ render(){ return &amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt; } } export default App;  1) react import</description>
+    </item>
+    
+  </channel>
+</rss>

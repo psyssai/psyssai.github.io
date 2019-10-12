@@ -1,0 +1,1244 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/psyssai.github.io"
+        },
+        "articleSection" : "frontend",
+        "name" : "[React]3.State \x26 Component Life Cycle",
+        "headline" : "[React]3.State \x26 Component Life Cycle",
+        "description" : "안녕하세요. PSYda 입니다.\n본 포스팅은 Nomad Coders 의 \x26ldquo;React JS로 웹서비스 만들기\x26rdquo;를 통해 학습한 내용을 정리한 것입니다.\n이번 포스팅에서 알아볼 내용은 아래와 같습니다.\n  Class Component State Component LifeCycle    1. Class Component Component는 함수 Component와 Class Component과 있으며, 이전 포스팅에 이어 이번에는 Class Component에 대해 알아보겠습니다.\n1.1 Class Component 생성 \/\/App.js import React from \x27react\x27; class App extends React.Component{ render(){ return \x26lt;div\x26gt;Hello\x26lt;\/div\x26gt; } } export default App;  1) react import",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-10-12 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-10-12 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/psyssai.github.io\/frontend\/react\/react_3_state_lifecycle\/",
+        "wordCount" : "723",
+        "keywords" : [ "React","FrontEnd","노마드코더","스테이트","클래스 컴포넌트","컴포넌트 라이프싸이클","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[React]3.State &amp; Component Life Cycle</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.57.2" />
+        
+
+
+        
+            <meta name="author" content="PSYda">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[React]3.State &amp; Component Life Cycle"/>
+<meta name="twitter:description" content="안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+  Class Component State Component LifeCycle    1. Class Component Component는 함수 Component와 Class Component과 있으며, 이전 포스팅에 이어 이번에는 Class Component에 대해 알아보겠습니다.
+1.1 Class Component 생성 //App.js import React from &#39;react&#39;; class App extends React.Component{ render(){ return &lt;div&gt;Hello&lt;/div&gt; } } export default App;  1) react import"/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="[React]3.State &amp; Component Life Cycle" />
+<meta property="og:description" content="안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+  Class Component State Component LifeCycle    1. Class Component Component는 함수 Component와 Class Component과 있으며, 이전 포스팅에 이어 이번에는 Class Component에 대해 알아보겠습니다.
+1.1 Class Component 생성 //App.js import React from &#39;react&#39;; class App extends React.Component{ render(){ return &lt;div&gt;Hello&lt;/div&gt; } } export default App;  1) react import" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/" />
+<meta property="article:published_time" content="2019-10-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-12T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[React]3.State &amp; Component Life Cycle">
+<meta itemprop="description" content="안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서 알아볼 내용은 아래와 같습니다.
+  Class Component State Component LifeCycle    1. Class Component Component는 함수 Component와 Class Component과 있으며, 이전 포스팅에 이어 이번에는 Class Component에 대해 알아보겠습니다.
+1.1 Class Component 생성 //App.js import React from &#39;react&#39;; class App extends React.Component{ render(){ return &lt;div&gt;Hello&lt;/div&gt; } } export default App;  1) react import">
+
+
+<meta itemprop="datePublished" content="2019-10-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-10-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="723">
+
+
+
+<meta itemprop="keywords" content="React,FrontEnd,노마드코더,스테이트,클래스 컴포넌트,컴포넌트 라이프싸이클," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/main.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/add-on.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/academicons.min.css">
+        
+
+        
+        
+            
+                
+            
+        
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://psyssai.github.io/">frontend</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://psyssai.github.io/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://psyssai.github.io/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-12'>
+                                    October 12, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/">[React]2.Component, JSX, Props</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-08'>
+                                    October 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_1_introduction/">[React]1.React 소개와 설치</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-27'>
+                                    September 27, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_0_overview/">[React]0.개요</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-26'>
+                                    September 26, 2019</time>
+                            </header>
+                            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_0_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-08-31'>
+                                    August 31, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-10-12'>
+            October 12, 2019</time>
+        <span class="author">PSYda</span>
+        
+            <p>4 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<p>안녕하세요. PSYda 입니다.</p>
+
+<p>본 포스팅은 <a href="https://academy.nomadcoders.co/courses/">Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;</a>를 통해 학습한 내용을 정리한 것입니다.</p>
+
+<p>이번 포스팅에서 알아볼 내용은 아래와 같습니다.</p>
+
+<div id = "summary">
+<br>
+<ol>
+<strong>
+<li>Class Component</li>
+<li>State</li>
+<li>Component LifeCycle</li>
+</strong>
+</ol>
+</div>
+
+<h1 id="1-class-component">1. Class Component</h1>
+
+<p>Component는 함수 Component와 Class Component과 있으며, <a href="https://psyssai.github.io/frontend/react/react_2_component_jsx">이전 포스팅</a>에 이어 이번에는 Class Component에 대해 알아보겠습니다.</p>
+
+<h2 id="1-1-class-component-생성">1.1 Class Component 생성</h2>
+
+<pre><code class="language-js">//App.js
+import React from 'react';
+
+class App extends React.Component{
+  render(){ return &lt;div&gt;Hello&lt;/div&gt; }
+}
+
+export default App;
+
+</code></pre>
+
+<p><strong>1) react import </strong></p>
+
+<pre><code class="language-js">import React from 'react';
+</code></pre>
+
+<p><strong>2) React.Component Class로 부터 상속받은 App Class(Component) 생성 </strong></p>
+
+<pre><code class="language-js">class App extends React.Component{}
+</code></pre>
+
+<p><strong>3) render 함수의 return에 rendering 할 내용을 JSX로 작성</strong></p>
+
+<pre><code class="language-js">render(){ return &lt;div&gt;Hello&lt;/div&gt; }
+</code></pre>
+
+<p><strong>4) Component export</strong></p>
+
+<pre><code class="language-js">export defualt App;
+</code></pre>
+
+<h1 id="2-state">2.State</h1>
+
+<ul>
+<li>State = Object</li>
+<li>Component 내부에서 동적인 데이터를 다루고 싶을 때 사용</li>
+<li>State가 변경되면 자동으로 render 함수 수행</li>
+</ul>
+
+<h2 id="2-1-state-생성-및-사용">2.1 State 생성 및 사용</h2>
+
+<pre><code class="language-js">//App Class
+class App extends React.Component{
+    state = { count : 0 } ;
+    render(){ return &lt;div&gt;The number is {this.state.count}&lt;/div&gt; }
+}
+</code></pre>
+
+<p><strong>1) State 만들기</strong></p>
+
+<ul>
+<li>Class 내부에 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">state = { 변수 : 값 }</span></strong>
+    
+
+ 형태로 생성</li>
+<li>미래에 사용할 모든 변수를 정의할 필요는 없음. 계획단계의 변수만 정의</li>
+</ul>
+
+<p><strong>2) State 사용</strong></p>
+
+<ul>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">{this.state.변수명}</span></strong>
+    
+
+ 형태로 사용</li>
+<li>또는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">const {변수명} = this.state</span></strong>
+    
+
+ 로 정의하고, 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">변수명</span></strong>
+    
+
+ 을 대신 사용</li>
+</ul>
+
+<h2 id="2-2-state-의-값-변경">2.2 State 의 값 변경</h2>
+
+<ul>
+<li>this.state.count = 1 과 같은 형태로 직접 state를 변경할 수 없음</li>
+<li>State의 값을 변경하기 위해서는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">setState()</span></strong>
+    
+
+ 함수를 반드시 사용!</li>
+<li>setState를 통해 State의 값이 변경되면 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">render() 함수를 자동으로 실행</span></strong>
+    
+
+</li>
+<li>Virtual DOM 을 통해 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">변경된 부분(State가 변한 부분) 만 다시 Rendering</span></strong>
+    
+
+ 함</li>
+</ul>
+
+<p>예제 코드 입니다.</p>
+
+<pre><code class="language-js">//App Class
+class App extends React.Component{
+  state = {
+    count: 0
+  };
+
+  // add, minus 함수
+  add = () =&gt; {
+    this.setState({count: this.state.count + 1});
+  };
+  minus = () =&gt; {
+    this.setState({count: this.state.count - 1});
+  };
+
+  // render 함수
+  render(){
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;The number is : {this.state.count}&lt;/h1&gt;
+        &lt;button onClick={this.add}&gt;Add&lt;/button&gt;
+        &lt;button onClick={this.minus}&gt;Minus&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+
+<p>위의 예제는 두 개의 Button(Add, Minus)을 생성합니다. Add Button을 누르면 State의 Count가 +1, Minus Button을 누르면 State의 Count가 -1 이 됩니다. State가 Undate되면서 render() 함수에 있는 내용이 자동으로 rendering 되어 브라우저에서 변경된 내용을 바로 볼 수 있습니다. 세부적으로 알아보겠습니다.</p>
+
+<p><strong>1) render 함수에 Button 생성</strong></p>
+
+<pre><code class="language-html">&lt;button onClick={this.add}&gt;Add&lt;/button&gt;
+&lt;button onClick={this.minus}&gt;Minus&lt;/button&gt;
+</code></pre>
+
+<ul>
+<li>Add/Minus Button을 클릭(onClick) 하면 add/minus 함수 호출</li>
+<li>이벤트 이름 설정시 반드시 camelCase로 작성(onClick, onChange 등)</li>
+<li>이벤트에 전달해주는 값은 반드시 함수(함수를 호출 하면 안됨, ex Add())</li>
+</ul>
+
+<p><strong>2) add, minus 함수 생성</strong></p>
+
+<pre><code class="language-js">  add = () =&gt; {
+    this.setState({count: this.state.count + 1});
+  };
+</code></pre>
+
+<ul>
+<li>setState를 통해 state의 count 값을 update를 하고 rendering 수행</li>
+</ul>
+
+<p><strong>3) 동작 확인</strong>
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/3/3_1.png" alt="">
+            </span></p>
+        
+    
+
+</p>
+
+<p><strong>4) 기타 사항 </strong><br />
+2) 에서 setState를 통해 state를 변경 할 때 예제와 같이 this.state.count 형태로 사용할 경우 this.state를 한번 더 조회해야 하는 문제를 가지고 있습니다. 그래서 아래와 같이 함수형태로 바꿔서 사용합니다.</p>
+
+<pre><code class="language-js">  add = () =&gt; {
+    this.setState(current =&gt; ({ count: current.count + 1 }));
+  };
+</code></pre>
+
+<h1 id="3-component-life-cycle">3. Component Life Cycle</h1>
+
+<p>React Component 생성(Mounting), 업데이트(Updating), 파괴(Unmounting) 될 수 있습니다.
+그 과정에서 호출되는 함수들이 있으며, 호출 시점에 따라 필요한 사용자 코드를 추가할 수 있습니다.</p>
+
+<h1 id="3-1-mounting">3.1 Mounting</h1>
+
+<p>Component가 Mounting 될 때 호출 되는 함수 및 호출 순서는 아래와 같습니다.</p>
+
+<p>1) <strong>cunstructor()</strong> : Component 생성자로 가장 먼저 호출</p>
+
+<p>2) static getDerivedStateFromProps() : 지금 수준에서 몰라도 됨</p>
+
+<p>3) <strong>render()</strong> : Rendering 하는 내용 작성</p>
+
+<p>4) <strong>componentDidMount()</strong> : Rendering 후에 필요한 내용을 작성</p>
+
+<h1 id="3-2-updating">3.2 updating</h1>
+
+<p>Component가 변경 될 때 호출 되는 함수 및 호출 순서</p>
+
+<p>1) static getDerivedStateFromProps() : 지금 수준에서 몰라도 됨</p>
+
+<p>2) shouldComponentUpdate() : Component 최적화내용 작성</p>
+
+<p>3) <strong>render()</strong> : Rendering 하는 내용 작성</p>
+
+<p>4) getSnapshotBeforeUpdate() : DOM 업데이트 하기 직전에 해야할 내용을 작성</p>
+
+<p>5) <strong>componentDidUpdate()</strong> : Redering 후에 필요한 내용을 작성</p>
+
+<h1 id="3-3-unmounting">3.3 unmounting</h1>
+
+<p>Component가 unmounting 될 떄 호출 되는 함수 및 호출 순서</p>
+
+<p>1) <strong>componentWillUnmount()</strong> : 이벤트 제거 및 기타 사용자 코드 제거 내용 작성</p>
+
+<h1 id="3-4-mounting-life-cycle을-사용한-예제">3.4 (Mounting)Life Cycle을 사용한 예제</h1>
+
+<pre><code class="language-js">//App Class
+class App extends React.Component{
+  state = {
+    isLoading: true
+  }
+  componentDidMount(){
+    setTimeout( () =&gt; {
+      this.setState({isLoading:false});
+    }, 6000)
+  }
+  render(){
+    const { isLoading } = this.state;
+    return &lt;div&gt;{ isLoading ? &quot;Loading...&quot; : &quot;We are ready&quot; }&lt;/div&gt;;
+  }
+}
+</code></pre>
+
+<p><strong>1) isLoading 은 true</strong></p>
+
+<pre><code class="language-js">  state = { isLoading: true }
+</code></pre>
+
+<p><strong>2) render함수에서 isLoading에 따라 화면 표시</strong></p>
+
+<pre><code class="language-js">  render(){
+    const { isLoading } = this.state;
+    return &lt;div&gt;{ isLoading ? &quot;Loading...&quot; : &quot;We are ready&quot; }&lt;/div&gt;;
+  }
+</code></pre>
+
+<ul>
+<li>isLoading 이 True 이면 &ldquo;Loading&hellip;&rdquo; 출력</li>
+<li>isLoading 이 false이면 &ldquo;We are ready&rdquo; 출력</li>
+</ul>
+
+<p><strong>3) componentDidMount() 함수를 이용한 rendering 이후 처리</strong></p>
+
+<pre><code class="language-js">  componentDidMount(){
+    setTimeout( () =&gt; {
+      this.setState({isLoading:false});
+    }, 6000)
+  }
+</code></pre>
+
+<ul>
+<li>componentDidMount() 는 render() 함수 이후에 실행됨</li>
+<li>6초(6000ms) 후에 state의 isLoading을 false로 변경</li>
+</ul>
+
+<p><strong>4) setState가 실행되어 render() 가 다시 실행</strong></p>
+
+<ul>
+<li>isLoading이 false로 변경되었기 때문에 &ldquo;We are ready&rdquo; 출력</li>
+</ul>
+
+<p><strong>5) 동작확인 </strong>
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/3/3_2.png/" alt="center">
+            </span></p>
+        
+    
+
+</p>
+
+<p>감사합니다.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/categories/frontend/react">FrontEnd/React</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/react">React</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/frontend">FrontEnd</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94">노마드코더</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%8A%B8">스테이트</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8">클래스 컴포넌트</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%8B%B8%EC%9D%B4%ED%81%B4">컴포넌트 라이프싸이클</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "psyssai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/"
+                class="button big previous">[React]2.Component, JSX, Props</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='https://psyssai.github.io/'><img src="https://psyssai.github.io/img/main/logo1.jpg" width="200" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>PSYda</h2>
+        <p>아직 많이 부족한 개발자 입니다. 틈틈히 공부한 내용을 올리고 있습니다. 현재에 멈추지 않고 계속적으로 발전하길 원합니다.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-12'>
+                October 12, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/">[React]2.Component, JSX, Props</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-08'>
+                October 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_1_introduction/">[React]1.React 소개와 설치</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-27'>
+                September 27, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_0_overview/">[React]0.개요</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-26'>
+                September 26, 2019
+              </time>
+            </header>
+            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_0_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a>
+              </h3>
+              
+              <time class="published" datetime='2019-08-31'>
+                August 31, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://psyssai.github.io/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/frontend/react/">frontend/react</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          PSYda
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://psyssai.github.io/js/util.js"></script>
+      <script src="https://psyssai.github.io/js/main.js"></script>
+      <script src="https://psyssai.github.io/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
