@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React App on PSYda</title>
+    <link>https://psyssai.github.io/tags/react-app/</link>
+    <description>Recent content in React App on PSYda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://psyssai.github.io/tags/react-app/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[React]4.영화 App 만들기</title>
+      <link>https://psyssai.github.io/frontend/react/react_4_create_movie_app/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://psyssai.github.io/frontend/react/react_4_create_movie_app/</guid>
+      <description>안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &amp;ldquo;React JS로 웹서비스 만들기&amp;rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서는 지금까지 배운 내용을 바탕으로 실제 여기 형태를 가지는 Movie App을 만들어 볼 예정입니다. 세부적으로 알아볼 내용은 아래와 같습니다.
+  API로 부터 Movie 데이터 가져오기 Movies App 화면에 띄우기 Movies App에 스타일 입히기 Github page에 Movie App 표시    1. API로 부터 Movie 데이터 가져오기 Javascript를 이용해 외부의 데이터를 가지고 오는 방법에는 jquery, fetch, Axios 등의 방법이 있는데, 그 중 Axios를 이용하겠습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
