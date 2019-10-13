@@ -1,0 +1,1550 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/psyssai.github.io"
+        },
+        "articleSection" : "frontend",
+        "name" : "[React]4.영화 App 만들기",
+        "headline" : "[React]4.영화 App 만들기",
+        "description" : "안녕하세요. PSYda 입니다.\n본 포스팅은 Nomad Coders 의 \x26ldquo;React JS로 웹서비스 만들기\x26rdquo;를 통해 학습한 내용을 정리한 것입니다.\n이번 포스팅에서는 지금까지 배운 내용을 바탕으로 실제 여기 형태를 가지는 Movie App을 만들어 볼 예정입니다. 세부적으로 알아볼 내용은 아래와 같습니다.\n  \rAPI\r로 부터 Movie 데이터 가져오기\r Movies App 화면에 띄우기\r Movies App에 스타일 입히기\r \rGithub page에 Movie App 표시\r    1. API로 부터 Movie 데이터 가져오기 Javascript를 이용해 외부의 데이터를 가지고 오는 방법에는 jquery, fetch, Axios 등의 방법이 있는데, 그 중 Axios\r를 이용하겠습니다.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-10-12 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-10-12 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/psyssai.github.io\/frontend\/react\/react_4_create_movie_app\/",
+        "wordCount" : "852",
+        "keywords" : [ "React","FrontEnd","노마드코더","스테이트","클래스 컴포넌트","컴포넌트 라이프싸이클","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[React]4.영화 App 만들기</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.57.2" />
+        
+
+
+        
+            <meta name="author" content="PSYda">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[React]4.영화 App 만들기"/>
+<meta name="twitter:description" content="안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서는 지금까지 배운 내용을 바탕으로 실제 여기 형태를 가지는 Movie App을 만들어 볼 예정입니다. 세부적으로 알아볼 내용은 아래와 같습니다.
+  API로 부터 Movie 데이터 가져오기 Movies App 화면에 띄우기 Movies App에 스타일 입히기 Github page에 Movie App 표시    1. API로 부터 Movie 데이터 가져오기 Javascript를 이용해 외부의 데이터를 가지고 오는 방법에는 jquery, fetch, Axios 등의 방법이 있는데, 그 중 Axios를 이용하겠습니다."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="[React]4.영화 App 만들기" />
+<meta property="og:description" content="안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서는 지금까지 배운 내용을 바탕으로 실제 여기 형태를 가지는 Movie App을 만들어 볼 예정입니다. 세부적으로 알아볼 내용은 아래와 같습니다.
+  API로 부터 Movie 데이터 가져오기 Movies App 화면에 띄우기 Movies App에 스타일 입히기 Github page에 Movie App 표시    1. API로 부터 Movie 데이터 가져오기 Javascript를 이용해 외부의 데이터를 가지고 오는 방법에는 jquery, fetch, Axios 등의 방법이 있는데, 그 중 Axios를 이용하겠습니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psyssai.github.io/frontend/react/react_4_create_movie_app/" />
+<meta property="article:published_time" content="2019-10-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-12T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://psyssai.github.io/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[React]4.영화 App 만들기">
+<meta itemprop="description" content="안녕하세요. PSYda 입니다.
+본 포스팅은 Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;를 통해 학습한 내용을 정리한 것입니다.
+이번 포스팅에서는 지금까지 배운 내용을 바탕으로 실제 여기 형태를 가지는 Movie App을 만들어 볼 예정입니다. 세부적으로 알아볼 내용은 아래와 같습니다.
+  API로 부터 Movie 데이터 가져오기 Movies App 화면에 띄우기 Movies App에 스타일 입히기 Github page에 Movie App 표시    1. API로 부터 Movie 데이터 가져오기 Javascript를 이용해 외부의 데이터를 가지고 오는 방법에는 jquery, fetch, Axios 등의 방법이 있는데, 그 중 Axios를 이용하겠습니다.">
+
+
+<meta itemprop="datePublished" content="2019-10-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-10-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="852">
+
+
+
+<meta itemprop="keywords" content="React,FrontEnd,노마드코더,스테이트,클래스 컴포넌트,컴포넌트 라이프싸이클," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/main.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/add-on.css">
+            <link rel="stylesheet" href="https://psyssai.github.io/css/academicons.min.css">
+        
+
+        
+        
+            
+                
+            
+        
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://psyssai.github.io/">frontend</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://psyssai.github.io/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://psyssai.github.io/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://psyssai.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://psyssai.github.io/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://psyssai.github.io/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_4_create_movie_app/">[React]4.영화 App 만들기</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-12'>
+                                    October 12, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-11'>
+                                    October 11, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/">[React]2.Component, JSX, Props</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-08'>
+                                    October 8, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_1_introduction/">[React]1.React 소개와 설치</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-27'>
+                                    September 27, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_0_overview/">[React]0.개요</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-09-26'>
+                                    September 26, 2019</time>
+                            </header>
+                            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_0_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://psyssai.github.io/frontend/react/react_4_create_movie_app/">[React]4.영화 App 만들기</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-10-12'>
+            October 12, 2019</time>
+        <span class="author">PSYda</span>
+        
+            <p>4 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<p>안녕하세요. PSYda 입니다.</p>
+
+<p>본 포스팅은 <a href="https://academy.nomadcoders.co/courses/">Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;</a>를 통해 학습한 내용을 정리한 것입니다.</p>
+
+<p>이번 포스팅에서는 지금까지 배운 내용을 바탕으로 실제 <a href="https://dribbble.com/shots/2442798-Movie-Application/attachments/475341">여기</a> 형태를 가지는 Movie App을 만들어 볼 예정입니다. 세부적으로 알아볼 내용은 아래와 같습니다.</p>
+
+<div id = "summary">
+<br>
+<ol>
+<strong>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">API</span></strong>
+    
+
+로 부터 Movie 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">데이터 가져오기</span></strong>
+    
+
+</li>
+<li>Movies App 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">화면에 띄우기</span></strong>
+    
+
+</li>
+<li>Movies App에 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">스타일 입히기</span></strong>
+    
+
+</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Github page에 Movie App 표시</span></strong>
+    
+
+</li>
+</strong>
+</ol>
+</div>
+
+<h1 id="1-api로-부터-movie-데이터-가져오기">1. API로 부터 Movie 데이터 가져오기</h1>
+
+<p>Javascript를 이용해 외부의 데이터를 가지고 오는 방법에는 <strong>jquery, fetch, Axios</strong> 등의 방법이 있는데, 그 중 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Axios</span></strong>
+    
+
+를 이용하겠습니다.</p>
+
+<h1 id="1-1-axios">1.1 Axios</h1>
+
+<p><strong>1) Axios 설치</strong></p>
+
+<ul>
+<li><p>cmd(터미널) 창에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm i axios 입력</span></strong>
+    
+
+</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm i axios
+</code></pre></li>
+</ul>
+
+<p><strong>2) Axios import</strong></p>
+
+<pre><code class="language-js">import axios from &quot;axios&quot;;
+</code></pre>
+
+<h1 id="1-2-api-yts-사용하기">1.2 API(yts) 사용하기</h1>
+
+<p><strong>1) Data를 가져올 API URL 정보</strong></p>
+
+<ul>
+<li><a href="https://yts-proxy.now.sh/list_movies.json">https://yts-proxy.now.sh/list_movies.json</a></li>
+</ul>
+
+<p><strong>2) Axios를 이용해 Data 가져오기</strong></p>
+
+<pre><code class="language-js">//App class
+  getMovies = async () =&gt; {
+    const { data: { data: { movies }}} = await axios.get(&quot;https://yts-proxy.now.sh/list_movies.json?sort_by=rating&quot;);list_movies.json&quot;);
+  }
+  componentDidMount(){
+    this.getMovies();
+  }
+</code></pre>
+
+<ul>
+<li>getMovies 라는 함수를 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">비동기 방식(async, await)</span></strong>
+    
+
+으로 생성</li>
+<li>getMovies 함수에서 movies라는 변수에 가져온 영화 데이터 저장</li>
+<li>movies 라는 데이터는 data 안의 data 안에 있음.</li>
+<li>rending 후에(componentDidMount함수에서) getMovies 함수 실행</li>
+</ul>
+
+<h1 id="2-movies-rendering">2. Movies Rendering</h1>
+
+<h2 id="2-1-movie-component-생성">2.1 Movie Component 생성</h2>
+
+<p>Movie 데이터를 rendering 하기 위한 Component를 생성합니다.</p>
+
+<pre><code class="language-js">//Movie.js
+import React from &quot;react&quot;;
+import PropTypes from &quot;prop-types&quot;;
+
+function Movie({id, year, title, summary, poster, genres}){
+    return &lt;h5&gt;{title}&lt;/h5&gt;
+}
+
+Movie.propTypes = {
+    id:PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    title:PropTypes.string.isRequired,
+    summary:PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
+export default Movie;
+</code></pre>
+
+<p><strong>1) props 설정</strong></p>
+
+<pre><code class="language-js">function Movie({id, year, title, summary, poster, genres})
+</code></pre>
+
+<ul>
+<li>id, year, title, summary, poster 를 props로 받음</li>
+</ul>
+
+<p><strong>2) title을 rendering</strong></p>
+
+<pre><code class="language-js">return &lt;h5&gt;{title}&lt;/h5&gt;
+</code></pre>
+
+<p><strong>3) PropTypes를 이용해 props의 type check</strong></p>
+
+<pre><code class="language-js">Movie.propTypes = {
+    id:PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    title:PropTypes.string.isRequired,
+    summary:PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+</code></pre>
+
+<ul>
+<li>id, year 는 숫자형</li>
+<li>title, summary, poster 는 string 형</li>
+<li>genres는 array형</li>
+</ul>
+
+<h2 id="2-2-state-사용">2.2 state 사용</h2>
+
+<p>가져온 movies 데이터를 state에 저장합니다.</p>
+
+<p><strong>1) state 생성</strong></p>
+
+<pre><code class="language-js">//App Class
+  state = {
+    isLoading: true,
+    movies: []
+  }
+</code></pre>
+
+<ul>
+<li>movies : [] 라는 state Object 정의</li>
+</ul>
+
+<p><strong>2) state 저장</strong></p>
+
+<pre><code class="language-js">//App class
+  getMovies = async () =&gt; {
+    const { data: { data: { movies }}} = await axios.get(&quot;https://yts-proxy.now.sh/list_movies.json?sort_by=rating&quot;);
+    this.setState({ movies, isLoading:false })
+  };
+</code></pre>
+
+<ul>
+<li>가져온 데이터(movies) 를 State에 저장</li>
+<li><strong><u>movies : movies</u></strong> 를 써야하나 위와 같이 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">movies</span></strong>
+    
+
+ 형태로 사용 가능</li>
+</ul>
+
+<h2 id="2-3-rendering">2.3 Rendering</h2>
+
+<p>state에 값이 저장되면 rendering 을 시작합니다.</p>
+
+<pre><code class="language-js">//App class
+  render(){
+    const { isLoading, movies } = this.state;
+    return (
+    &lt;div&gt;
+      { isLoading ? &quot;Loading...&quot; : movies.map( movie =&gt; (
+        &lt;Movie 
+          key={movie.id} 
+          id={movie.id} 
+          year={movie.year} 
+          title={movie.title} 
+          summary={movie.summary} 
+          poster={movie.medium_cover_image}
+          genres = {movie.genres} /&gt;
+    )) }&lt;/div&gt;);
+</code></pre>
+
+<p><strong>1) 최초 rendering </strong></p>
+
+<ul>
+<li>isLoading 은 True 이기 때문에 <strong>&ldquo;Loading&hellip;&rdquo;</strong> 을 출력</li>
+</ul>
+
+<p><strong>2)State에 저장 </strong></p>
+
+<ul>
+<li>isLoading 이 False 로 변경됨</li>
+<li>조건문에 따라 movies.map() 함수가 실행</li>
+</ul>
+
+<p><strong>3) Movie Component를 사용</strong></p>
+
+<h2 id="2-4-동작-확인">2.4 동작 확인</h2>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/4/4_1.png" alt="">
+            </span></p>
+        
+    
+
+
+
+<h1 id="3-movie-app-styling">3. Movie App Styling</h1>
+
+<h1 id="3-1-movie-app-의-구조화">3.1 Movie App 의 구조화</h1>
+
+<p>위에서 작성한 Movie App은 단순히 데이터만 들어가 있기 때문에 Style을 입히기 힘듭니다. HTML Tag와 Class를 이용해 구조화 해줌으로서 CSS 파일을 이용해 Styling 할 수 있습니다. 여기서 HTML 의 class 를 JSX에서 사용할 때는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">className</span></strong>
+    
+
+ 을 써야합니다.</p>
+
+<p>위의 Component의 return 부분을 수정하여 구조화 된 형태로 변경하겠습니다.</p>
+
+<p><strong>1) Movie Component의 return 변경</strong></p>
+
+<pre><code class="language-js">//Movie Component
+function Movie({id, year, title, summary, poster}){
+    return (
+    &lt;div className=&quot;movie&quot;&gt;
+        &lt;img src={poster} alt={title} title={title}/&gt;
+        &lt;div className=&quot;movie__data&quot;&gt;
+            &lt;h3 className =&quot;movie__title&quot;&gt;{title}&lt;/h3&gt;
+            &lt;h5 className=&quot;movie__year&quot;&gt;{year}&lt;/h5&gt;
+            &lt;ul className = &quot;genres&quot;&gt;
+                {genres.map((genre, index) =&gt; (
+                &lt;li key = {index} className =&quot;genres__genre&quot;&gt;{genre}&lt;/li&gt;
+                ))}
+            &lt;/ul&gt;
+            &lt;p className=&quot;movie__summary&quot;&gt;{summary}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    )
+}
+</code></pre>
+
+<ul>
+<li>genres는 array형태 이기 때문에 map 함수를 이용해 li 태그 생성</li>
+</ul>
+
+<p><strong>2) App Component render함수의 return 변경</strong></p>
+
+<pre><code class="language-js">//App Component render 함수
+ render(){
+    const { isLoading, movies } = this.state;
+    return (
+    &lt;section className =&quot;container&quot;&gt;
+      { isLoading 
+      ? &lt;div className = &quot;loader&quot;&gt;
+        &lt;span className=&quot;loader__text&quot;&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+      :(
+        &lt;div className = &quot;movies&quot;&gt;
+          {movies.map(movie =&gt; 
+          (
+            &lt;Movie
+              key = {movie.id}
+              id = {movie.id}
+              year = {movie.year}
+              title = {movie.title}
+              summary = {movie.summary}
+              poster = {movie.medium_cover_image}
+              genres = {movie.genres}
+            /&gt;
+          )
+          )
+          }
+        &lt;/div&gt;
+      )}
+      &lt;/section&gt;);
+  }
+</code></pre>
+
+<p><strong>3) 동작 확인</strong>
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/4/4_2.png" alt="">
+            </span></p>
+        
+    
+
+</p>
+
+<h2 id="3-2-css-파일로-movie-app-styling">3.2 css 파일로 Movie App Styling</h2>
+
+<p><strong>1) css 파일 생성</strong></p>
+
+<ul>
+<li>Movie.css 파일 생성</li>
+<li>App.css 파일 생성</li>
+</ul>
+
+<p><strong>2) css 파일 import</strong></p>
+
+<ul>
+<li>Movie.js 에서 상단에 <strong><span style="color:red">import &ldquo;./Movie.css&rdquo;</span></strong> 입력</li>
+<li>App.js 에서 상단에 <strong><span style="color:red">import &ldquo;./App.css&rdquo;</span></strong> 입력</li>
+</ul>
+
+<p><strong>3) css 파일에 Style 내용 입력</strong>
+입력한 css 내용은 아래 github 에서 참고하실 수 있습니다.</p>
+
+<ul>
+<li><a href="https://github.com/nomadcoders/movie_app_2019/blob/master/src/App.css">App.css</a></li>
+<li><a href="https://github.com/nomadcoders/movie_app_2019/blob/master/src/Movie.css">Movie.css</a></li>
+</ul>
+
+<h2 id="3-3-동작-확인">3.3 동작 확인</h2>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/4/4_3.png" alt="">
+            </span></p>
+        
+    
+
+
+
+<h2 id="3-4-기타-작업">3.4 기타 작업</h2>
+
+<p>위의 결과물을 확인해보면 summary 글자 수의 차이에 따라 영화 소개 박스의 크기가 차이 나는 것을 확인 할 수 있습니다. 이는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">slice</span></strong>
+    
+
+ 라는 함수를 통해 summary 의 글자 수를 고정함으로서 해결할 수 있습니다.</p>
+
+<p><strong>1) slice를 통한 string 의 글자수 고정</strong></p>
+
+<pre><code class="language-html">//Movie function(component)의 return
+&lt;p className=&quot;movie__summary&quot;&gt;{summary.slice(0, 140)}&lt;/p&gt;
+</code></pre>
+
+<p><strong>2) 최종 결과물 확인</strong>
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/4/4_4.png" alt="">
+            </span></p>
+        
+    
+
+</p>
+
+<h1 id="4-github-page-에-movie-app-표시">4. Github page 에 Movie App 표시</h1>
+
+<p>Github에서 우리가 만든 Movie App을 화면에 표시할 수 있습니다. 이는 온라인 상에서 다른 사람이 우리가 만든 결과물을 볼 수 있음을 의미합니다. 그 방법에 대해 알아보겠습니다.</p>
+
+<h1 id="4-1-gh-pages-설치">4.1 gh-pages 설치</h1>
+
+<p>Github page 에 표시하기 위해서는 <strong><u>gh-pages</u></strong>를 설치해야합니다.</p>
+
+<ul>
+<li><p>cmd(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm i gh-pages</span></strong>
+    
+
+</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm i gh-pages
+</code></pre></li>
+</ul>
+
+<h1 id="4-2-package-json-수정">4.2 package.json 수정</h1>
+
+<p><strong>1) homepage 설정</strong></p>
+
+<pre><code class="language-js">//package.json
+&quot;homepage&quot;:&quot;https://psyssai.github.io/movie_app_2019&quot;
+</code></pre>
+
+<ul>
+<li>psyssai 대신 본인의 github ID 입력</li>
+<li>movie_app_2019 대신 본인의 react project 명 입력</li>
+</ul>
+
+<p><strong>2) scripts에 내용 추가</strong></p>
+
+<pre><code class="language-js">//package.json
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;react-scripts start&quot;,
+    &quot;build&quot;: &quot;react-scripts build&quot;,
+    &quot;deploy&quot;: &quot;gh-pages -d build&quot;,
+    &quot;predeploy&quot;: &quot;npm run build&quot;
+  }
+</code></pre>
+
+<ul>
+<li>deploy 와 predeploy 내용 추가</li>
+</ul>
+
+<p><strong>3) movie_app 빌드</strong></p>
+
+<ul>
+<li><p>cmd(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm run build</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm run build
+</code></pre></li>
+</ul>
+
+<p><strong>4) movie_app을 github page에 발행</strong></p>
+
+<ul>
+<li><p>cmd(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm run deploy</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm run deploy
+</code></pre></li>
+
+<li><p>scripts에 따라 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">predeploy(npm run build)</span></strong>
+    
+
+ 가 먼저 실행됨</p></li>
+
+<li><p>그 후에 script의 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">deploy(gh-pages -d build)</span></strong>
+    
+
+ 가 실행</p></li>
+</ul>
+
+<p><strong>5) github사이트에서 결과물 확인</strong></p>
+
+<ul>
+<li><a href="https://psyssai.github.io/movie_app_2019">github 사이트</a> 접속</li>
+</ul>
+
+<p>감사합니다.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/categories/frontend/react">FrontEnd/React</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/react">React</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/frontend">FrontEnd</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94">노마드코더</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%8A%B8">스테이트</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8">클래스 컴포넌트</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://psyssai.github.io/tags/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%8B%B8%EC%9D%B4%ED%81%B4">컴포넌트 라이프싸이클</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "psyssai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/"
+                class="button big previous">[React]3.State &amp; Component Life Cycle</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='https://psyssai.github.io/'><img src="https://psyssai.github.io/img/main/logo1.jpg" width="200" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>PSYda</h2>
+        <p>아직 많이 부족한 개발자 입니다. 틈틈히 공부한 내용을 올리고 있습니다. 현재에 멈추지 않고 계속적으로 발전하길 원합니다.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_4_create_movie_app/">[React]4.영화 App 만들기</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-12'>
+                October 12, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-11'>
+                October 11, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/">[React]2.Component, JSX, Props</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-08'>
+                October 8, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_1_introduction/">[React]1.React 소개와 설치</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-27'>
+                September 27, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_0_overview/">[React]0.개요</a>
+              </h3>
+              
+              <time class="published" datetime='2019-09-26'>
+                September 26, 2019
+              </time>
+            </header>
+            
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+        
+        
+
+        <a href="https://psyssai.github.io/frontend/react/react_0_overview/" class="image featured">
+            <div class = "CenterImg">
+            <img src="https://psyssai.github.io/img/react/reactIcon.png" alt="">
+            </div>
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://psyssai.github.io/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/pandas/">빅데이터분석/pandas</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://psyssai.github.io/categories/frontend/react/">frontend/react</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+        
+  <li><a href="//github.com/psyssai" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+  <li><a href="mailto:psyssai@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          PSYda
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://psyssai.github.io/js/util.js"></script>
+      <script src="https://psyssai.github.io/js/main.js"></script>
+      <script src="https://psyssai.github.io/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

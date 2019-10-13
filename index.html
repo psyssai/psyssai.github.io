@@ -220,11 +220,23 @@
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a></h3>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_4_create_movie_app/">[React]4.영화 App 만들기</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2019-10-12'>
                                     October 12, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-11'>
+                                    October 11, 2019</time>
                             </header>
                             
 
@@ -293,18 +305,6 @@
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-08-31'>
-                                    August 31, 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -327,7 +327,7 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a></h2>
+            <h2><a href="https://psyssai.github.io/frontend/react/react_4_create_movie_app/">[React]4.영화 App 만들기</a></h2>
         
         
     </div>
@@ -388,93 +388,12 @@
 
 <p>본 포스팅은 <a href="https://academy.nomadcoders.co/courses/">Nomad Coders 의 &ldquo;React JS로 웹서비스 만들기&rdquo;</a>를 통해 학습한 내용을 정리한 것입니다.</p>
 
-<p>이번 포스팅에서 알아볼 내용은 아래와 같습니다.</p>
+<p>이번 포스팅에서는 지금까지 배운 내용을 바탕으로 실제 <a href="https://dribbble.com/shots/2442798-Movie-Application/attachments/475341">여기</a> 형태를 가지는 Movie App을 만들어 볼 예정입니다. 세부적으로 알아볼 내용은 아래와 같습니다.</p>
 
 <div id = "summary">
 <br>
 <ol>
 <strong>
-<li>Class Component</li>
-<li>State</li>
-<li>Component LifeCycle</li>
-</strong>
-</ol>
-</div>
-
-<h1 id="1-class-component">1. Class Component</h1>
-
-<p>Component는 함수 Component와 Class Component과 있으며, <a href="https://psyssai.github.io/frontend/react/react_2_component_jsx">이전 포스팅</a>에 이어 이번에는 Class Component에 대해 알아보겠습니다.</p>
-
-<h2 id="1-1-class-component-생성">1.1 Class Component 생성</h2>
-
-<pre><code class="language-js">//App.js
-import React from 'react';
-
-class App extends React.Component{
-  render(){ return &lt;div&gt;Hello&lt;/div&gt; }
-}
-
-export default App;
-
-</code></pre>
-
-<p><strong>1) react import </strong></p>
-
-<pre><code class="language-js">import React from 'react';
-</code></pre>
-
-<p><strong>2) React.Component Class로 부터 상속받은 App Class(Component) 생성 </strong></p>
-
-<pre><code class="language-js">class App extends React.Component{}
-</code></pre>
-
-<p><strong>3) render 함수의 return에 rendering 할 내용을 JSX로 작성</strong></p>
-
-<pre><code class="language-js">render(){ return &lt;div&gt;Hello&lt;/div&gt; }
-</code></pre>
-
-<p><strong>4) Component export</strong></p>
-
-<pre><code class="language-js">export defualt App;
-</code></pre>
-
-<h1 id="2-state">2.State</h1>
-
-<ul>
-<li>State = Object</li>
-<li>Component 내부에서 동적인 데이터를 다루고 싶을 때 사용</li>
-<li>State가 변경되면 자동으로 render 함수 수행</li>
-</ul>
-
-<h2 id="2-1-state-생성-및-사용">2.1 State 생성 및 사용</h2>
-
-<pre><code class="language-js">//App Class
-class App extends React.Component{
-    state = { count : 0 } ;
-    render(){ return &lt;div&gt;The number is {this.state.count}&lt;/div&gt; }
-}
-</code></pre>
-
-<p><strong>1) State 만들기</strong></p>
-
-<ul>
-<li>Class 내부에 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">state = { 변수 : 값 }</span></strong>
-    
-
- 형태로 생성</li>
-<li>미래에 사용할 모든 변수를 정의할 필요는 없음. 계획단계의 변수만 정의</li>
-</ul>
-
-<p><strong>2) State 사용</strong></p>
-
-<ul>
 <li>
 
 
@@ -482,125 +401,398 @@ class App extends React.Component{
     
         
     
-    <strong><span style = "color:red">{this.state.변수명}</span></strong>
+    <strong><span style = "color:red">API</span></strong>
     
 
- 형태로 사용</li>
-<li>또는 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">const {변수명} = this.state</span></strong>
-    
-
- 로 정의하고, 
+로 부터 Movie 
 
 
 
     
         
     
-    <strong><span style = "color:red">변수명</span></strong>
-    
-
- 을 대신 사용</li>
-</ul>
-
-<h2 id="2-2-state-의-값-변경">2.2 State 의 값 변경</h2>
-
-<ul>
-<li>this.state.count = 1 과 같은 형태로 직접 state를 변경할 수 없음</li>
-<li>State의 값을 변경하기 위해서는 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">setState()</span></strong>
-    
-
- 함수를 반드시 사용!</li>
-<li>setState를 통해 State의 값이 변경되면 
-
-
-
-    
-        
-    
-    <strong><span style = "color:red">render() 함수를 자동으로 실행</span></strong>
+    <strong><span style = "color:red">데이터 가져오기</span></strong>
     
 
 </li>
-<li>Virtual DOM 을 통해 
+<li>Movies App 
 
 
 
     
         
     
-    <strong><span style = "color:red">변경된 부분(State가 변한 부분) 만 다시 Rendering</span></strong>
+    <strong><span style = "color:red">화면에 띄우기</span></strong>
     
 
- 함</li>
+</li>
+<li>Movies App에 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">스타일 입히기</span></strong>
+    
+
+</li>
+<li>
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Github page에 Movie App 표시</span></strong>
+    
+
+</li>
+</strong>
+</ol>
+</div>
+
+<h1 id="1-api로-부터-movie-데이터-가져오기">1. API로 부터 Movie 데이터 가져오기</h1>
+
+<p>Javascript를 이용해 외부의 데이터를 가지고 오는 방법에는 <strong>jquery, fetch, Axios</strong> 등의 방법이 있는데, 그 중 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">Axios</span></strong>
+    
+
+를 이용하겠습니다.</p>
+
+<h1 id="1-1-axios">1.1 Axios</h1>
+
+<p><strong>1) Axios 설치</strong></p>
+
+<ul>
+<li><p>cmd(터미널) 창에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm i axios 입력</span></strong>
+    
+
+</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm i axios
+</code></pre></li>
 </ul>
 
-<p>예제 코드 입니다.</p>
+<p><strong>2) Axios import</strong></p>
+
+<pre><code class="language-js">import axios from &quot;axios&quot;;
+</code></pre>
+
+<h1 id="1-2-api-yts-사용하기">1.2 API(yts) 사용하기</h1>
+
+<p><strong>1) Data를 가져올 API URL 정보</strong></p>
+
+<ul>
+<li><a href="https://yts-proxy.now.sh/list_movies.json">https://yts-proxy.now.sh/list_movies.json</a></li>
+</ul>
+
+<p><strong>2) Axios를 이용해 Data 가져오기</strong></p>
+
+<pre><code class="language-js">//App class
+  getMovies = async () =&gt; {
+    const { data: { data: { movies }}} = await axios.get(&quot;https://yts-proxy.now.sh/list_movies.json?sort_by=rating&quot;);list_movies.json&quot;);
+  }
+  componentDidMount(){
+    this.getMovies();
+  }
+</code></pre>
+
+<ul>
+<li>getMovies 라는 함수를 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">비동기 방식(async, await)</span></strong>
+    
+
+으로 생성</li>
+<li>getMovies 함수에서 movies라는 변수에 가져온 영화 데이터 저장</li>
+<li>movies 라는 데이터는 data 안의 data 안에 있음.</li>
+<li>rending 후에(componentDidMount함수에서) getMovies 함수 실행</li>
+</ul>
+
+<h1 id="2-movies-rendering">2. Movies Rendering</h1>
+
+<h2 id="2-1-movie-component-생성">2.1 Movie Component 생성</h2>
+
+<p>Movie 데이터를 rendering 하기 위한 Component를 생성합니다.</p>
+
+<pre><code class="language-js">//Movie.js
+import React from &quot;react&quot;;
+import PropTypes from &quot;prop-types&quot;;
+
+function Movie({id, year, title, summary, poster, genres}){
+    return &lt;h5&gt;{title}&lt;/h5&gt;
+}
+
+Movie.propTypes = {
+    id:PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    title:PropTypes.string.isRequired,
+    summary:PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
+export default Movie;
+</code></pre>
+
+<p><strong>1) props 설정</strong></p>
+
+<pre><code class="language-js">function Movie({id, year, title, summary, poster, genres})
+</code></pre>
+
+<ul>
+<li>id, year, title, summary, poster 를 props로 받음</li>
+</ul>
+
+<p><strong>2) title을 rendering</strong></p>
+
+<pre><code class="language-js">return &lt;h5&gt;{title}&lt;/h5&gt;
+</code></pre>
+
+<p><strong>3) PropTypes를 이용해 props의 type check</strong></p>
+
+<pre><code class="language-js">Movie.propTypes = {
+    id:PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    title:PropTypes.string.isRequired,
+    summary:PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+</code></pre>
+
+<ul>
+<li>id, year 는 숫자형</li>
+<li>title, summary, poster 는 string 형</li>
+<li>genres는 array형</li>
+</ul>
+
+<h2 id="2-2-state-사용">2.2 state 사용</h2>
+
+<p>가져온 movies 데이터를 state에 저장합니다.</p>
+
+<p><strong>1) state 생성</strong></p>
 
 <pre><code class="language-js">//App Class
-class App extends React.Component{
   state = {
-    count: 0
-  };
-
-  // add, minus 함수
-  add = () =&gt; {
-    this.setState({count: this.state.count + 1});
-  };
-  minus = () =&gt; {
-    this.setState({count: this.state.count - 1});
-  };
-
-  // render 함수
-  render(){
-    return (
-      &lt;div&gt;
-        &lt;h1&gt;The number is : {this.state.count}&lt;/h1&gt;
-        &lt;button onClick={this.add}&gt;Add&lt;/button&gt;
-        &lt;button onClick={this.minus}&gt;Minus&lt;/button&gt;
-      &lt;/div&gt;
-    )
+    isLoading: true,
+    movies: []
   }
+</code></pre>
+
+<ul>
+<li>movies : [] 라는 state Object 정의</li>
+</ul>
+
+<p><strong>2) state 저장</strong></p>
+
+<pre><code class="language-js">//App class
+  getMovies = async () =&gt; {
+    const { data: { data: { movies }}} = await axios.get(&quot;https://yts-proxy.now.sh/list_movies.json?sort_by=rating&quot;);
+    this.setState({ movies, isLoading:false })
+  };
+</code></pre>
+
+<ul>
+<li>가져온 데이터(movies) 를 State에 저장</li>
+<li><strong><u>movies : movies</u></strong> 를 써야하나 위와 같이 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">movies</span></strong>
+    
+
+ 형태로 사용 가능</li>
+</ul>
+
+<h2 id="2-3-rendering">2.3 Rendering</h2>
+
+<p>state에 값이 저장되면 rendering 을 시작합니다.</p>
+
+<pre><code class="language-js">//App class
+  render(){
+    const { isLoading, movies } = this.state;
+    return (
+    &lt;div&gt;
+      { isLoading ? &quot;Loading...&quot; : movies.map( movie =&gt; (
+        &lt;Movie 
+          key={movie.id} 
+          id={movie.id} 
+          year={movie.year} 
+          title={movie.title} 
+          summary={movie.summary} 
+          poster={movie.medium_cover_image}
+          genres = {movie.genres} /&gt;
+    )) }&lt;/div&gt;);
+</code></pre>
+
+<p><strong>1) 최초 rendering </strong></p>
+
+<ul>
+<li>isLoading 은 True 이기 때문에 <strong>&ldquo;Loading&hellip;&rdquo;</strong> 을 출력</li>
+</ul>
+
+<p><strong>2)State에 저장 </strong></p>
+
+<ul>
+<li>isLoading 이 False 로 변경됨</li>
+<li>조건문에 따라 movies.map() 함수가 실행</li>
+</ul>
+
+<p><strong>3) Movie Component를 사용</strong></p>
+
+<h2 id="2-4-동작-확인">2.4 동작 확인</h2>
+
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/4/4_1.png" alt="">
+            </span></p>
+        
+    
+
+
+
+<h1 id="3-movie-app-styling">3. Movie App Styling</h1>
+
+<h1 id="3-1-movie-app-의-구조화">3.1 Movie App 의 구조화</h1>
+
+<p>위에서 작성한 Movie App은 단순히 데이터만 들어가 있기 때문에 Style을 입히기 힘듭니다. HTML Tag와 Class를 이용해 구조화 해줌으로서 CSS 파일을 이용해 Styling 할 수 있습니다. 여기서 HTML 의 class 를 JSX에서 사용할 때는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">className</span></strong>
+    
+
+ 을 써야합니다.</p>
+
+<p>위의 Component의 return 부분을 수정하여 구조화 된 형태로 변경하겠습니다.</p>
+
+<p><strong>1) Movie Component의 return 변경</strong></p>
+
+<pre><code class="language-js">//Movie Component
+function Movie({id, year, title, summary, poster}){
+    return (
+    &lt;div className=&quot;movie&quot;&gt;
+        &lt;img src={poster} alt={title} title={title}/&gt;
+        &lt;div className=&quot;movie__data&quot;&gt;
+            &lt;h3 className =&quot;movie__title&quot;&gt;{title}&lt;/h3&gt;
+            &lt;h5 className=&quot;movie__year&quot;&gt;{year}&lt;/h5&gt;
+            &lt;ul className = &quot;genres&quot;&gt;
+                {genres.map((genre, index) =&gt; (
+                &lt;li key = {index} className =&quot;genres__genre&quot;&gt;{genre}&lt;/li&gt;
+                ))}
+            &lt;/ul&gt;
+            &lt;p className=&quot;movie__summary&quot;&gt;{summary}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    )
 }
 </code></pre>
 
-<p>위의 예제는 두 개의 Button(Add, Minus)을 생성합니다. Add Button을 누르면 State의 Count가 +1, Minus Button을 누르면 State의 Count가 -1 이 됩니다. State가 Undate되면서 render() 함수에 있는 내용이 자동으로 rendering 되어 브라우저에서 변경된 내용을 바로 볼 수 있습니다. 세부적으로 알아보겠습니다.</p>
-
-<p><strong>1) render 함수에 Button 생성</strong></p>
-
-<pre><code class="language-html">&lt;button onClick={this.add}&gt;Add&lt;/button&gt;
-&lt;button onClick={this.minus}&gt;Minus&lt;/button&gt;
-</code></pre>
-
 <ul>
-<li>Add/Minus Button을 클릭(onClick) 하면 add/minus 함수 호출</li>
-<li>이벤트 이름 설정시 반드시 camelCase로 작성(onClick, onChange 등)</li>
-<li>이벤트에 전달해주는 값은 반드시 함수(함수를 호출 하면 안됨, ex Add())</li>
+<li>genres는 array형태 이기 때문에 map 함수를 이용해 li 태그 생성</li>
 </ul>
 
-<p><strong>2) add, minus 함수 생성</strong></p>
+<p><strong>2) App Component render함수의 return 변경</strong></p>
 
-<pre><code class="language-js">  add = () =&gt; {
-    this.setState({count: this.state.count + 1});
-  };
+<pre><code class="language-js">//App Component render 함수
+ render(){
+    const { isLoading, movies } = this.state;
+    return (
+    &lt;section className =&quot;container&quot;&gt;
+      { isLoading 
+      ? &lt;div className = &quot;loader&quot;&gt;
+        &lt;span className=&quot;loader__text&quot;&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+      :(
+        &lt;div className = &quot;movies&quot;&gt;
+          {movies.map(movie =&gt; 
+          (
+            &lt;Movie
+              key = {movie.id}
+              id = {movie.id}
+              year = {movie.year}
+              title = {movie.title}
+              summary = {movie.summary}
+              poster = {movie.medium_cover_image}
+              genres = {movie.genres}
+            /&gt;
+          )
+          )
+          }
+        &lt;/div&gt;
+      )}
+      &lt;/section&gt;);
+  }
 </code></pre>
-
-<ul>
-<li>setState를 통해 state의 count 값을 update를 하고 rendering 수행</li>
-</ul>
 
 <p><strong>3) 동작 확인</strong>
 
@@ -648,116 +840,39 @@ class App extends React.Component{
     
         
             <p><span class="image center">
-            <img src="https://psyssai.github.io/img/react/3/3_1.png" alt="">
+            <img src="https://psyssai.github.io/img/react/4/4_2.png" alt="">
             </span></p>
         
     
 
 </p>
 
-<p><strong>4) 기타 사항 </strong><br />
-2) 에서 setState를 통해 state를 변경 할 때 예제와 같이 this.state.count 형태로 사용할 경우 this.state를 한번 더 조회해야 하는 문제를 가지고 있습니다. 그래서 아래와 같이 함수형태로 바꿔서 사용합니다.</p>
+<h2 id="3-2-css-파일로-movie-app-styling">3.2 css 파일로 Movie App Styling</h2>
 
-<pre><code class="language-js">  add = () =&gt; {
-    this.setState(current =&gt; ({ count: current.count + 1 }));
-  };
-</code></pre>
-
-<h1 id="3-component-life-cycle">3. Component Life Cycle</h1>
-
-<p>React Component 생성(Mounting), 업데이트(Updating), 파괴(Unmounting) 될 수 있습니다.
-그 과정에서 호출되는 함수들이 있으며, 호출 시점에 따라 필요한 사용자 코드를 추가할 수 있습니다.</p>
-
-<h1 id="3-1-mounting">3.1 Mounting</h1>
-
-<p>Component가 Mounting 될 때 호출 되는 함수 및 호출 순서는 아래와 같습니다.</p>
-
-<p>1) <strong>cunstructor()</strong> : Component 생성자로 가장 먼저 호출</p>
-
-<p>2) static getDerivedStateFromProps() : 지금 수준에서 몰라도 됨</p>
-
-<p>3) <strong>render()</strong> : Rendering 하는 내용 작성</p>
-
-<p>4) <strong>componentDidMount()</strong> : Rendering 후에 필요한 내용을 작성</p>
-
-<h1 id="3-2-updating">3.2 updating</h1>
-
-<p>Component가 변경 될 때 호출 되는 함수 및 호출 순서</p>
-
-<p>1) static getDerivedStateFromProps() : 지금 수준에서 몰라도 됨</p>
-
-<p>2) shouldComponentUpdate() : Component 최적화내용 작성</p>
-
-<p>3) <strong>render()</strong> : Rendering 하는 내용 작성</p>
-
-<p>4) getSnapshotBeforeUpdate() : DOM 업데이트 하기 직전에 해야할 내용을 작성</p>
-
-<p>5) <strong>componentDidUpdate()</strong> : Redering 후에 필요한 내용을 작성</p>
-
-<h1 id="3-3-unmounting">3.3 unmounting</h1>
-
-<p>Component가 unmounting 될 떄 호출 되는 함수 및 호출 순서</p>
-
-<p>1) <strong>componentWillUnmount()</strong> : 이벤트 제거 및 기타 사용자 코드 제거 내용 작성</p>
-
-<h1 id="3-4-mounting-life-cycle을-사용한-예제">3.4 (Mounting)Life Cycle을 사용한 예제</h1>
-
-<pre><code class="language-js">//App Class
-class App extends React.Component{
-  state = {
-    isLoading: true
-  }
-  componentDidMount(){
-    setTimeout( () =&gt; {
-      this.setState({isLoading:false});
-    }, 6000)
-  }
-  render(){
-    const { isLoading } = this.state;
-    return &lt;div&gt;{ isLoading ? &quot;Loading...&quot; : &quot;We are ready&quot; }&lt;/div&gt;;
-  }
-}
-</code></pre>
-
-<p><strong>1) isLoading 은 true</strong></p>
-
-<pre><code class="language-js">  state = { isLoading: true }
-</code></pre>
-
-<p><strong>2) render함수에서 isLoading에 따라 화면 표시</strong></p>
-
-<pre><code class="language-js">  render(){
-    const { isLoading } = this.state;
-    return &lt;div&gt;{ isLoading ? &quot;Loading...&quot; : &quot;We are ready&quot; }&lt;/div&gt;;
-  }
-</code></pre>
+<p><strong>1) css 파일 생성</strong></p>
 
 <ul>
-<li>isLoading 이 True 이면 &ldquo;Loading&hellip;&rdquo; 출력</li>
-<li>isLoading 이 false이면 &ldquo;We are ready&rdquo; 출력</li>
+<li>Movie.css 파일 생성</li>
+<li>App.css 파일 생성</li>
 </ul>
 
-<p><strong>3) componentDidMount() 함수를 이용한 rendering 이후 처리</strong></p>
-
-<pre><code class="language-js">  componentDidMount(){
-    setTimeout( () =&gt; {
-      this.setState({isLoading:false});
-    }, 6000)
-  }
-</code></pre>
+<p><strong>2) css 파일 import</strong></p>
 
 <ul>
-<li>componentDidMount() 는 render() 함수 이후에 실행됨</li>
-<li>6초(6000ms) 후에 state의 isLoading을 false로 변경</li>
+<li>Movie.js 에서 상단에 <strong><span style="color:red">import &ldquo;./Movie.css&rdquo;</span></strong> 입력</li>
+<li>App.js 에서 상단에 <strong><span style="color:red">import &ldquo;./App.css&rdquo;</span></strong> 입력</li>
 </ul>
 
-<p><strong>4) setState가 실행되어 render() 가 다시 실행</strong></p>
+<p><strong>3) css 파일에 Style 내용 입력</strong>
+입력한 css 내용은 아래 github 에서 참고하실 수 있습니다.</p>
 
 <ul>
-<li>isLoading이 false로 변경되었기 때문에 &ldquo;We are ready&rdquo; 출력</li>
+<li><a href="https://github.com/nomadcoders/movie_app_2019/blob/master/src/App.css">App.css</a></li>
+<li><a href="https://github.com/nomadcoders/movie_app_2019/blob/master/src/Movie.css">Movie.css</a></li>
 </ul>
 
-<p><strong>5) 동작확인 </strong>
+<h2 id="3-3-동작-확인">3.3 동작 확인</h2>
+
 
 
 
@@ -803,12 +918,206 @@ class App extends React.Component{
     
         
             <p><span class="image center">
-            <img src="https://psyssai.github.io/img/react/3/3_2.png/" alt="center">
+            <img src="https://psyssai.github.io/img/react/4/4_3.png" alt="">
+            </span></p>
+        
+    
+
+
+
+<h2 id="3-4-기타-작업">3.4 기타 작업</h2>
+
+<p>위의 결과물을 확인해보면 summary 글자 수의 차이에 따라 영화 소개 박스의 크기가 차이 나는 것을 확인 할 수 있습니다. 이는 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">slice</span></strong>
+    
+
+ 라는 함수를 통해 summary 의 글자 수를 고정함으로서 해결할 수 있습니다.</p>
+
+<p><strong>1) slice를 통한 string 의 글자수 고정</strong></p>
+
+<pre><code class="language-html">//Movie function(component)의 return
+&lt;p className=&quot;movie__summary&quot;&gt;{summary.slice(0, 140)}&lt;/p&gt;
+</code></pre>
+
+<p><strong>2) 최종 결과물 확인</strong>
+
+
+
+    
+    
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+    
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+    
+
+    
+        
+            <p><span class="image center">
+            <img src="https://psyssai.github.io/img/react/4/4_4.png" alt="">
             </span></p>
         
     
 
 </p>
+
+<h1 id="4-github-page-에-movie-app-표시">4. Github page 에 Movie App 표시</h1>
+
+<p>Github에서 우리가 만든 Movie App을 화면에 표시할 수 있습니다. 이는 온라인 상에서 다른 사람이 우리가 만든 결과물을 볼 수 있음을 의미합니다. 그 방법에 대해 알아보겠습니다.</p>
+
+<h1 id="4-1-gh-pages-설치">4.1 gh-pages 설치</h1>
+
+<p>Github page 에 표시하기 위해서는 <strong><u>gh-pages</u></strong>를 설치해야합니다.</p>
+
+<ul>
+<li><p>cmd(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm i gh-pages</span></strong>
+    
+
+</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm i gh-pages
+</code></pre></li>
+</ul>
+
+<h1 id="4-2-package-json-수정">4.2 package.json 수정</h1>
+
+<p><strong>1) homepage 설정</strong></p>
+
+<pre><code class="language-js">//package.json
+&quot;homepage&quot;:&quot;https://psyssai.github.io/movie_app_2019&quot;
+</code></pre>
+
+<ul>
+<li>psyssai 대신 본인의 github ID 입력</li>
+<li>movie_app_2019 대신 본인의 react project 명 입력</li>
+</ul>
+
+<p><strong>2) scripts에 내용 추가</strong></p>
+
+<pre><code class="language-js">//package.json
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;react-scripts start&quot;,
+    &quot;build&quot;: &quot;react-scripts build&quot;,
+    &quot;deploy&quot;: &quot;gh-pages -d build&quot;,
+    &quot;predeploy&quot;: &quot;npm run build&quot;
+  }
+</code></pre>
+
+<ul>
+<li>deploy 와 predeploy 내용 추가</li>
+</ul>
+
+<p><strong>3) movie_app 빌드</strong></p>
+
+<ul>
+<li><p>cmd(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm run build</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm run build
+</code></pre></li>
+</ul>
+
+<p><strong>4) movie_app을 github page에 발행</strong></p>
+
+<ul>
+<li><p>cmd(터미널)에서 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">npm run deploy</span></strong>
+    
+
+ 입력</p>
+
+<pre><code class="language-cmd">movie_app_2019&gt;npm run deploy
+</code></pre></li>
+
+<li><p>scripts에 따라 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">predeploy(npm run build)</span></strong>
+    
+
+ 가 먼저 실행됨</p></li>
+
+<li><p>그 후에 script의 
+
+
+
+    
+        
+    
+    <strong><span style = "color:red">deploy(gh-pages -d build)</span></strong>
+    
+
+ 가 실행</p></li>
+</ul>
+
+<p><strong>5) github사이트에서 결과물 확인</strong></p>
+
+<ul>
+<li><a href="https://psyssai.github.io/movie_app_2019">github 사이트</a> 접속</li>
+</ul>
 
 <p>감사합니다.</p>
 
@@ -891,8 +1200,8 @@ class App extends React.Component{
 
 <ul class="actions pagination">
     
-        <li><a href="https://psyssai.github.io/frontend/react/react_2_component_jsx/"
-                class="button big previous">[React]2.Component, JSX, Props</a></li>
+        <li><a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/"
+                class="button big previous">[React]3.State &amp; Component Life Cycle</a></li>
     
 
     
@@ -990,11 +1299,25 @@ class App extends React.Component{
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a>
+                <a href="https://psyssai.github.io/frontend/react/react_4_create_movie_app/">[React]4.영화 App 만들기</a>
               </h3>
               
               <time class="published" datetime='2019-10-12'>
                 October 12, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://psyssai.github.io/frontend/react/react_3_state_lifecycle/">[React]3.State &amp; Component Life Cycle</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-11'>
+                October 11, 2019
               </time>
             </header>
             
@@ -1070,20 +1393,6 @@ class App extends React.Component{
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://psyssai.github.io/blog/bigdata/pandas/10_dataframe_grouping/">[Pandas 기초]10.DataFrame의 집계(그룹핑) 함수</a>
-              </h3>
-              
-              <time class="published" datetime='2019-08-31'>
-                August 31, 2019
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -1128,7 +1437,7 @@ class App extends React.Component{
             <header>
               
                 <a href="https://psyssai.github.io/categories/frontend/react/">frontend/react</a>
-                <span style="float:right;">4</span>
+                <span style="float:right;">5</span>
               
             </header>
           </article>
